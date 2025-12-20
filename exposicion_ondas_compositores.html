@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPOSITORES - Exposición ONDAS</title>
+    <link rel="stylesheet" href="exposicion_ondas_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-ornament">✦ ✦ ✦</div>
+        <h1 class="main-title">ONDAS</h1>
+        <p class="subtitle">Revista Popular de Radiotelefonía</p>
+        <div class="header-years">Madrid · 1925-1927</div>
+        <div class="header-ornament">✦ ✦ ✦</div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar por categoría, autor, compositor, intérprete, fecha...">
+            <button id="searchBtn">Buscar</button>
+            <button id="clearSearch">Limpiar</button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
+
+        <section class="gallery-header">
+            <h1>COMPOSITORES</h1>
+            <p>Los grandes maestros de la música universal retratados en ONDAS</p>
+            <p style="margin-top: 1rem; color: #666;">278 imágenes en esta categoría · Mostrando 10 ejemplos</p>
+        </section>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1920:01:11_ONDAS Sibelius.png" alt="Sibelius" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">11/01/1920</div>
+                    <div class="image-title">Sibelius</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Mantecón.png" alt="Mantecón" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">01/06/1925</div>
+                    <div class="image-title">Mantecón</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Puccini.png" alt="Puccini" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">01/06/1925</div>
+                    <div class="image-title">Puccini</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925_06_28_ONDAS Bretón.png" alt="Bretón" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">28/06/1925</div>
+                    <div class="image-title">Bretón</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925_07_05_ONDAS Verdi.png" alt="Verdi" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">05/07/1925</div>
+                    <div class="image-title">Verdi</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925_07_12_ONDAS Mascagni.png" alt="Mascagni" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">12/07/1925</div>
+                    <div class="image-title">Mascagni</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925:07:19_ONDAS Haydn.png" alt="Haydn" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">19/07/1925</div>
+                    <div class="image-title">Haydn</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925:07:19_ONDAS Henri Viextemps.png" alt="Henri Viextemps" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">19/07/1925</div>
+                    <div class="image-title">Henri Viextemps</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925:08:16_ONDAS Haydn.png" alt="Haydn" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">16/08/1925</div>
+                    <div class="image-title">Haydn</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="ondas/imagenes/COMPOSITORES/1925:08:23_ONDAS Bellini.png" alt="Bellini" loading="lazy">
+                <div class="image-caption">
+                    <div class="image-date">23/08/1925</div>
+                    <div class="image-title">Bellini</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <p style="font-style: italic; color: #666;">Esta categoría contiene 278 imágenes de compositores. Aquí se muestran 10 ejemplos representativos.</p>
+        </div>
+
+        <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-ornament">✦ ✦ ✦</div>
+        <p>&copy; 2025 Exposición Virtual ONDAS · Todos los derechos reservados</p>
+    </footer>
+
+    <script src="exposicion_ondas_search.js"></script>
+    <script>
+        // Cargar imágenes de esta categoría en la base de datos de búsqueda
+        const composerImages = [
+            '1920:01:11_ONDAS Sibelius.png',
+            '1925_06_01_ONDAS Mantecón.png',
+            '1925_06_01_ONDAS Puccini.png',
+            '1925_06_28_ONDAS Bretón.png',
+            '1925_07_05_ONDAS Verdi.png',
+            '1925_07_12_ONDAS Mascagni.png',
+            '1925:07:19_ONDAS Haydn.png',
+            '1925:07:19_ONDAS Henri Viextemps.png',
+            '1925:08:16_ONDAS Haydn.png',
+            '1925:08:23_ONDAS Bellini.png'
+        ];
+        window.ondasExhibition.loadCategoryImages('compositores', composerImages);
+    </script>
+</body>
+</html>
