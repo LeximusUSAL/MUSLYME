@@ -226,6 +226,27 @@ body {
 }
 
 /* ==========================================
+   BANNER IMAGE
+   ========================================== */
+
+.banner-image {
+    margin: 3rem 0;
+    text-align: center;
+    background-color: var(--color-white);
+    border: 3px double var(--color-black);
+    padding: 2rem;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--color-black);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+/* ==========================================
    CATEGORIES GRID
    ========================================== */
 
@@ -289,6 +310,9 @@ body {
     text-transform: uppercase;
     border-bottom: 2px solid var(--color-black);
     padding-bottom: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .category-count {
@@ -488,6 +512,20 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .category-card {
+        padding: 1.5rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.3rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.4;
+    }
+
+    .category-desc {
+        font-size: 0.95rem;
+    }
+
     .search-container {
         flex-direction: column;
     }
@@ -498,6 +536,22 @@ body {
 
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    .intro-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .banner-image {
+        margin: 2rem 0;
+    }
+
+    .banner-image img {
+        max-width: 100%;
     }
 }
 
