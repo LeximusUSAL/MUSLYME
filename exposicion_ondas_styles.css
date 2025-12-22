@@ -230,16 +230,16 @@ body {
    ========================================== */
 
 .banner-image {
-    margin: 3rem 0;
+    margin: 2rem 0;
     text-align: center;
     background-color: var(--color-white);
     border: 3px double var(--color-black);
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .banner-image img {
-    max-width: 700px;
-    width: 100%;
+    max-width: 100%;
+    width: auto;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -548,11 +548,8 @@ body {
     }
 
     .banner-image {
-        margin: 2rem 0;
-    }
-
-    .banner-image img {
-        max-width: 100%;
+        margin: 1.5rem 0;
+        padding: 1rem;
     }
 }
 
