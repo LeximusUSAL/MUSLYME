@@ -238,7 +238,8 @@ body {
 }
 
 .banner-image img {
-    max-width: 100%;
+    max-width: 700px;
+    width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
