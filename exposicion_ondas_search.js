@@ -283,7 +283,7 @@ function loadCategoryImages(category, images) {
  * Sistema de paginación para galerías de imágenes
  */
 let currentPage = 1;
-const IMAGES_PER_PAGE = 40;
+const IMAGES_PER_PAGE = 39;
 
 function initializePagination() {
     const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
