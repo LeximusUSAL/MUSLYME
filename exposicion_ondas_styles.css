@@ -498,6 +498,91 @@ body {
 }
 
 /* ==========================================
+   PAGINATION CONTROLS
+   ========================================== */
+
+.pagination-controls {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.page-number {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.5rem 0.9rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 2.5rem;
+}
+
+.page-number:hover {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
+
+.page-number.active {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-weight: 700;
+    border: 2px solid var(--color-black);
+}
+
+.page-ellipsis {
+    padding: 0 0.5rem;
+    color: var(--color-medium-gray);
+    font-weight: bold;
+}
+
+.pagination-info {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-medium-gray);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* ==========================================
    RESPONSIVE DESIGN
    ========================================== */
 
@@ -566,6 +651,22 @@ body {
         margin: 1.5rem 0;
         padding: 1rem;
     }
+
+    .pagination-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .page-numbers {
+        margin: 0.5rem 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .page-btn, .page-number {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
 }
 
 @media print {
@@ -573,7 +674,11 @@ body {
         background-color: white;
     }
 
-    .main-nav, .search-container {
+    .main-nav, .search-container, .pagination-controls {
         display: none;
+    }
+
+    .gallery-item {
+        display: block !important;
     }
 }
