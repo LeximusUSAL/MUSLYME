@@ -3,8 +3,8 @@
  * Sistema de búsqueda universal para categorías, imágenes, fechas, autores, compositores e intérpretes
  */
 
-// Base de datos de todas las imágenes de la exposición (se carga dinámicamente)
-const ondasDatabase = {
+// Base de datos de todas las imágenes de la exposición (se carga dinámicamente desde JSON)
+let ondasDatabase = {
     compositores: [],
     cantantes: [],
     interpretes: [],
@@ -16,6 +16,9 @@ const ondasDatabase = {
     anuncios: [],
     otras: []
 };
+
+// Estado de carga de la base de datos
+let isDatabaseLoaded = false;
 
 // Mapeo de categorías a URLs
 const categoryURLs = {
@@ -96,6 +99,11 @@ function normalizeText(text) {
  * Realiza búsqueda en todas las categorías
  */
 function performSearch(searchTerm) {
+    if (!isDatabaseLoaded) {
+        alert('La base de datos aún se está cargando. Por favor, espere un momento e intente de nuevo.');
+        return [];
+    }
+
     const normalizedSearch = normalizeText(searchTerm);
     const results = [];
 
@@ -198,12 +206,29 @@ function displaySearchResults(results) {
                     </a>
                 `;
             } else if (result.type === 'image') {
+                // Mapeo de nombres de categoría a nombres de directorio
+                const categoryDirMap = {
+                    'Compositores': 'COMPOSITORES',
+                    'Cantantes': 'CANTANTES',
+                    'Otros Intérpretes': 'OTROS INTÉRPRETES',
+                    'Óperas': 'ÓPERAS',
+                    'Zarzuela y Obras Musicales': 'ZARZUELA Y OBRAS MUSICALES CONCRETAS',
+                    'Instrumentos e Inventos': 'INSTRUMENTOS e INVENTOS',
+                    'Caricaturas y Dibujos': 'CARICATURAS, TIRAS CÓMICAS, DIBUJOS',
+                    'Portadas Musicales': 'PORTADAS y CABECERAS MUSICALES',
+                    'Anuncios': 'ANUNCIOS ',
+                    'Otras Imágenes': 'OTRAS IMÁGENES y PORTADAS GENERALISTAS'
+                };
+
+                const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
+                const imagePath = `ondas/imagenes/${categoryDir}/${result.image}`;
+
                 resultsHTML += `
                     <div class="gallery-item">
-                        <img src="/Users/maria/Desktop/ONDAS/IMÁGENES/${result.categoryName.toUpperCase()}/${result.image}"
+                        <img src="${imagePath}"
                              alt="${result.metadata.title}"
                              loading="lazy"
-                             onerror="this.style.display='none'">
+                             onerror="this.style.display='none'; this.parentElement.style.display='none';">
                         <div class="image-caption">
                             <div class="image-date">${result.metadata.date}</div>
                             <div class="image-title">${result.metadata.title}</div>
@@ -280,143 +305,34 @@ function loadCategoryImages(category, images) {
 }
 
 /**
- * Sistema de paginación para galerías de imágenes
+ * Carga la base de datos de imágenes desde el archivo JSON
  */
-let currentPage = 1;
-const IMAGES_PER_PAGE = 39;
-
-function initializePagination() {
-    const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
-    const totalItems = galleryItems.length;
-    const totalPages = Math.ceil(totalItems / IMAGES_PER_PAGE);
-
-    if (totalPages <= 1) {
-        // No necesita paginación
-        return;
-    }
-
-    // Crear controles de paginación
-    createPaginationControls(totalPages);
-
-    // Mostrar primera página
-    showPage(1, galleryItems, totalPages);
-}
-
-function createPaginationControls(totalPages) {
-    const galleryGrid = document.querySelector('.gallery-grid');
-
-    // Crear contenedor de paginación
-    const paginationDiv = document.createElement('div');
-    paginationDiv.className = 'pagination-controls';
-    paginationDiv.id = 'paginationControls';
-
-    // Insertar después de la galería
-    galleryGrid.insertAdjacentElement('afterend', paginationDiv);
-
-    updatePaginationControls(totalPages);
-}
-
-function updatePaginationControls(totalPages) {
-    const paginationDiv = document.getElementById('paginationControls');
-    if (!paginationDiv) return;
-
-    let html = '<div class="pagination-buttons">';
-
-    // Botón anterior
-    html += `<button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="window.ondasExhibition.goToPage(${currentPage - 1})">
-        ← Anterior
-    </button>`;
-
-    // Números de página
-    html += '<div class="page-numbers">';
-
-    // Siempre mostrar primera página
-    if (currentPage > 3) {
-        html += `<button class="page-number" onclick="window.ondasExhibition.goToPage(1)">1</button>`;
-        if (currentPage > 4) {
-            html += '<span class="page-ellipsis">...</span>';
+async function loadDatabase() {
+    try {
+        const response = await fetch('ondas_database.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-    }
-
-    // Páginas cercanas a la actual
-    for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
-        html += `<button class="page-number ${i === currentPage ? 'active' : ''}"
-                        onclick="window.ondasExhibition.goToPage(${i})">${i}</button>`;
-    }
-
-    // Siempre mostrar última página
-    if (currentPage < totalPages - 2) {
-        if (currentPage < totalPages - 3) {
-            html += '<span class="page-ellipsis">...</span>';
-        }
-        html += `<button class="page-number" onclick="window.ondasExhibition.goToPage(${totalPages})">${totalPages}</button>`;
-    }
-
-    html += '</div>';
-
-    // Botón siguiente
-    html += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="window.ondasExhibition.goToPage(${currentPage + 1})">
-        Siguiente →
-    </button>`;
-
-    html += '</div>';
-
-    // Info de página
-    const startItem = ((currentPage - 1) * IMAGES_PER_PAGE) + 1;
-    const endItem = Math.min(currentPage * IMAGES_PER_PAGE, document.querySelectorAll('.gallery-grid .gallery-item').length);
-    const totalItems = document.querySelectorAll('.gallery-grid .gallery-item').length;
-
-    html += `<div class="pagination-info">
-        Mostrando ${startItem}-${endItem} de ${totalItems} imágenes (Página ${currentPage} de ${totalPages})
-    </div>`;
-
-    paginationDiv.innerHTML = html;
-}
-
-function showPage(pageNumber, items = null, totalPages = null) {
-    const galleryItems = items || document.querySelectorAll('.gallery-grid .gallery-item');
-    const total = totalPages || Math.ceil(galleryItems.length / IMAGES_PER_PAGE);
-
-    currentPage = pageNumber;
-
-    const startIndex = (pageNumber - 1) * IMAGES_PER_PAGE;
-    const endIndex = startIndex + IMAGES_PER_PAGE;
-
-    // Ocultar/mostrar elementos
-    galleryItems.forEach((item, index) => {
-        if (index >= startIndex && index < endIndex) {
-            item.style.display = '';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-
-    // Actualizar controles
-    updatePaginationControls(total);
-
-    // Scroll al inicio de la galería
-    const galleryHeader = document.querySelector('.gallery-header');
-    if (galleryHeader) {
-        galleryHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
-
-function goToPage(pageNumber) {
-    const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
-    const totalPages = Math.ceil(galleryItems.length / IMAGES_PER_PAGE);
-
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-        showPage(pageNumber);
+        const data = await response.json();
+        ondasDatabase = data;
+        isDatabaseLoaded = true;
+        console.log('✓ Base de datos ONDAS cargada:', {
+            total: Object.values(ondasDatabase).reduce((sum, arr) => sum + arr.length, 0),
+            categorias: Object.keys(ondasDatabase).length
+        });
+    } catch (error) {
+        console.error('Error cargando base de datos ONDAS:', error);
+        alert('Error: No se pudo cargar la base de datos de imágenes. El buscador no funcionará correctamente.');
     }
 }
 
 /**
  * Inicializa el sistema cuando el DOM está listo
  */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadDatabase();
     initializeSearch();
-    initializePagination();
-    console.log('ONDAS Virtual Exhibition - Sistema de búsqueda y paginación inicializado');
+    console.log('ONDAS Virtual Exhibition - Sistema de búsqueda inicializado');
 });
 
 // Exportar funciones para uso en páginas de galería
@@ -424,8 +340,5 @@ window.ondasExhibition = {
     extractMetadata,
     loadCategoryImages,
     performSearch,
-    displaySearchResults,
-    initializePagination,
-    goToPage,
-    showPage
+    displaySearchResults
 };
