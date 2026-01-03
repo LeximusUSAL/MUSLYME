@@ -60,8 +60,9 @@ function extractMetadata(filename) {
     const nameWithoutExt = filename.replace('.webp', '').replace('.png', '');
 
     // Buscar patrón de fecha (YYYY:MM:DD o YYYY_MM_DD)
-    const datePattern1 = /^(\d{4}):(\d{2}):(\d{2})_ONDAS\s+(.+)$/;
-    const datePattern2 = /^(\d{4})_(\d{2})_(\d{2})_ONDAS\s+(.+)$/;
+    // Acepta tanto espacio como guión bajo antes de ONDAS
+    const datePattern1 = /^(\d{4}):(\d{2}):(\d{2})[_\s]+ONDAS\s+(.+)$/;
+    const datePattern2 = /^(\d{4})_(\d{2})_(\d{2})[_\s]+ONDAS\s+(.+)$/;
 
     let match = nameWithoutExt.match(datePattern1) || nameWithoutExt.match(datePattern2);
 
