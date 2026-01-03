@@ -225,7 +225,10 @@ function displaySearchResults(results) {
                 };
 
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
-                const imagePath = `ondas/imagenes/${categoryDir}/${result.image}`;
+                // Codificar correctamente la URL para caracteres especiales (acentos, ñ, etc.)
+                const categoryDirEncoded = encodeURIComponent(categoryDir);
+                const imageEncoded = encodeURIComponent(result.image);
+                const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
 
                 resultsHTML += `
                     <div class="gallery-item">
