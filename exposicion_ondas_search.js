@@ -11,6 +11,7 @@ let ondasDatabase = {
     operas: [],
     zarzuelas: [],
     instrumentos: [],
+    caricaturas_retratos: [],
     caricaturas: [],
     portadas: [],
     anuncios: [],
@@ -28,6 +29,7 @@ const categoryURLs = {
     operas: 'exposicion_ondas_operas.html',
     zarzuelas: 'exposicion_ondas_zarzuelas.html',
     instrumentos: 'exposicion_ondas_instrumentos.html',
+    caricaturas_retratos: 'exposicion_ondas_caricaturas_retratos.html',
     caricaturas: 'exposicion_ondas_caricaturas.html',
     portadas: 'exposicion_ondas_portadas.html',
     anuncios: 'exposicion_ondas_anuncios.html',
@@ -38,14 +40,15 @@ const categoryURLs = {
 const categoryNames = {
     compositores: 'Compositores',
     cantantes: 'Cantantes',
-    interpretes: 'Otros Intérpretes',
+    interpretes: 'Otros Intérpretes y Protagonistas',
     operas: 'Óperas',
-    zarzuelas: 'Zarzuela y Obras Musicales',
-    instrumentos: 'Instrumentos e Inventos',
-    caricaturas: 'Caricaturas y Dibujos',
-    portadas: 'Portadas Musicales',
+    zarzuelas: 'Otras Obras Musicales Concretas',
+    instrumentos: 'Instrumentos, Inventos y Experimentos Radiofónicos',
+    caricaturas_retratos: 'Caricaturas y Retratos de Compositores e Intérpretes',
+    caricaturas: 'Tiras Cómicas, Chistes y Dibujos',
+    portadas: 'Portadas Musicales y Cabeceras',
     anuncios: 'Anuncios',
-    otras: 'Otras Imágenes'
+    otras: 'Estudios de Radio y Otras Imágenes Generales'
 };
 
 /**
@@ -53,8 +56,8 @@ const categoryNames = {
  * Formato: YYYY:MM:DD_ONDAS Nombre.png o YYYY_MM_DD_ONDAS Nombre.png
  */
 function extractMetadata(filename) {
-    // Remover la extensión .png
-    const nameWithoutExt = filename.replace('.png', '');
+    // Remover la extensión .webp o .png
+    const nameWithoutExt = filename.replace('.webp', '').replace('.png', '');
 
     // Buscar patrón de fecha (YYYY:MM:DD o YYYY_MM_DD)
     const datePattern1 = /^(\d{4}):(\d{2}):(\d{2})_ONDAS\s+(.+)$/;
@@ -210,14 +213,15 @@ function displaySearchResults(results) {
                 const categoryDirMap = {
                     'Compositores': 'COMPOSITORES',
                     'Cantantes': 'CANTANTES',
-                    'Otros Intérpretes': 'OTROS INTÉRPRETES',
+                    'Otros Intérpretes y Protagonistas': 'OTROS INTÉRPRETES Y PROTAGONISTAS',
                     'Óperas': 'ÓPERAS',
-                    'Zarzuela y Obras Musicales': 'ZARZUELA Y OBRAS MUSICALES CONCRETAS',
-                    'Instrumentos e Inventos': 'INSTRUMENTOS e INVENTOS',
-                    'Caricaturas y Dibujos': 'CARICATURAS, TIRAS CÓMICAS, DIBUJOS',
-                    'Portadas Musicales': 'PORTADAS y CABECERAS MUSICALES',
+                    'Otras Obras Musicales Concretas': 'OTRAS OBRAS MUSICALES CONCRETAS',
+                    'Instrumentos, Inventos y Experimentos Radiofónicos': 'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS',
+                    'Caricaturas y Retratos de Compositores e Intérpretes': 'CARICATURAS y RETRATOS de Compositores e intérpretes',
+                    'Tiras Cómicas, Chistes y Dibujos': 'TIRAS CÓMICAS, CHISTES Y DIBUJOS',
+                    'Portadas Musicales y Cabeceras': 'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA',
                     'Anuncios': 'ANUNCIOS ',
-                    'Otras Imágenes': 'OTRAS IMÁGENES y PORTADAS GENERALISTAS'
+                    'Estudios de Radio y Otras Imágenes Generales': 'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES'
                 };
 
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
