@@ -239,12 +239,10 @@ function displaySearchResults(results, page = 1) {
                 };
 
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
-                // Codificar correctamente la URL para caracteres especiales (acentos, ñ, etc.)
-                const categoryDirEncoded = encodeURIComponent(categoryDir);
                 // Reemplazar .png por .webp ya que los archivos reales están en formato WebP
                 const imageWithWebp = result.image.replace('.png', '.webp');
-                const imageEncoded = encodeURIComponent(imageWithWebp);
-                const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
+                // No usar encodeURIComponent - dejar que el navegador maneje el encoding automáticamente
+                const imagePath = `ondas/imagenes/${categoryDir}/${imageWithWebp}`;
 
                 resultsHTML += `
                     <div class="gallery-item">
