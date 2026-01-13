@@ -241,7 +241,9 @@ function displaySearchResults(results, page = 1) {
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
                 // Codificar correctamente la URL para caracteres especiales (acentos, ñ, etc.)
                 const categoryDirEncoded = encodeURIComponent(categoryDir);
-                const imageEncoded = encodeURIComponent(result.image);
+                // Reemplazar .png por .webp ya que los archivos reales están en formato WebP
+                const imageWithWebp = result.image.replace('.png', '.webp');
+                const imageEncoded = encodeURIComponent(imageWithWebp);
                 const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
 
                 resultsHTML += `
@@ -249,7 +251,7 @@ function displaySearchResults(results, page = 1) {
                         <img src="${imagePath}"
                              alt="${result.metadata.title}"
                              loading="lazy"
-                             onerror="this.style.display='none'; this.parentElement.style.display='none';">
+                             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\'%3E%3Crect fill=\'%23f0f0f0\' width=\'200\' height=\'200\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23999\' font-family=\'Arial\' font-size=\'14\'%3EImagen no disponible%3C/text%3E%3C/svg%3E';">
                         <div class="image-caption">
                             <div class="image-date">${result.metadata.date}</div>
                             <div class="image-title">${result.metadata.title}</div>
