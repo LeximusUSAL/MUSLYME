@@ -241,8 +241,9 @@ function displaySearchResults(results, page = 1) {
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
                 // Reemplazar .png por .webp ya que los archivos reales están en formato WebP
                 const imageWithWebp = result.image.replace('.png', '.webp');
-                // No usar encodeURIComponent - dejar que el navegador maneje el encoding automáticamente
-                const imagePath = `ondas/imagenes/${categoryDir}/${imageWithWebp}`;
+                // Encodear solo el nombre del archivo para manejar caracteres especiales
+                const imageEncoded = encodeURIComponent(imageWithWebp);
+                const imagePath = `ondas/imagenes/${categoryDir}/${imageEncoded}`;
 
                 resultsHTML += `
                     <div class="gallery-item">
