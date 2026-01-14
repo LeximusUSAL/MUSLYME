@@ -241,9 +241,13 @@ function displaySearchResults(results, page = 1) {
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
                 // Reemplazar .png por .webp ya que los archivos reales están en formato WebP
                 const imageWithWebp = result.image.replace('.png', '.webp');
-                // Encodear tanto el directorio como el nombre del archivo para manejar caracteres especiales y espacios
-                const categoryDirEncoded = encodeURIComponent(categoryDir);
-                const imageEncoded = encodeURIComponent(imageWithWebp);
+                // Normalizar a NFD (forma descompuesta) para coincidir con los nombres de archivo en el servidor
+                // macOS y GitHub usan NFD para caracteres acentuados
+                const categoryDirNFD = categoryDir.normalize('NFD');
+                const imageNFD = imageWithWebp.normalize('NFD');
+                // Encodear para manejar caracteres especiales y espacios
+                const categoryDirEncoded = encodeURIComponent(categoryDirNFD);
+                const imageEncoded = encodeURIComponent(imageNFD);
                 const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
 
                 resultsHTML += `
