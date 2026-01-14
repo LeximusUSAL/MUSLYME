@@ -241,13 +241,13 @@ function displaySearchResults(results, page = 1) {
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
                 // Reemplazar .png por .webp ya que los archivos reales están en formato WebP
                 const imageWithWebp = result.image.replace('.png', '.webp');
-                // Normalizar a NFD (forma descompuesta) para coincidir con los nombres de archivo en el servidor
-                // macOS y GitHub usan NFD para caracteres acentuados
-                const categoryDirNFD = categoryDir.normalize('NFD');
-                const imageNFD = imageWithWebp.normalize('NFD');
+                // Normalizar a NFC (forma compuesta) para coincidir con GitHub Pages
+                // GitHub normaliza los nombres de archivo a NFC
+                const categoryDirNFC = categoryDir.normalize('NFC');
+                const imageNFC = imageWithWebp.normalize('NFC');
                 // Encodear para manejar caracteres especiales y espacios
-                const categoryDirEncoded = encodeURIComponent(categoryDirNFD);
-                const imageEncoded = encodeURIComponent(imageNFD);
+                const categoryDirEncoded = encodeURIComponent(categoryDirNFC);
+                const imageEncoded = encodeURIComponent(imageNFC);
                 const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
 
                 resultsHTML += `
