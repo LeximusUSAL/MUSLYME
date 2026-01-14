@@ -183,6 +183,10 @@ const resultsPerPage = 50;
 function displaySearchResults(results, page = 1) {
     currentSearchResults = results;
     currentPage = page;
+    // Actualizar la referencia en window para que la paginación funcione
+    if (window.ondasExhibition) {
+        window.ondasExhibition.currentSearchResults = currentSearchResults;
+    }
 
     const container = document.querySelector('.container');
 
