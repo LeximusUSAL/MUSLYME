@@ -313,22 +313,8 @@ function displaySearchResults(results) {
                 const imageEncoded = encodeURIComponent(imageNFC);
                 const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
 
-                // Generar etiquetas de equipos de audio si existen
-                let equipoTagsHTML = '';
-                if (result.equipoAudio && result.equipoAudio.length > 0) {
-                    const equipoIcons = { microfono: '🎤', altavoz: '🔊', cascos: '🎧' };
-                    const equipoColors = { microfono: '#e74c3c', altavoz: '#3498db', cascos: '#2ecc71' };
-                    const equipoNames = { microfono: 'Micrófono', altavoz: 'Altavoz', cascos: 'Cascos' };
-                    equipoTagsHTML = '<div style="position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end;">';
-                    result.equipoAudio.forEach(eq => {
-                        equipoTagsHTML += `<span style="background: ${equipoColors[eq]}; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.7rem;">${equipoIcons[eq]} ${equipoNames[eq]}</span>`;
-                    });
-                    equipoTagsHTML += '</div>';
-                }
-
                 resultsHTML += `
-                    <div class="gallery-item" style="position: relative;">
-                        ${equipoTagsHTML}
+                    <div class="gallery-item">
                         <img src="${imagePath}"
                              alt="${result.metadata.title}"
                              loading="lazy"
