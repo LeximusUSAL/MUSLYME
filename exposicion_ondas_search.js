@@ -172,22 +172,10 @@ function performSearch(searchTerm) {
     return results;
 }
 
-// Estado de paginación
-let currentSearchResults = [];
-let currentPage = 1;
-const resultsPerPage = 50;
-
 /**
- * Muestra los resultados de búsqueda con paginación
+ * Muestra todos los resultados de búsqueda en una sola página
  */
-function displaySearchResults(results, page = 1) {
-    currentSearchResults = results;
-    currentPage = page;
-    // Actualizar la referencia en window para que la paginación funcione
-    if (window.ondasExhibition) {
-        window.ondasExhibition.currentSearchResults = currentSearchResults;
-    }
-
+function displaySearchResults(results) {
     const container = document.querySelector('.container');
 
     // Eliminar resultados anteriores si existen
@@ -207,18 +195,28 @@ function displaySearchResults(results, page = 1) {
             <p class="no-results">No se encontraron resultados para su búsqueda.</p>
         `;
     } else {
-        const totalPages = Math.ceil(results.length / resultsPerPage);
-        const startIndex = (page - 1) * resultsPerPage;
-        const endIndex = Math.min(startIndex + resultsPerPage, results.length);
-        const pageResults = results.slice(startIndex, endIndex);
-
         let resultsHTML = `
-            <h3>Resultados de la Búsqueda (${results.length} resultados - Página ${page} de ${totalPages})</h3>
+            <h3>Resultados de la Búsqueda (${results.length} resultados)</h3>
             <div class="ornamental-line"></div>
             <div class="gallery-grid">
         `;
 
-        pageResults.forEach(result => {
+        // Mapeo de nombres de categoría a nombres de directorio
+        const categoryDirMap = {
+            'Compositores': 'COMPOSITORES',
+            'Cantantes': 'CANTANTES',
+            'Otros Intérpretes y Protagonistas': 'OTROS INTÉRPRETES Y PROTAGONISTAS',
+            'Óperas': 'ÓPERAS',
+            'Otras Obras Musicales Concretas': 'OTRAS OBRAS MUSICALES CONCRETAS',
+            'Instrumentos, Inventos y Experimentos Radiofónicos': 'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS',
+            'Caricaturas y Retratos de Compositores e Intérpretes': 'CARICATURAS y RETRATOS de Compositores e intérpretes',
+            'Tiras Cómicas, Chistes y Dibujos': 'TIRAS CÓMICAS, CHISTES Y DIBUJOS',
+            'Portadas Musicales y Cabeceras': 'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA',
+            'Anuncios': 'ANUNCIOS ',
+            'Estudios de Radio y Otras Imágenes Generales': 'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES'
+        };
+
+        results.forEach(result => {
             if (result.type === 'category') {
                 resultsHTML += `
                     <a href="${result.url}" class="category-card">
@@ -227,26 +225,10 @@ function displaySearchResults(results, page = 1) {
                     </a>
                 `;
             } else if (result.type === 'image') {
-                // Mapeo de nombres de categoría a nombres de directorio
-                const categoryDirMap = {
-                    'Compositores': 'COMPOSITORES',
-                    'Cantantes': 'CANTANTES',
-                    'Otros Intérpretes y Protagonistas': 'OTROS INTÉRPRETES Y PROTAGONISTAS',
-                    'Óperas': 'ÓPERAS',
-                    'Otras Obras Musicales Concretas': 'OTRAS OBRAS MUSICALES CONCRETAS',
-                    'Instrumentos, Inventos y Experimentos Radiofónicos': 'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS',
-                    'Caricaturas y Retratos de Compositores e Intérpretes': 'CARICATURAS y RETRATOS de Compositores e intérpretes',
-                    'Tiras Cómicas, Chistes y Dibujos': 'TIRAS CÓMICAS, CHISTES Y DIBUJOS',
-                    'Portadas Musicales y Cabeceras': 'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA',
-                    'Anuncios': 'ANUNCIOS ',
-                    'Estudios de Radio y Otras Imágenes Generales': 'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES'
-                };
-
                 const categoryDir = categoryDirMap[result.categoryName] || result.categoryName.toUpperCase();
                 // Reemplazar .png por .webp ya que los archivos reales están en formato WebP
                 const imageWithWebp = result.image.replace('.png', '.webp');
                 // Normalizar a NFC (forma compuesta) para coincidir con GitHub Pages
-                // GitHub normaliza los nombres de archivo a NFC
                 const categoryDirNFC = categoryDir.normalize('NFC');
                 const imageNFC = imageWithWebp.normalize('NFC');
                 // Encodear para manejar caracteres especiales y espacios
@@ -273,73 +255,6 @@ function displaySearchResults(results, page = 1) {
         });
 
         resultsHTML += '</div>';
-
-        // Añadir controles de paginación si hay más de una página
-        if (totalPages > 1) {
-            resultsHTML += `
-                <div class="pagination-controls" style="text-align: center; margin: 2rem 0; padding: 1rem;">
-                    <p style="font-style: italic; color: #666; margin-bottom: 1rem;">
-                        Mostrando resultados ${startIndex + 1} - ${endIndex} de ${results.length}
-                    </p>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-            `;
-
-            // Botón anterior
-            if (page > 1) {
-                resultsHTML += `<button onclick="window.ondasExhibition.displaySearchResults(window.ondasExhibition.currentSearchResults, ${page - 1})"
-                    style="padding: 0.5rem 1rem; background: #8b4513; color: white; border: none; cursor: pointer; font-family: 'EB Garamond', serif;">
-                    ← Anterior
-                </button>`;
-            }
-
-            // Números de página (mostrar hasta 10 páginas alrededor de la actual)
-            const pageStart = Math.max(1, page - 5);
-            const pageEnd = Math.min(totalPages, page + 5);
-
-            if (pageStart > 1) {
-                resultsHTML += `<button onclick="window.ondasExhibition.displaySearchResults(window.ondasExhibition.currentSearchResults, 1)"
-                    style="padding: 0.5rem 1rem; background: #f5f5dc; border: 1px solid #8b4513; cursor: pointer; font-family: 'EB Garamond', serif;">1</button>`;
-                if (pageStart > 2) {
-                    resultsHTML += `<span style="padding: 0.5rem;">...</span>`;
-                }
-            }
-
-            for (let i = pageStart; i <= pageEnd; i++) {
-                const isCurrentPage = i === page;
-                const buttonStyle = isCurrentPage
-                    ? "padding: 0.5rem 1rem; background: #8b4513; color: white; border: none; font-weight: bold; font-family: 'EB Garamond', serif; cursor: default;"
-                    : "padding: 0.5rem 1rem; background: #f5f5dc; border: 1px solid #8b4513; cursor: pointer; font-family: 'EB Garamond', serif;";
-
-                if (isCurrentPage) {
-                    resultsHTML += `<button style="${buttonStyle}">${i}</button>`;
-                } else {
-                    resultsHTML += `<button onclick="window.ondasExhibition.displaySearchResults(window.ondasExhibition.currentSearchResults, ${i})"
-                        style="${buttonStyle}">${i}</button>`;
-                }
-            }
-
-            if (pageEnd < totalPages) {
-                if (pageEnd < totalPages - 1) {
-                    resultsHTML += `<span style="padding: 0.5rem;">...</span>`;
-                }
-                resultsHTML += `<button onclick="window.ondasExhibition.displaySearchResults(window.ondasExhibition.currentSearchResults, ${totalPages})"
-                    style="padding: 0.5rem 1rem; background: #f5f5dc; border: 1px solid #8b4513; cursor: pointer; font-family: 'EB Garamond', serif;">${totalPages}</button>`;
-            }
-
-            // Botón siguiente
-            if (page < totalPages) {
-                resultsHTML += `<button onclick="window.ondasExhibition.displaySearchResults(window.ondasExhibition.currentSearchResults, ${page + 1})"
-                    style="padding: 0.5rem 1rem; background: #8b4513; color: white; border: none; cursor: pointer; font-family: 'EB Garamond', serif;">
-                    Siguiente →
-                </button>`;
-            }
-
-            resultsHTML += `
-                    </div>
-                </div>
-            `;
-        }
-
         resultsSection.innerHTML = resultsHTML;
     }
 
@@ -347,14 +262,8 @@ function displaySearchResults(results, page = 1) {
     const nav = document.querySelector('.main-nav');
     nav.insertAdjacentElement('afterend', resultsSection);
 
-    // Scroll a los resultados (suave en primera búsqueda, inmediato en cambio de página)
-    if (page === 1) {
-        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        // Scroll al inicio de los resultados al cambiar de página
-        resultsSection.scrollIntoView({ behavior: 'auto', block: 'start' });
-        window.scrollBy(0, -100); // Ajuste para mostrar el header
-    }
+    // Scroll suave a los resultados
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /**
@@ -437,7 +346,5 @@ window.ondasExhibition = {
     extractMetadata,
     loadCategoryImages,
     performSearch,
-    displaySearchResults,
-    currentSearchResults,
-    currentPage
+    displaySearchResults
 };
