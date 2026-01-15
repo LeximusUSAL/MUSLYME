@@ -1,0 +1,2754 @@
+{
+  "metadata": {
+    "proyecto": "ONDAS - Etiquetado de Equipos de Audio",
+    "categorias": [
+      {
+        "id": "microfono",
+        "nombre": "Micrófono",
+        "sinonimos": [
+          "micrófono",
+          "microfono",
+          "mic"
+        ]
+      },
+      {
+        "id": "altavoz",
+        "nombre": "Altavoz",
+        "sinonimos": [
+          "altavoz",
+          "altavoces",
+          "speaker",
+          "bocina"
+        ]
+      },
+      {
+        "id": "cascos",
+        "nombre": "Cascos/Auriculares",
+        "sinonimos": [
+          "cascos",
+          "auriculares",
+          "headphones",
+          "audífonos"
+        ]
+      }
+    ],
+    "fecha_exportacion": "2026-01-15T10:06:22.609Z",
+    "total_imagenes_etiquetadas": 301
+  },
+  "imagenes": [
+    {
+      "id": "ANUNCIOS /1926:05:02_ONDAS Anuncio con Miguel Fleta.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1926:05:02_ONDAS Anuncio con Miguel Fleta.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1926:05:02_ONDAS Anuncio con Miguel Fleta.webp"
+    },
+    {
+      "id": "ANUNCIOS /1926:05:30_ONDAS Scieola.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1926:05:30_ONDAS Scieola.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1926:05:30_ONDAS Scieola.webp"
+    },
+    {
+      "id": "ANUNCIOS /1927:01:16_ONDAS Koniko.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1927:01:16_ONDAS Koniko.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1927:01:16_ONDAS Koniko.webp"
+    },
+    {
+      "id": "ANUNCIOS /1927:01:18_ONDAS Philips.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1927:01:18_ONDAS Philips.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1927:01:18_ONDAS Philips.webp"
+    },
+    {
+      "id": "ANUNCIOS /1927:02:27_ONDAS3 Koniko.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1927:02:27_ONDAS3 Koniko.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1927:02:27_ONDAS3 Koniko.webp"
+    },
+    {
+      "id": "ANUNCIOS /1927:12:11_ONDAS Radiotechnique.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1927:12:11_ONDAS Radiotechnique.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1927:12:11_ONDAS Radiotechnique.webp"
+    },
+    {
+      "id": "ANUNCIOS /1929:09:14_ONDAS Philips.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1929:09:14_ONDAS Philips.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1929:09:14_ONDAS Philips.webp"
+    },
+    {
+      "id": "ANUNCIOS /1929:10:05_ONDAS Philips.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1929:10:05_ONDAS Philips.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ANUNCIOS /1929:10:05_ONDAS Philips.webp"
+    },
+    {
+      "id": "ANUNCIOS /1929:11:09_ONDAS Altavoces Philips.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1929:11:09_ONDAS Altavoces Philips.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1929:11:09_ONDAS Altavoces Philips.webp"
+    },
+    {
+      "id": "ANUNCIOS /1929:11:23_ONDAS  Telefunken.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1929:11:23_ONDAS  Telefunken.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ANUNCIOS /1929:11:23_ONDAS  Telefunken.webp"
+    },
+    {
+      "id": "ANUNCIOS /1930:03:29_ONDAS4 Philips.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1930:03:29_ONDAS4 Philips.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1930:03:29_ONDAS4 Philips.webp"
+    },
+    {
+      "id": "ANUNCIOS /1930:10:25_ONDAS Anuncio Radio.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1930:10:25_ONDAS Anuncio Radio.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1930:10:25_ONDAS Anuncio Radio.webp"
+    },
+    {
+      "id": "ANUNCIOS /1931:05:30_ONDAS Philips Auto-Radio.webp",
+      "carpeta": "ANUNCIOS ",
+      "archivo": "1931:05:30_ONDAS Philips Auto-Radio.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ANUNCIOS /1931:05:30_ONDAS Philips Auto-Radio.webp"
+    },
+    {
+      "id": "CANTANTES/1925:10:11_ONDAS Marie Samson, cantante húngara, escuchando un concierto.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1925:10:11_ONDAS Marie Samson, cantante húngara, escuchando un concierto.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "CANTANTES/1925:10:11_ONDAS Marie Samson, cantante húngara, escuchando un concierto.webp"
+    },
+    {
+      "id": "CANTANTES/1926:02:14_ONDAS Sammy Lee desde prisión.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:02:14_ONDAS Sammy Lee desde prisión.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:02:14_ONDAS Sammy Lee desde prisión.webp"
+    },
+    {
+      "id": "CANTANTES/1926:03:14_ONDAS Bathman barítono.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:03:14_ONDAS Bathman barítono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:03:14_ONDAS Bathman barítono.webp"
+    },
+    {
+      "id": "CANTANTES/1926:03:28_ONDAS Marion Talley, cantante de la ópera de Nueva York.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:03:28_ONDAS Marion Talley, cantante de la ópera de Nueva York.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:03:28_ONDAS Marion Talley, cantante de la ópera de Nueva York.webp"
+    },
+    {
+      "id": "CANTANTES/1926:03:28_ONDAS Miguel Fleta, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:03:28_ONDAS Miguel Fleta, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:03:28_ONDAS Miguel Fleta, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1926:04:04_ONDAS Juan Rosich, tenor 2.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:04:04_ONDAS Juan Rosich, tenor 2.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:04:04_ONDAS Juan Rosich, tenor 2.webp"
+    },
+    {
+      "id": "CANTANTES/1926:04:11_ONDAS Marcos Redondo, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:04:11_ONDAS Marcos Redondo, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:04:11_ONDAS Marcos Redondo, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1926:06:06_ONDAS Gertrude Short, artista de music hall de Nueva York.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:06:06_ONDAS Gertrude Short, artista de music hall de Nueva York.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:06:06_ONDAS Gertrude Short, artista de music hall de Nueva York.webp"
+    },
+    {
+      "id": "CANTANTES/1926:07:04_ONDAS Jeannette Vreeland, soprano de Nueva York dando un concierto desde un avión.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1926:07:04_ONDAS Jeannette Vreeland, soprano de Nueva York dando un concierto desde un avión.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1926:07:04_ONDAS Jeannette Vreeland, soprano de Nueva York dando un concierto desde un avión.webp"
+    },
+    {
+      "id": "CANTANTES/1927:06:19_ONDAS Irene Ambrús, artista y cantante alemana.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1927:06:19_ONDAS Irene Ambrús, artista y cantante alemana.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "CANTANTES/1927:06:19_ONDAS Irene Ambrús, artista y cantante alemana.webp"
+    },
+    {
+      "id": "CANTANTES/1927:08:14_ONDAS Fiodor Shaliapin, bajo y orquesta.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1927:08:14_ONDAS Fiodor Shaliapin, bajo y orquesta.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1927:08:14_ONDAS Fiodor Shaliapin, bajo y orquesta.webp"
+    },
+    {
+      "id": "CANTANTES/1927:12:25_ONDAS William M Nani, tenor, y  Elai Weiber, soprano, ganadores del concurso de la emisora norteamericana WRNY.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1927:12:25_ONDAS William M Nani, tenor, y  Elai Weiber, soprano, ganadores del concurso de la emisora norteamericana WRNY.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1927:12:25_ONDAS William M Nani, tenor, y  Elai Weiber, soprano, ganadores del concurso de la emisora norteamericana WRNY.webp"
+    },
+    {
+      "id": "CANTANTES/1929:02:09_ONDAS Raquel Meller con Pepita Samper.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1929:02:09_ONDAS Raquel Meller con Pepita Samper.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1929:02:09_ONDAS Raquel Meller con Pepita Samper.webp"
+    },
+    {
+      "id": "CANTANTES/1929:08:03_ONDAS Lillian Taiz, cantante de la NBC Nueva York.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1929:08:03_ONDAS Lillian Taiz, cantante de la NBC Nueva York.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1929:08:03_ONDAS Lillian Taiz, cantante de la NBC Nueva York.webp"
+    },
+    {
+      "id": "CANTANTES/1929:10:05_ONDAS Hans Depser, tenor de Hamburgo.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1929:10:05_ONDAS Hans Depser, tenor de Hamburgo.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1929:10:05_ONDAS Hans Depser, tenor de Hamburgo.webp"
+    },
+    {
+      "id": "CANTANTES/1930:09:20_ONDAS  Roberto Rey, baritono.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1930:09:20_ONDAS  Roberto Rey, baritono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1930:09:20_ONDAS  Roberto Rey, baritono.webp"
+    },
+    {
+      "id": "CANTANTES/1930:11:01_ONDAS Hipólito Lázaro, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1930:11:01_ONDAS Hipólito Lázaro, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1930:11:01_ONDAS Hipólito Lázaro, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1930:11:15_ONDAS Lucilla Long, cantante norteamericana .webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1930:11:15_ONDAS Lucilla Long, cantante norteamericana .webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1930:11:15_ONDAS Lucilla Long, cantante norteamericana .webp"
+    },
+    {
+      "id": "CANTANTES/1931:04:25_ONDAS  Ricardo Blanco, Álvarez Cantos en la sala Aeolian.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1931:04:25_ONDAS  Ricardo Blanco, Álvarez Cantos en la sala Aeolian.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1931:04:25_ONDAS  Ricardo Blanco, Álvarez Cantos en la sala Aeolian.webp"
+    },
+    {
+      "id": "CANTANTES/1931:05:30_ONDAS Jacjie Heller, tenor NYC.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1931:05:30_ONDAS Jacjie Heller, tenor NYC.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1931:05:30_ONDAS Jacjie Heller, tenor NYC.webp"
+    },
+    {
+      "id": "CANTANTES/1931:05:30_ONDAS Rosa Díez cupletista.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1931:05:30_ONDAS Rosa Díez cupletista.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1931:05:30_ONDAS Rosa Díez cupletista.webp"
+    },
+    {
+      "id": "CANTANTES/1931:12:19_ONDAS Paquita Alfonso, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1931:12:19_ONDAS Paquita Alfonso, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1931:12:19_ONDAS Paquita Alfonso, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1932:01:09_ONDAS Juan García, tenor, con orquesta.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:01:09_ONDAS Juan García, tenor, con orquesta.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:01:09_ONDAS Juan García, tenor, con orquesta.webp"
+    },
+    {
+      "id": "CANTANTES/1932:02:06_ONDAS Teresita Vargas canzonetista y bailarina.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:02:06_ONDAS Teresita Vargas canzonetista y bailarina.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:02:06_ONDAS Teresita Vargas canzonetista y bailarina.webp"
+    },
+    {
+      "id": "CANTANTES/1932:02:11_ONDAS Margarita Cueto, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:02:11_ONDAS Margarita Cueto, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:02:11_ONDAS Margarita Cueto, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1932:03:05_ONDAS Torres, Calvo, cantantes, y Cantos.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:03:05_ONDAS Torres, Calvo, cantantes, y Cantos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:03:05_ONDAS Torres, Calvo, cantantes, y Cantos.webp"
+    },
+    {
+      "id": "CANTANTES/1932:03:19_ONDAS Tino Folgar, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:03:19_ONDAS Tino Folgar, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:03:19_ONDAS Tino Folgar, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1932:04:16_ONDAS Imperio Argentina 2.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:04:16_ONDAS Imperio Argentina 2.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:04:16_ONDAS Imperio Argentina 2.webp"
+    },
+    {
+      "id": "CANTANTES/1932:04:16_ONDAS Imperio Argentina, artista en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:04:16_ONDAS Imperio Argentina, artista en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:04:16_ONDAS Imperio Argentina, artista en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1932:06:11_ONDAS Hipólito Lázaro, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:06:11_ONDAS Hipólito Lázaro, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:06:11_ONDAS Hipólito Lázaro, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1932:10:08_ONDAS  Matha cantante, Mor, cantante, Meré, piano, Franco, piano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:10:08_ONDAS  Matha cantante, Mor, cantante, Meré, piano, Franco, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:10:08_ONDAS  Matha cantante, Mor, cantante, Meré, piano, Franco, piano.webp"
+    },
+    {
+      "id": "CANTANTES/1932:10:22_ONDAS Laura Nieto, soprano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:10:22_ONDAS Laura Nieto, soprano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:10:22_ONDAS Laura Nieto, soprano.webp"
+    },
+    {
+      "id": "CANTANTES/1932:10:29_ONDAS Antonia Floralda, cantante y Álvarez Cantos, piano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:10:29_ONDAS Antonia Floralda, cantante y Álvarez Cantos, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:10:29_ONDAS Antonia Floralda, cantante y Álvarez Cantos, piano.webp"
+    },
+    {
+      "id": "CANTANTES/1932:10:29_ONDAS Cuarteto Vocal Ruso Borodin.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:10:29_ONDAS Cuarteto Vocal Ruso Borodin.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:10:29_ONDAS Cuarteto Vocal Ruso Borodin.webp"
+    },
+    {
+      "id": "CANTANTES/1932:11:19_ONDAS José Angerri, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:11:19_ONDAS José Angerri, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:11:19_ONDAS José Angerri, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1932:11:26_ONDAS Tino Folgar, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:11:26_ONDAS Tino Folgar, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:11:26_ONDAS Tino Folgar, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1932:12:27_ONDAS Hermelinda de Montesa, cantante en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1932:12:27_ONDAS Hermelinda de Montesa, cantante en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1932:12:27_ONDAS Hermelinda de Montesa, cantante en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1933:01:14_ONDAS Mari Carmen Fernández de Toro, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:01:14_ONDAS Mari Carmen Fernández de Toro, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:01:14_ONDAS Mari Carmen Fernández de Toro, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1933:01:21_ONDAS Argulló cantante, Gamero y Álvarez Cantos.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:01:21_ONDAS Argulló cantante, Gamero y Álvarez Cantos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:01:21_ONDAS Argulló cantante, Gamero y Álvarez Cantos.webp"
+    },
+    {
+      "id": "CANTANTES/1933:02:04_ONDAS Wischniewsky, tenor ruso.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:02:04_ONDAS Wischniewsky, tenor ruso.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:02:04_ONDAS Wischniewsky, tenor ruso.webp"
+    },
+    {
+      "id": "CANTANTES/1933:03:25_ONDAS Paquita Alcaraz, cantante en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:03:25_ONDAS Paquita Alcaraz, cantante en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:03:25_ONDAS Paquita Alcaraz, cantante en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1933:04:08_ONDAS Conchita Agulló, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:04:08_ONDAS Conchita Agulló, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:04:08_ONDAS Conchita Agulló, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1933:05:06_ONDAS Lee Wiley, además de guapa canta muy bien (sexista).webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:05:06_ONDAS Lee Wiley, además de guapa canta muy bien (sexista).webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:05:06_ONDAS Lee Wiley, además de guapa canta muy bien (sexista).webp"
+    },
+    {
+      "id": "CANTANTES/1933:06:10_ONDAS  Dugnen Eguilcoz, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:06:10_ONDAS  Dugnen Eguilcoz, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:06:10_ONDAS  Dugnen Eguilcoz, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1933:06:10_ONDAS  Georges Genin, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:06:10_ONDAS  Georges Genin, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:06:10_ONDAS  Georges Genin, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1933:06:24_ONDAS Margarita Cueto, soprano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:06:24_ONDAS Margarita Cueto, soprano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:06:24_ONDAS Margarita Cueto, soprano.webp"
+    },
+    {
+      "id": "CANTANTES/1933:07:08_ONDAS Luisa Espinosa, tiple, Román Zorzano, barítono, sexteto de unión radio.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:07:08_ONDAS Luisa Espinosa, tiple, Román Zorzano, barítono, sexteto de unión radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:07:08_ONDAS Luisa Espinosa, tiple, Román Zorzano, barítono, sexteto de unión radio.webp"
+    },
+    {
+      "id": "CANTANTES/1933:07:15_ONDAS Anibal Vela, bajo, Laura Nieto, soprano, Antonio Miras, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:07:15_ONDAS Anibal Vela, bajo, Laura Nieto, soprano, Antonio Miras, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:07:15_ONDAS Anibal Vela, bajo, Laura Nieto, soprano, Antonio Miras, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1933:07:22_ONDAS María Téllez y Manuel Alares.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:07:22_ONDAS María Téllez y Manuel Alares.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:07:22_ONDAS María Téllez y Manuel Alares.webp"
+    },
+    {
+      "id": "CANTANTES/1933:07:22_ONDAS María Téllez, artista en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:07:22_ONDAS María Téllez, artista en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:07:22_ONDAS María Téllez, artista en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1933:07:29_ONDAS  Dorini de Diso, soprano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:07:29_ONDAS  Dorini de Diso, soprano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:07:29_ONDAS  Dorini de Diso, soprano.webp"
+    },
+    {
+      "id": "CANTANTES/1933:08:12_ONDAS Rosario Agueda, cancionista.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:08:12_ONDAS Rosario Agueda, cancionista.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:08:12_ONDAS Rosario Agueda, cancionista.webp"
+    },
+    {
+      "id": "CANTANTES/1933:08:26_ONDAS Gertrudis Forster, cantante norteamericana.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:08:26_ONDAS Gertrudis Forster, cantante norteamericana.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:08:26_ONDAS Gertrudis Forster, cantante norteamericana.webp"
+    },
+    {
+      "id": "CANTANTES/1933:08:26_ONDAS María Valverde, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:08:26_ONDAS María Valverde, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:08:26_ONDAS María Valverde, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1933:09:30_ONDAS Fidela Campiña y Jesús Gaviria, cantantes.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:09:30_ONDAS Fidela Campiña y Jesús Gaviria, cantantes.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:09:30_ONDAS Fidela Campiña y Jesús Gaviria, cantantes.webp"
+    },
+    {
+      "id": "CANTANTES/1933:10:14_ONDAS Concha Panadés, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1933:10:14_ONDAS Concha Panadés, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1933:10:14_ONDAS Concha Panadés, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1934:02:17_ONDAS Sélica Pérez Carpio, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:02:17_ONDAS Sélica Pérez Carpio, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:02:17_ONDAS Sélica Pérez Carpio, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1934:04:21_ONDAS Ángeles Ottein, cantante y María Rodrigo, piano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:04:21_ONDAS Ángeles Ottein, cantante y María Rodrigo, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:04:21_ONDAS Ángeles Ottein, cantante y María Rodrigo, piano.webp"
+    },
+    {
+      "id": "CANTANTES/1934:05:05_ONDAS   Celestino Aguirre Sarobe, barítono.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:05:05_ONDAS   Celestino Aguirre Sarobe, barítono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:05:05_ONDAS   Celestino Aguirre Sarobe, barítono.webp"
+    },
+    {
+      "id": "CANTANTES/1934:05:26_ONDAS  Juan Pulido, barítono.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:05:26_ONDAS  Juan Pulido, barítono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:05:26_ONDAS  Juan Pulido, barítono.webp"
+    },
+    {
+      "id": "CANTANTES/1934:06:23_ONDAS Rafael Nieto, cantaor; Vicente Fernández, guitarra.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:06:23_ONDAS Rafael Nieto, cantaor; Vicente Fernández, guitarra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:06:23_ONDAS Rafael Nieto, cantaor; Vicente Fernández, guitarra.webp"
+    },
+    {
+      "id": "CANTANTES/1934:07:14_ONDAS  El niño de Valdepeñas, cantaor flamenco, Manolo martín, guitarra..webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:07:14_ONDAS  El niño de Valdepeñas, cantaor flamenco, Manolo martín, guitarra..webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:07:14_ONDAS  El niño de Valdepeñas, cantaor flamenco, Manolo martín, guitarra..webp"
+    },
+    {
+      "id": "CANTANTES/1934:07:14_ONDAS  Pastora Imperio.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:07:14_ONDAS  Pastora Imperio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:07:14_ONDAS  Pastora Imperio.webp"
+    },
+    {
+      "id": "CANTANTES/1934:09:01_ONDAS Joaquina Carreras, canzonetista.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:09:01_ONDAS Joaquina Carreras, canzonetista.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:09:01_ONDAS Joaquina Carreras, canzonetista.webp"
+    },
+    {
+      "id": "CANTANTES/1934:09:15_ONDAS Juan García, tenor, y su orquesta.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:09:15_ONDAS Juan García, tenor, y su orquesta.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:09:15_ONDAS Juan García, tenor, y su orquesta.webp"
+    },
+    {
+      "id": "CANTANTES/1934:12:08_ONDAS Kathe Smith cantante (comentarios sexistas por su cuerpo), Guerrita cantaor flamenco, Martel, guitarra.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:12:08_ONDAS Kathe Smith cantante (comentarios sexistas por su cuerpo), Guerrita cantaor flamenco, Martel, guitarra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:12:08_ONDAS Kathe Smith cantante (comentarios sexistas por su cuerpo), Guerrita cantaor flamenco, Martel, guitarra.webp"
+    },
+    {
+      "id": "CANTANTES/1934:12:15_ONDAS Concha Piquer, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:12:15_ONDAS Concha Piquer, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:12:15_ONDAS Concha Piquer, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1934:12:15_ONDAS Paquita Escribano junto a Ortiz de Villajos, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1934:12:15_ONDAS Paquita Escribano junto a Ortiz de Villajos, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1934:12:15_ONDAS Paquita Escribano junto a Ortiz de Villajos, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:01:19_ONDAS La Yankee y Anita Flores, cantantes.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:01:19_ONDAS La Yankee y Anita Flores, cantantes.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:01:19_ONDAS La Yankee y Anita Flores, cantantes.webp"
+    },
+    {
+      "id": "CANTANTES/1935:01:19_ONDAS Luisa Esteso, cantante en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:01:19_ONDAS Luisa Esteso, cantante en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:01:19_ONDAS Luisa Esteso, cantante en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1935:01:26_ONDAS Amelia Vázquez, soprano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:01:26_ONDAS Amelia Vázquez, soprano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:01:26_ONDAS Amelia Vázquez, soprano.webp"
+    },
+    {
+      "id": "CANTANTES/1935:01:26_ONDAS Celia Gámez, artista.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:01:26_ONDAS Celia Gámez, artista.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:01:26_ONDAS Celia Gámez, artista.webp"
+    },
+    {
+      "id": "CANTANTES/1935:01:26_ONDAS Estrellita Castro, cantante en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:01:26_ONDAS Estrellita Castro, cantante en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:01:26_ONDAS Estrellita Castro, cantante en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1935:02:16_ONDAS Blanca Suárez, cantante en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:02:16_ONDAS Blanca Suárez, cantante en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:02:16_ONDAS Blanca Suárez, cantante en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1935:02:23_ONDAS María Arias, artista de la canción.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:02:23_ONDAS María Arias, artista de la canción.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:02:23_ONDAS María Arias, artista de la canción.webp"
+    },
+    {
+      "id": "CANTANTES/1935:03:09_ONDAS Eugenia Nardin, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:03:09_ONDAS Eugenia Nardin, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:03:09_ONDAS Eugenia Nardin, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:03:23_ONDAS  Estrellita Castro, Niño de Utrera a la guitarra, Ana Lasalle, Raquel Meller, Margarita del Rio, cantantes y cantaores flamencos, guitarra.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:03:23_ONDAS  Estrellita Castro, Niño de Utrera a la guitarra, Ana Lasalle, Raquel Meller, Margarita del Rio, cantantes y cantaores flamencos, guitarra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:03:23_ONDAS  Estrellita Castro, Niño de Utrera a la guitarra, Ana Lasalle, Raquel Meller, Margarita del Rio, cantantes y cantaores flamencos, guitarra.webp"
+    },
+    {
+      "id": "CANTANTES/1935:03:30_ONDAS Gisa Bergmann, cantante en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:03:30_ONDAS Gisa Bergmann, cantante en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:03:30_ONDAS Gisa Bergmann, cantante en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1935:04:20_ONDAS Mercedes Serós, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:04:20_ONDAS Mercedes Serós, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:04:20_ONDAS Mercedes Serós, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:07:13_ONDAS Anibal Vela, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:07:13_ONDAS Anibal Vela, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:07:13_ONDAS Anibal Vela, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:08:03_ONDAS Isabel Sánchez Escribano, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:08:03_ONDAS Isabel Sánchez Escribano, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:08:03_ONDAS Isabel Sánchez Escribano, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:08:10_ONDAS María Luisa Moneró, cancionista en Portada.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:08:10_ONDAS María Luisa Moneró, cancionista en Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:08:10_ONDAS María Luisa Moneró, cancionista en Portada.webp"
+    },
+    {
+      "id": "CANTANTES/1935:08:31_ONDAS  Estrella Pardo, soprano y Carlos Puchol, barítono.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:08:31_ONDAS  Estrella Pardo, soprano y Carlos Puchol, barítono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:08:31_ONDAS  Estrella Pardo, soprano y Carlos Puchol, barítono.webp"
+    },
+    {
+      "id": "CANTANTES/1935:08:31_ONDAS  Pastora Imperio, su hija, Araco y Arozamena.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:08:31_ONDAS  Pastora Imperio, su hija, Araco y Arozamena.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:08:31_ONDAS  Pastora Imperio, su hija, Araco y Arozamena.webp"
+    },
+    {
+      "id": "CANTANTES/1935:09:14_ONDAS Conchita Sevilla y Mercedes Fifi, cantantes.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:09:14_ONDAS Conchita Sevilla y Mercedes Fifi, cantantes.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:09:14_ONDAS Conchita Sevilla y Mercedes Fifi, cantantes.webp"
+    },
+    {
+      "id": "CANTANTES/1935:09:21_ONDAS Penita Rollán, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:09:21_ONDAS Penita Rollán, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:09:21_ONDAS Penita Rollán, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:09:21_ONDAS Posiblemente Roland Hayes, tenor.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:09:21_ONDAS Posiblemente Roland Hayes, tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:09:21_ONDAS Posiblemente Roland Hayes, tenor.webp"
+    },
+    {
+      "id": "CANTANTES/1935:10:05_ONDAS   Irma Goday, artista.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:10:05_ONDAS   Irma Goday, artista.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:10:05_ONDAS   Irma Goday, artista.webp"
+    },
+    {
+      "id": "CANTANTES/1935:10:12_ONDAS Angeles Novalón, cantante.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:10:12_ONDAS Angeles Novalón, cantante.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:10:12_ONDAS Angeles Novalón, cantante.webp"
+    },
+    {
+      "id": "CANTANTES/1935:10:12_ONDAS Sara Insúa, soprano.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:10:12_ONDAS Sara Insúa, soprano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:10:12_ONDAS Sara Insúa, soprano.webp"
+    },
+    {
+      "id": "CANTANTES/1935:10:26_ONDAS María Teresa Estremera, canto.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:10:26_ONDAS María Teresa Estremera, canto.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:10:26_ONDAS María Teresa Estremera, canto.webp"
+    },
+    {
+      "id": "CANTANTES/1935:10:26_ONDAS Mercedes Dalvy soprano, Luis Almodovar baritono.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:10:26_ONDAS Mercedes Dalvy soprano, Luis Almodovar baritono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:10:26_ONDAS Mercedes Dalvy soprano, Luis Almodovar baritono.webp"
+    },
+    {
+      "id": "CANTANTES/1935:12:28_ONDAS Angelillo, cantante, y el empresario Vedrines.webp",
+      "carpeta": "CANTANTES",
+      "archivo": "1935:12:28_ONDAS Angelillo, cantante, y el empresario Vedrines.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "CANTANTES/1935:12:28_ONDAS Angelillo, cantante, y el empresario Vedrines.webp"
+    },
+    {
+      "id": "COMPOSITORES/1930:11:22_ONDAS Charpentier.webp",
+      "carpeta": "COMPOSITORES",
+      "archivo": "1930:11:22_ONDAS Charpentier.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "COMPOSITORES/1930:11:22_ONDAS Charpentier.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:07:12_ONDAS Música a la hora del te.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1925:07:12_ONDAS Música a la hora del te.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:07:12_ONDAS Música a la hora del te.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:09:27_ONDAS Escuchando conciertos.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1925:09:27_ONDAS Escuchando conciertos.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:09:27_ONDAS Escuchando conciertos.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:10:04_ONDAS Escucha Radiofónica.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1925:10:04_ONDAS Escucha Radiofónica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:10:04_ONDAS Escucha Radiofónica.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:11:22_ONDAS Estación americana WRNY.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1925:11:22_ONDAS Estación americana WRNY.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:11:22_ONDAS Estación americana WRNY.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:12:13_ONDAS Príncipes escuchando concierto.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1925:12:13_ONDAS Príncipes escuchando concierto.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:12:13_ONDAS Príncipes escuchando concierto.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:01:17_ONDAS Escuchando concierto en barco.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:01:17_ONDAS Escuchando concierto en barco.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:01:17_ONDAS Escuchando concierto en barco.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:03:28_ONDAS Niño escuchando concierto por la radio.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:03:28_ONDAS Niño escuchando concierto por la radio.webp",
+      "categorias": [
+        "cascos",
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:03:28_ONDAS Niño escuchando concierto por la radio.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:04:18_ONDAS Escuchando conciertos 44 dias sin comer.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:04:18_ONDAS Escuchando conciertos 44 dias sin comer.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:04:18_ONDAS Escuchando conciertos 44 dias sin comer.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:05:02_ONDAS Escuchando concierto por radio en hospital de niños.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:05:02_ONDAS Escuchando concierto por radio en hospital de niños.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:05:02_ONDAS Escuchando concierto por radio en hospital de niños.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:05:09_ONDAS Irene Ambrús escuchando un concierto.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:05:09_ONDAS Irene Ambrús escuchando un concierto.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:05:09_ONDAS Irene Ambrús escuchando un concierto.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:10:24 ONDAS Concierto a Gallinas.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:10:24 ONDAS Concierto a Gallinas.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:10:24 ONDAS Concierto a Gallinas.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:11:08_ONDAS Enfermo en hospital escuchando concierto.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:11:08_ONDAS Enfermo en hospital escuchando concierto.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:11:08_ONDAS Enfermo en hospital escuchando concierto.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:11:08_ONDAS León cachorro escuchando concierto.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1926:11:08_ONDAS León cachorro escuchando concierto.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1926:11:08_ONDAS León cachorro escuchando concierto.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:01:01_ONDAS Expedicionarios en Groenlandia escuchando un concierto.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1927:01:01_ONDAS Expedicionarios en Groenlandia escuchando un concierto.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:01:01_ONDAS Expedicionarios en Groenlandia escuchando un concierto.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:04:10_ONDAS Rommer escuchando un concierto en la radio.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1927:04:10_ONDAS Rommer escuchando un concierto en la radio.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:04:10_ONDAS Rommer escuchando un concierto en la radio.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:05:15_ONDAS Comparación foca con grandes cantantes.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1927:05:15_ONDAS Comparación foca con grandes cantantes.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:05:15_ONDAS Comparación foca con grandes cantantes.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:06:19_ONDAS Velocidad de ondas.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1927:06:19_ONDAS Velocidad de ondas.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:06:19_ONDAS Velocidad de ondas.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:11:06_ONDAS  Gallo auténtico en recital de canto.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1927:11:06_ONDAS  Gallo auténtico en recital de canto.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1927:11:06_ONDAS  Gallo auténtico en recital de canto.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1929:10:19_ONDAS Equivocación humorística, Gómez de la Serna.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1929:10:19_ONDAS Equivocación humorística, Gómez de la Serna.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1929:10:19_ONDAS Equivocación humorística, Gómez de la Serna.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1929:11:02_ONDAS Coros de Speaker, Gómez de la Serna.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1929:11:02_ONDAS Coros de Speaker, Gómez de la Serna.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1929:11:02_ONDAS Coros de Speaker, Gómez de la Serna.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1930:05:30_ONDAS Escuchando un concierto desde una cueva.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1930:05:30_ONDAS Escuchando un concierto desde una cueva.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1930:05:30_ONDAS Escuchando un concierto desde una cueva.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1930:11:15_ONDAS Anciana escuchando un concierto en aldea de Nápoles.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1930:11:15_ONDAS Anciana escuchando un concierto en aldea de Nápoles.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1930:11:15_ONDAS Anciana escuchando un concierto en aldea de Nápoles.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1931:05:16_ONDAS encerrado en caja de cristal escuhando conciertos.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1931:05:16_ONDAS encerrado en caja de cristal escuhando conciertos.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1931:05:16_ONDAS encerrado en caja de cristal escuhando conciertos.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1931:12:26_ONDAS Niños cantando villancicos.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1931:12:26_ONDAS Niños cantando villancicos.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1931:12:26_ONDAS Niños cantando villancicos.webp"
+    },
+    {
+      "id": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1932:06:04_ONDAS C. Bell escuchando conciertos radiados.webp",
+      "carpeta": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES",
+      "archivo": "1932:06:04_ONDAS C. Bell escuchando conciertos radiados.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1932:06:04_ONDAS C. Bell escuchando conciertos radiados.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1926:03:21_ONDAS Inventos radio.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1926:03:21_ONDAS Inventos radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1926:03:21_ONDAS Inventos radio.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1926:03:21_ONDAS Radio Barco_Concierto escuchando concierto.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1926:03:21_ONDAS Radio Barco_Concierto escuchando concierto.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1926:03:21_ONDAS Radio Barco_Concierto escuchando concierto.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1926:11:28_Ondas Fuente-altavoz.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1926:11:28_Ondas Fuente-altavoz.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1926:11:28_Ondas Fuente-altavoz.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:02:13_ONDAS Transmisión simultánea 2.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1927:02:13_ONDAS Transmisión simultánea 2.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:02:13_ONDAS Transmisión simultánea 2.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:02:13_ONDAS Transmisión simultanea1.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1927:02:13_ONDAS Transmisión simultanea1.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:02:13_ONDAS Transmisión simultanea1.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:06:19_ONDAS Cantando a la vez que se imprimen discos.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1927:06:19_ONDAS Cantando a la vez que se imprimen discos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:06:19_ONDAS Cantando a la vez que se imprimen discos.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:08:21_ONDAS Retransmitiendo concierto 4.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1927:08:21_ONDAS Retransmitiendo concierto 4.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:08:21_ONDAS Retransmitiendo concierto 4.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:08:21_ONDAS Retransmitiendo concierto.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1927:08:21_ONDAS Retransmitiendo concierto.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1927:08:21_ONDAS Retransmitiendo concierto.webp"
+    },
+    {
+      "id": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1932:04:30_ONDAS Grabación en diferentes ubicaciones.webp",
+      "carpeta": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS",
+      "archivo": "1932:04:30_ONDAS Grabación en diferentes ubicaciones.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1932:04:30_ONDAS Grabación en diferentes ubicaciones.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1925:10:25_ONDAS Bailarina sin nombre de Nueva York.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1925:10:25_ONDAS Bailarina sin nombre de Nueva York.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1925:10:25_ONDAS Bailarina sin nombre de Nueva York.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:02:21_ONDAS Violinistas de Providence EEUU..webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1926:02:21_ONDAS Violinistas de Providence EEUU..webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:02:21_ONDAS Violinistas de Providence EEUU..webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:05:23_ONDAS Coleman y Raud.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1926:05:23_ONDAS Coleman y Raud.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:05:23_ONDAS Coleman y Raud.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:06:13_ONDAS Lipton y Pennington.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1926:06:13_ONDAS Lipton y Pennington.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:06:13_ONDAS Lipton y Pennington.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:06:20 ONDAS Orquesta Artys.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1926:06:20 ONDAS Orquesta Artys.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:06:20 ONDAS Orquesta Artys.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:06:20 ONDAS Quinteto de UR.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1926:06:20 ONDAS Quinteto de UR.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:06:20 ONDAS Quinteto de UR.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:11:28_Ondas Ipana Troubadours vestidos de toreros en Nueva York.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1926:11:28_Ondas Ipana Troubadours vestidos de toreros en Nueva York.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1926:11:28_Ondas Ipana Troubadours vestidos de toreros en Nueva York.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1927:01:01_ONDAS Quinteto Unión Radio.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1927:01:01_ONDAS Quinteto Unión Radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1927:01:01_ONDAS Quinteto Unión Radio.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1927:12:11_ONDAS Kowalewa y Clemens, violín.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1927:12:11_ONDAS Kowalewa y Clemens, violín.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1927:12:11_ONDAS Kowalewa y Clemens, violín.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:04:06_ONDAS Paul Whiteman el rey del jazz.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1929:04:06_ONDAS Paul Whiteman el rey del jazz.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:04:06_ONDAS Paul Whiteman el rey del jazz.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:05:18_ONDAS Cantante japonesa.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1929:05:18_ONDAS Cantante japonesa.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:05:18_ONDAS Cantante japonesa.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:05:18_ONDAS Orquesta estudio Radio de Noruega.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1929:05:18_ONDAS Orquesta estudio Radio de Noruega.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:05:18_ONDAS Orquesta estudio Radio de Noruega.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:08:24_ONDAS Jack Payne y su orquesta en estudio Savoy Hill.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1929:08:24_ONDAS Jack Payne y su orquesta en estudio Savoy Hill.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:08:24_ONDAS Jack Payne y su orquesta en estudio Savoy Hill.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:10:19_ONDAS Harry Lander, gaita.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1929:10:19_ONDAS Harry Lander, gaita.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:10:19_ONDAS Harry Lander, gaita.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:12:21_ONDAS Artistas Japonesas.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1929:12:21_ONDAS Artistas Japonesas.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1929:12:21_ONDAS Artistas Japonesas.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:01:04_ONDAS Banda de la Policía de Berlín.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:01:04_ONDAS Banda de la Policía de Berlín.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:01:04_ONDAS Banda de la Policía de Berlín.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Boxeador y bandoneón.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:02:15_ONDAS Boxeador y bandoneón.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Boxeador y bandoneón.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Gregorio Martínez Sierra.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:02:15_ONDAS Gregorio Martínez Sierra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Gregorio Martínez Sierra.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Josephine Baker con su mánager y un boxeador cubano.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:02:15_ONDAS Josephine Baker con su mánager y un boxeador cubano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Josephine Baker con su mánager y un boxeador cubano.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Josephine Baker.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:02:15_ONDAS Josephine Baker.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:02:15_ONDAS Josephine Baker.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:03:01_ONDAS  Coros Gallegos Rosalía de Castro.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:03:01_ONDAS  Coros Gallegos Rosalía de Castro.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:03:01_ONDAS  Coros Gallegos Rosalía de Castro.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:03:15_ONDAS Graciela.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:03:15_ONDAS Graciela.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:03:15_ONDAS Graciela.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:03:29_ONDAS2 Cuarteto de cuerda Femenino Weis.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:03:29_ONDAS2 Cuarteto de cuerda Femenino Weis.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:03:29_ONDAS2 Cuarteto de cuerda Femenino Weis.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:05:31_ONDAS Cuarteto de canciones negras.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:05:31_ONDAS Cuarteto de canciones negras.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:05:31_ONDAS Cuarteto de canciones negras.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:08:16_ONDAS Escuela alemana en Belén.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:08:16_ONDAS Escuela alemana en Belén.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:08:16_ONDAS Escuela alemana en Belén.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:08:30_ONDAS Orquesa de Radio Alger.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:08:30_ONDAS Orquesa de Radio Alger.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:08:30_ONDAS Orquesa de Radio Alger.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:10:04_ONDAS Orquesta Argentina Pizarro.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:10:04_ONDAS Orquesta Argentina Pizarro.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:10:04_ONDAS Orquesta Argentina Pizarro.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:10:18_ONDAS Aureliano Izquiano, piano y otros.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1930:10:18_ONDAS Aureliano Izquiano, piano y otros.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1930:10:18_ONDAS Aureliano Izquiano, piano y otros.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:01:17_ONDAS Orquesta Th Saccavel-Jazz.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:01:17_ONDAS Orquesta Th Saccavel-Jazz.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:01:17_ONDAS Orquesta Th Saccavel-Jazz.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:03:07_ONDAS Banda Municipal de Madrid y Ricardo Villa, director.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:03:07_ONDAS Banda Municipal de Madrid y Ricardo Villa, director.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:03:07_ONDAS Banda Municipal de Madrid y Ricardo Villa, director.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:03:28_ONDAS Trío Vela, Fúster y Martínez (violín, violonchelo y piano).webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:03:28_ONDAS Trío Vela, Fúster y Martínez (violín, violonchelo y piano).webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:03:28_ONDAS Trío Vela, Fúster y Martínez (violín, violonchelo y piano).webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:05:16_ONDAS Cuarteto Vandelle.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:05:16_ONDAS Cuarteto Vandelle.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:05:16_ONDAS Cuarteto Vandelle.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:05:16_ONDAS María Lejárraga.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:05:16_ONDAS María Lejárraga.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:05:16_ONDAS María Lejárraga.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:06:06_ONDAS Cuadro Cubano de Moisés Simons.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:06:06_ONDAS Cuadro Cubano de Moisés Simons.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:06:06_ONDAS Cuadro Cubano de Moisés Simons.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:10:03_ONDAS García Marco, violín.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:10:03_ONDAS García Marco, violín.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:10:03_ONDAS García Marco, violín.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:10:10_ONDAS Sexteto de Unión Radio.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:10:10_ONDAS Sexteto de Unión Radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:10:10_ONDAS Sexteto de Unión Radio.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:12:05_ONDAS Tomás Borrás y Antonia Mercé La Argentina.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1931:12:05_ONDAS Tomás Borrás y Antonia Mercé La Argentina.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1931:12:05_ONDAS Tomás Borrás y Antonia Mercé La Argentina.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:02:27_ONDAS Sexteto Unión Radio.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:02:27_ONDAS Sexteto Unión Radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:02:27_ONDAS Sexteto Unión Radio.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:03:05_ONDAS Zabaleta, arpa.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:03:05_ONDAS Zabaleta, arpa.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:03:05_ONDAS Zabaleta, arpa.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:04:09_ONDAS Orquesta Cubana Los Siboneyes.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:04:09_ONDAS Orquesta Cubana Los Siboneyes.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:04:09_ONDAS Orquesta Cubana Los Siboneyes.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:08:27_ONDAS Daniel Arnau, guitarra.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:08:27_ONDAS Daniel Arnau, guitarra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:08:27_ONDAS Daniel Arnau, guitarra.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:08_ONDAS Trío Matamoro.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:10:08_ONDAS Trío Matamoro.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:08_ONDAS Trío Matamoro.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:08_ONDAS Trío Steinhauser, piano, arpa y xilófono.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:10:08_ONDAS Trío Steinhauser, piano, arpa y xilófono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:08_ONDAS Trío Steinhauser, piano, arpa y xilófono.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:15_ONDAS Intérpretes de Tango, bandoneón.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:10:15_ONDAS Intérpretes de Tango, bandoneón.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:15_ONDAS Intérpretes de Tango, bandoneón.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:15_ONDAS Orquesta Artys.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:10:15_ONDAS Orquesta Artys.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:15_ONDAS Orquesta Artys.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:22_ONDAS Gran Orquesta de Unión Radio.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:10:22_ONDAS Gran Orquesta de Unión Radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:10:22_ONDAS Gran Orquesta de Unión Radio.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:11:26_ONDAS Los Rubians, guitarra y xilófono.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1932:11:26_ONDAS Los Rubians, guitarra y xilófono.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1932:11:26_ONDAS Los Rubians, guitarra y xilófono.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:04:08_ONDAS Rosario Huidobro, guitarra.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:04:08_ONDAS Rosario Huidobro, guitarra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:04:08_ONDAS Rosario Huidobro, guitarra.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:04:15_ONDAS Orquesta The Blue Jazz Ladies.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:04:15_ONDAS Orquesta The Blue Jazz Ladies.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:04:15_ONDAS Orquesta The Blue Jazz Ladies.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:05:20_ONDAS Matilde Muñoz y María Martínez Sierra (Lejárraga).webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:05:20_ONDAS Matilde Muñoz y María Martínez Sierra (Lejárraga).webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:05:20_ONDAS Matilde Muñoz y María Martínez Sierra (Lejárraga).webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:07:01_ONDAS  Adresan, Arregui, Lloret y el Sexteto de Unión Radio.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:07:01_ONDAS  Adresan, Arregui, Lloret y el Sexteto de Unión Radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:07:01_ONDAS  Adresan, Arregui, Lloret y el Sexteto de Unión Radio.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:07:08_ONDAS Rondalla Galindo.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:07:08_ONDAS Rondalla Galindo.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:07:08_ONDAS Rondalla Galindo.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:07:22_ONDAS Cipriano Rivas Cheriff.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:07:22_ONDAS Cipriano Rivas Cheriff.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:07:22_ONDAS Cipriano Rivas Cheriff.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:09:09_ONDAS Niños tocando piano y armónica.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:09:09_ONDAS Niños tocando piano y armónica.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:09:09_ONDAS Niños tocando piano y armónica.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:10:21_ONDAS Eliseo Grenet, piano.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:10:21_ONDAS Eliseo Grenet, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:10:21_ONDAS Eliseo Grenet, piano.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:11:18_ONDAS Cuarteto Iberia dirigido por Ángel Barrios, guitarra.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:11:18_ONDAS Cuarteto Iberia dirigido por Ángel Barrios, guitarra.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:11:18_ONDAS Cuarteto Iberia dirigido por Ángel Barrios, guitarra.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:12:02_ONDAS Ángel Barrios, guitarra y Manuel Machado.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1933:12:02_ONDAS Ángel Barrios, guitarra y Manuel Machado.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1933:12:02_ONDAS Ángel Barrios, guitarra y Manuel Machado.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:06:30_ONDAS Carolina Duplán, piano.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1934:06:30_ONDAS Carolina Duplán, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:06:30_ONDAS Carolina Duplán, piano.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:07:21_ONDAS Clara Campoamor con la orquesta del Patronato Nacional de Ciegos.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1934:07:21_ONDAS Clara Campoamor con la orquesta del Patronato Nacional de Ciegos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:07:21_ONDAS Clara Campoamor con la orquesta del Patronato Nacional de Ciegos.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:08:18_ONDAS Orquesta de la emisora de Praga.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1934:08:18_ONDAS Orquesta de la emisora de Praga.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:08:18_ONDAS Orquesta de la emisora de Praga.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:09:01_ONDAS Stokowski y la Orquesta Sinfónica de Filadelfia.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1934:09:01_ONDAS Stokowski y la Orquesta Sinfónica de Filadelfia.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:09:01_ONDAS Stokowski y la Orquesta Sinfónica de Filadelfia.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:12:15_ONDAS Intérpretes de la zarzuela El alma del carrero.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1934:12:15_ONDAS Intérpretes de la zarzuela El alma del carrero.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:12:15_ONDAS Intérpretes de la zarzuela El alma del carrero.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:12:15_ONDAS Luisa Pequeño, arpa, Pedro Meroño, viola, Manuel Garijo, flauta.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1934:12:15_ONDAS Luisa Pequeño, arpa, Pedro Meroño, viola, Manuel Garijo, flauta.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1934:12:15_ONDAS Luisa Pequeño, arpa, Pedro Meroño, viola, Manuel Garijo, flauta.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:01:26_ONDAS  Intérpretes del juguete cómico Los andovales.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:01:26_ONDAS  Intérpretes del juguete cómico Los andovales.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:01:26_ONDAS  Intérpretes del juguete cómico Los andovales.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:02:16_ONDAS Nita Guerri y la orquesta Garbó, Amparo Taberner.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:02:16_ONDAS Nita Guerri y la orquesta Garbó, Amparo Taberner.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:02:16_ONDAS Nita Guerri y la orquesta Garbó, Amparo Taberner.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:02:23_ONDAS Intérpretes de En España manda el sol, de Custodio y Burgos.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:02:23_ONDAS Intérpretes de En España manda el sol, de Custodio y Burgos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:02:23_ONDAS Intérpretes de En España manda el sol, de Custodio y Burgos.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:02:23_ONDAS Intérpretes de Las vampiresas.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:02:23_ONDAS Intérpretes de Las vampiresas.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:02:23_ONDAS Intérpretes de Las vampiresas.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:03:09_ONDAS  Pilar López cantante, Enrique Luzurriaga piano, José Cubiles, piano.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:03:09_ONDAS  Pilar López cantante, Enrique Luzurriaga piano, José Cubiles, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:03:09_ONDAS  Pilar López cantante, Enrique Luzurriaga piano, José Cubiles, piano.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:03:23_ONDAS Coro de Groenlandia dirigido por Malke.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:03:23_ONDAS Coro de Groenlandia dirigido por Malke.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:03:23_ONDAS Coro de Groenlandia dirigido por Malke.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:04:06_ONDAS Muñz, Guitart y Lerma.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:04:06_ONDAS Muñz, Guitart y Lerma.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:04:06_ONDAS Muñz, Guitart y Lerma.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:06:01_ONDAS  Quinteto Gaston Parkington de la British Broadcasting Corporation.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:06:01_ONDAS  Quinteto Gaston Parkington de la British Broadcasting Corporation.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:06:01_ONDAS  Quinteto Gaston Parkington de la British Broadcasting Corporation.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:06:08_ONDAS Enriqueta Laborde, piano.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:06:08_ONDAS Enriqueta Laborde, piano.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:06:08_ONDAS Enriqueta Laborde, piano.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:06:22_ONDAS Jefe de orquesta emisora NY.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:06:22_ONDAS Jefe de orquesta emisora NY.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:06:22_ONDAS Jefe de orquesta emisora NY.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:07:06_ONDAS Juan Guerrero, compositor folklorico, Varela cantor montañés.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:07:06_ONDAS Juan Guerrero, compositor folklorico, Varela cantor montañés.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:07:06_ONDAS Juan Guerrero, compositor folklorico, Varela cantor montañés.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:07:06_ONDAS Torner con intérpretes que aparecen sin nombre, sobre canciones populares de Castilla.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:07:06_ONDAS Torner con intérpretes que aparecen sin nombre, sobre canciones populares de Castilla.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:07:06_ONDAS Torner con intérpretes que aparecen sin nombre, sobre canciones populares de Castilla.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:08:10_ONDAS Valentín Martín, saxo.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:08:10_ONDAS Valentín Martín, saxo.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:08:10_ONDAS Valentín Martín, saxo.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:09:28_ONDAS Henry Wood, director.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:09:28_ONDAS Henry Wood, director.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:09:28_ONDAS Henry Wood, director.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:11:02_ONDAS  Artistas Unión Radio.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:11:02_ONDAS  Artistas Unión Radio.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:11:02_ONDAS  Artistas Unión Radio.webp"
+    },
+    {
+      "id": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:12:14_ONDAS María Teresa Estremera, Álvarez Cantos, Enrique Iniesta y Jesús Fernández Lorenzo.webp",
+      "carpeta": "OTROS INTÉRPRETES Y PROTAGONISTAS",
+      "archivo": "1935:12:14_ONDAS María Teresa Estremera, Álvarez Cantos, Enrique Iniesta y Jesús Fernández Lorenzo.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "OTROS INTÉRPRETES Y PROTAGONISTAS/1935:12:14_ONDAS María Teresa Estremera, Álvarez Cantos, Enrique Iniesta y Jesús Fernández Lorenzo.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:01_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1925:11:01_ONDAS Portada.webp",
+      "categorias": [
+        "altavoz",
+        "cascos"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:01_ONDAS Portada.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:15_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1925:11:15_ONDAS Portada.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:15_ONDAS Portada.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:12:06_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1925:12:06_ONDAS Portada.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:12:06_ONDAS Portada.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:01:10_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1926:01:10_ONDAS Portada.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:01:10_ONDAS Portada.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:02:07_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1926:02:07_ONDAS Portada.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:02:07_ONDAS Portada.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:02:21_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1926:02:21_ONDAS Portada.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:02:21_ONDAS Portada.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:05:02_ONDAS Portada Escuchando.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1926:05:02_ONDAS Portada Escuchando.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:05:02_ONDAS Portada Escuchando.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:08:22_ONDAS PORTADA.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1926:08:22_ONDAS PORTADA.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:08:22_ONDAS PORTADA.webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:09:12_ONDAS Portada (repite más).webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1926:09:12_ONDAS Portada (repite más).webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1926:09:12_ONDAS Portada (repite más).webp"
+    },
+    {
+      "id": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1930:05:03_ONDAS Portada.webp",
+      "carpeta": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA",
+      "archivo": "1930:05:03_ONDAS Portada.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1930:05:03_ONDAS Portada.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:01:23_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1925:01:23_ONDAS Chiste.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:01:23_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:06:28_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1925:06:28_ONDAS Chiste.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:06:28_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:07:12_ONDAS Chiste altavoz.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1925:07:12_ONDAS Chiste altavoz.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:07:12_ONDAS Chiste altavoz.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:07:12_ONDAS Dibujo casa en la radio.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1925:07:12_ONDAS Dibujo casa en la radio.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:07:12_ONDAS Dibujo casa en la radio.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:08:02_ONDAS Dibujo de un radio-cuento.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1925:08:02_ONDAS Dibujo de un radio-cuento.webp",
+      "categorias": [
+        "cascos",
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:08:02_ONDAS Dibujo de un radio-cuento.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:09:06_ONDAS  Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1925:09:06_ONDAS  Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:09:06_ONDAS  Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:04:25_ONDAS  Ensayo de ópera.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:04:25_ONDAS  Ensayo de ópera.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:04:25_ONDAS  Ensayo de ópera.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:05:16_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:05:16_ONDAS Chiste.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:05:16_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:05:23_ONDAS Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:05:23_ONDAS Dibujo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:05:23_ONDAS Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:06:06_ONDAS Chiste2.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:06:06_ONDAS Chiste2.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:06:06_ONDAS Chiste2.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:06:13_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:06:13_ONDAS Chiste.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:06:13_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:06:27_ONDAS6 ÉXITO DEL JAZZ.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:06:27_ONDAS6 ÉXITO DEL JAZZ.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:06:27_ONDAS6 ÉXITO DEL JAZZ.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:07:04_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:07:04_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:07:04_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:07:18_ONDAS  Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:07:18_ONDAS  Dibujo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:07:18_ONDAS  Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:10:17_ONDAS  Diva y Tenor.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:10:17_ONDAS  Diva y Tenor.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:10:17_ONDAS  Diva y Tenor.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:12:12_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:12:12_ONDAS Chiste.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:12:12_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:12:12_ONDAS Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1926:12:12_ONDAS Dibujo.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1926:12:12_ONDAS Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:02_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:01:02_ONDAS Chiste.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:02_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:02_ONDAS Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:01:02_ONDAS Dibujo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:02_ONDAS Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:02_ONDAS Dibujo2.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:01:02_ONDAS Dibujo2.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:02_ONDAS Dibujo2.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:09_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:01:09_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:09_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:16_ONDAS Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:01:16_ONDAS Dibujo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:01:16_ONDAS Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:03:13_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:03:13_ONDAS Chiste.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:03:13_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:05:29_ONDAS El altavoz y las visitas.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:05:29_ONDAS El altavoz y las visitas.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:05:29_ONDAS El altavoz y las visitas.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:06:05_ONDAS Chiste++.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:06:05_ONDAS Chiste++.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:06:05_ONDAS Chiste++.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:07:24_ONDAS Dibujo entre programación.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:07:24_ONDAS Dibujo entre programación.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:07:24_ONDAS Dibujo entre programación.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:09:18_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:09:18_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:09:18_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:10:02_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1927:10:02_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1927:10:02_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:01:19_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1929:01:19_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:01:19_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:01:19_ONDAS Ruiseñores de cintra.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1929:01:19_ONDAS Ruiseñores de cintra.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:01:19_ONDAS Ruiseñores de cintra.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:05:11_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1929:05:11_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:05:11_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:09:07_ONDAS TIra cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1929:09:07_ONDAS TIra cómica.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:09:07_ONDAS TIra cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:11:23_ONDAS  Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1929:11:23_ONDAS  Dibujo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1929:11:23_ONDAS  Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:02:22_ONDAS DIBUJO.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1930:02:22_ONDAS DIBUJO.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:02:22_ONDAS DIBUJO.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:05:17_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1930:05:17_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:05:17_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:10:11_ONDAS Dibujo flamenco.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1930:10:11_ONDAS Dibujo flamenco.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:10:11_ONDAS Dibujo flamenco.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:11(01_ONDAS Tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1930:11(01_ONDAS Tira cómica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:11(01_ONDAS Tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:12:13_ONDAS Tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1930:12:13_ONDAS Tira cómica.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:12:13_ONDAS Tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:12:27_ONDAS  Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1930:12:27_ONDAS  Dibujo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1930:12:27_ONDAS  Dibujo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:02:21_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:02:21_ONDAS Chiste.webp",
+      "categorias": [
+        "microfono",
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:02:21_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:03:14_ONDAS Flamenquismo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:03:14_ONDAS Flamenquismo.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:03:14_ONDAS Flamenquismo.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:03:21_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:03:21_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:03:21_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:04:04_ONDAS  Altavoz Suprasensible.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:04:04_ONDAS  Altavoz Suprasensible.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:04:04_ONDAS  Altavoz Suprasensible.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:05:16_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:05:16_ONDAS Chiste.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:05:16_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:05:23_ONDAS El Altavoz, tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:05:23_ONDAS El Altavoz, tira cómica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:05:23_ONDAS El Altavoz, tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:06:13_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:06:13_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:06:13_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:06:20_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:06:20_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:06:20_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:07:11_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:07:11_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:07:11_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:07:18_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:07:18_ONDAS Chiste.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:07:18_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:12:05_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1931:12:05_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1931:12:05_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:01:09_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:01:09_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:01:09_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:01:23_ONDAS Tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:01:23_ONDAS Tira cómica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:01:23_ONDAS Tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:02:06_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:02:06_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:02:06_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:02:11_ONDAS Chiste, escucha.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:02:11_ONDAS Chiste, escucha.webp",
+      "categorias": [
+        "cascos"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:02:11_ONDAS Chiste, escucha.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:06:25_Ondas Ilustrando un texto de Gómez de la Serna.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:06:25_Ondas Ilustrando un texto de Gómez de la Serna.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:06:25_Ondas Ilustrando un texto de Gómez de la Serna.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:06:25_Ondas Ilustrando un texto de Gómez de la Serna2.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:06:25_Ondas Ilustrando un texto de Gómez de la Serna2.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:06:25_Ondas Ilustrando un texto de Gómez de la Serna2.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:07:09_ONDAS Los ladrones y la radio oportuna, tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:07:09_ONDAS Los ladrones y la radio oportuna, tira cómica.webp",
+      "categorias": [
+        "microfono",
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:07:09_ONDAS Los ladrones y la radio oportuna, tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:08:06_ONDAS  Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:08:06_ONDAS  Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:08:06_ONDAS  Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:09:17_ONDAS Chiste.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:09:17_ONDAS Chiste.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:09:17_ONDAS Chiste.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:12:24_ONDAS El poder de la música, viñeta.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1932:12:24_ONDAS El poder de la música, viñeta.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1932:12:24_ONDAS El poder de la música, viñeta.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:02:04_ONDAS Pareja de sordos baila con la radio.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:02:04_ONDAS Pareja de sordos baila con la radio.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:02:04_ONDAS Pareja de sordos baila con la radio.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:02:04_ONDAS Tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:02:04_ONDAS Tira cómica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:02:04_ONDAS Tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:04:15_ONDAS El micrófono en la revista (sexista).webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:04:15_ONDAS El micrófono en la revista (sexista).webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:04:15_ONDAS El micrófono en la revista (sexista).webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:04:22_ONDAS Escuchando la Walkyria, tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:04:22_ONDAS Escuchando la Walkyria, tira cómica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:04:22_ONDAS Escuchando la Walkyria, tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:06:24_ONDAS El Do de pecho, viñeta.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:06:24_ONDAS El Do de pecho, viñeta.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:06:24_ONDAS El Do de pecho, viñeta.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:07:22_ONDAS El ideal de la radio Viñeta cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:07:22_ONDAS El ideal de la radio Viñeta cómica.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:07:22_ONDAS El ideal de la radio Viñeta cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:08:19_ONDAS Entre micrófonos.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1933:08:19_ONDAS Entre micrófonos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1933:08:19_ONDAS Entre micrófonos.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:06:09_ONDAS El día del micrófono. Tira cómica.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1934:06:09_ONDAS El día del micrófono. Tira cómica.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:06:09_ONDAS El día del micrófono. Tira cómica.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:07:21_ONDAS Los que actúan en la radio, cómo nos los figuramos.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1934:07:21_ONDAS Los que actúan en la radio, cómo nos los figuramos.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:07:21_ONDAS Los que actúan en la radio, cómo nos los figuramos.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:07:28_ONDAS Chiste Vals de las olas.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1934:07:28_ONDAS Chiste Vals de las olas.webp",
+      "categorias": [
+        "altavoz"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:07:28_ONDAS Chiste Vals de las olas.webp"
+    },
+    {
+      "id": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:08:25_ONDAS Dibujo.webp",
+      "carpeta": "TIRAS CÓMICAS, CHISTES Y DIBUJOS",
+      "archivo": "1934:08:25_ONDAS Dibujo.webp",
+      "categorias": [
+        "microfono"
+      ],
+      "ruta_relativa": "TIRAS CÓMICAS, CHISTES Y DIBUJOS/1934:08:25_ONDAS Dibujo.webp"
+    }
+  ]
+}

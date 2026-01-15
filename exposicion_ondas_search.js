@@ -18,6 +18,16 @@ let ondasDatabase = {
     otras: []
 };
 
+// Base de datos de etiquetas de equipos de audio
+let equiposAudioData = null;
+
+// Sinónimos para búsqueda de equipos de audio
+const equiposSinonimos = {
+    microfono: ['micrófono', 'microfono', 'mic', 'microfonos', 'micrófonos'],
+    altavoz: ['altavoz', 'altavoces', 'speaker', 'speakers', 'bocina', 'bocinas'],
+    cascos: ['cascos', 'auriculares', 'headphones', 'audífonos', 'audifonos', 'auricular']
+};
+
 // Estado de carga de la base de datos
 let isDatabaseLoaded = false;
 
@@ -100,6 +110,21 @@ function normalizeText(text) {
 }
 
 /**
+ * Detecta si el término de búsqueda corresponde a un equipo de audio
+ */
+function detectEquipoAudio(searchTerm) {
+    const normalized = normalizeText(searchTerm);
+    for (const [equipo, sinonimos] of Object.entries(equiposSinonimos)) {
+        for (const sinonimo of sinonimos) {
+            if (normalizeText(sinonimo).includes(normalized) || normalized.includes(normalizeText(sinonimo))) {
+                return equipo;
+            }
+        }
+    }
+    return null;
+}
+
+/**
  * Realiza búsqueda en todas las categorías
  */
 function performSearch(searchTerm) {
@@ -110,6 +135,56 @@ function performSearch(searchTerm) {
 
     const normalizedSearch = normalizeText(searchTerm);
     const results = [];
+    const addedImages = new Set(); // Para evitar duplicados
+
+    // Primero, buscar en equipos de audio si el término coincide
+    const equipoDetectado = detectEquipoAudio(searchTerm);
+    if (equipoDetectado && equiposAudioData && equiposAudioData.imagenes) {
+        const equipoNombres = {
+            microfono: 'Micrófono',
+            altavoz: 'Altavoz',
+            cascos: 'Cascos/Auriculares'
+        };
+
+        // Mapeo de carpetas a categorías del sistema
+        const carpetaToCategory = {
+            'ANUNCIOS ': 'anuncios',
+            'CANTANTES': 'cantantes',
+            'CARICATURAS y RETRATOS de Compositores e intérpretes': 'caricaturas_retratos',
+            'COMPOSITORES': 'compositores',
+            'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES': 'otras',
+            'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS': 'instrumentos',
+            'ÓPERAS': 'operas',
+            'OTRAS OBRAS MUSICALES CONCRETAS': 'zarzuelas',
+            'OTROS INTÉRPRETES Y PROTAGONISTAS': 'interpretes',
+            'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA': 'portadas',
+            'TIRAS CÓMICAS, CHISTES Y DIBUJOS': 'caricaturas'
+        };
+
+        equiposAudioData.imagenes.forEach(img => {
+            if (img.categorias.includes(equipoDetectado)) {
+                const category = carpetaToCategory[img.carpeta] || 'otras';
+                const imageKey = img.archivo;
+
+                if (!addedImages.has(imageKey)) {
+                    addedImages.add(imageKey);
+                    const metadata = extractMetadata(img.archivo);
+
+                    results.push({
+                        type: 'image',
+                        category: category,
+                        categoryName: categoryNames[category],
+                        url: categoryURLs[category],
+                        image: img.archivo,
+                        metadata: metadata,
+                        relevance: 90,
+                        matchedFields: [`equipo: ${equipoNombres[equipoDetectado]}`],
+                        equipoAudio: img.categorias
+                    });
+                }
+            }
+        });
+    }
 
     // Buscar en cada categoría
     for (const [category, images] of Object.entries(ondasDatabase)) {
@@ -126,6 +201,8 @@ function performSearch(searchTerm) {
 
         // Buscar en cada imagen de la categoría
         images.forEach((image, index) => {
+            if (addedImages.has(image)) return; // Evitar duplicados
+
             const metadata = extractMetadata(image);
             let relevance = 0;
             let matchedFields = [];
@@ -236,8 +313,22 @@ function displaySearchResults(results) {
                 const imageEncoded = encodeURIComponent(imageNFC);
                 const imagePath = `ondas/imagenes/${categoryDirEncoded}/${imageEncoded}`;
 
+                // Generar etiquetas de equipos de audio si existen
+                let equipoTagsHTML = '';
+                if (result.equipoAudio && result.equipoAudio.length > 0) {
+                    const equipoIcons = { microfono: '🎤', altavoz: '🔊', cascos: '🎧' };
+                    const equipoColors = { microfono: '#e74c3c', altavoz: '#3498db', cascos: '#2ecc71' };
+                    const equipoNames = { microfono: 'Micrófono', altavoz: 'Altavoz', cascos: 'Cascos' };
+                    equipoTagsHTML = '<div style="position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end;">';
+                    result.equipoAudio.forEach(eq => {
+                        equipoTagsHTML += `<span style="background: ${equipoColors[eq]}; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.7rem;">${equipoIcons[eq]} ${equipoNames[eq]}</span>`;
+                    });
+                    equipoTagsHTML += '</div>';
+                }
+
                 resultsHTML += `
-                    <div class="gallery-item">
+                    <div class="gallery-item" style="position: relative;">
+                        ${equipoTagsHTML}
                         <img src="${imagePath}"
                              alt="${result.metadata.title}"
                              loading="lazy"
@@ -315,6 +406,7 @@ function loadCategoryImages(category, images) {
  */
 async function loadDatabase() {
     try {
+        // Cargar base de datos principal
         const response = await fetch('ondas_database.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -326,6 +418,19 @@ async function loadDatabase() {
             total: Object.values(ondasDatabase).reduce((sum, arr) => sum + arr.length, 0),
             categorias: Object.keys(ondasDatabase).length
         });
+
+        // Cargar base de datos de equipos de audio
+        try {
+            const equiposResponse = await fetch('ondas_etiquetas_equipos_audio.json');
+            if (equiposResponse.ok) {
+                equiposAudioData = await equiposResponse.json();
+                console.log('✓ Etiquetas de equipos de audio cargadas:', {
+                    total: equiposAudioData.imagenes ? equiposAudioData.imagenes.length : 0
+                });
+            }
+        } catch (equiposError) {
+            console.warn('Aviso: No se pudieron cargar las etiquetas de equipos de audio:', equiposError);
+        }
     } catch (error) {
         console.error('Error cargando base de datos ONDAS:', error);
         alert('Error: No se pudo cargar la base de datos de imágenes. El buscador no funcionará correctamente.');
