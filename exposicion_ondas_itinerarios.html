@@ -124,6 +124,40 @@
             margin-right: 15px;
             vertical-align: middle;
         }
+
+        .itinerario-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .itinerario-thumb {
+            flex-shrink: 0;
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            object-fit: contain;
+        }
+
+        .itinerario-content {
+            flex: 1;
+        }
+
+        .itinerario-content h2 {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .itinerario-header {
+                flex-direction: column;
+            }
+            .itinerario-thumb {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -151,41 +185,66 @@
 
             <!-- ITINERARIO 1: Espacios invisibles -->
             <section class="itinerario-section" id="espacios">
-                <h2><span class="section-number">I</span>Espacios invisibles</h2>
-                <p class="descripcion">Los nuevos espacios de la radio, inicialmente inmateriales e invisibles, se hacen visibles a través de una iconografía insistente del estudio radiofónico. Las fotografías muestran de forma recurrente interiores reconocibles: atriles, micrófonos y, en el centro de la escena, instrumentos musicales como pianos, pianolas o guitarras. Estos elementos funcionan como anclajes visuales que traducen el sonido en imagen y permiten imaginar el lugar desde el que la radio emite.</p>
-                <a href="exposicion_ondas_galeria_itinerario.html?tipo=estudio" class="btn-itinerario">Ver imágenes de Estudios</a>
+                <div class="itinerario-header">
+                    <img src="ondas/imagenes/ESTUDIOS%20DE%20RADIO%20Y%20OTRAS%20IM%C3%81GENES%20GENERALES/1932%3A10%3A01_ONDAS%20Estudio%20Radiof%C3%B3nico%20EEUU.webp" alt="Estudio Radiofónico EEUU" class="itinerario-thumb">
+                    <div class="itinerario-content">
+                        <h2><span class="section-number">I</span>Espacios invisibles</h2>
+                        <p class="descripcion">Los nuevos espacios de la radio, inicialmente inmateriales e invisibles, se hacen visibles a través de una iconografía insistente del estudio radiofónico. Las fotografías muestran de forma recurrente interiores reconocibles: atriles, micrófonos y, en el centro de la escena, instrumentos musicales como pianos, pianolas o guitarras. Estos elementos funcionan como anclajes visuales que traducen el sonido en imagen y permiten imaginar el lugar desde el que la radio emite.</p>
+                        <a href="exposicion_ondas_galeria_itinerario.html?tipo=estudio" class="btn-itinerario">Ver imágenes de Estudios</a>
+                    </div>
+                </div>
             </section>
 
             <!-- ITINERARIO 2: Micrófono -->
             <section class="itinerario-section" id="microfono">
-                <h2><span class="section-number">II</span>Micrófono</h2>
-                <p class="descripcion">El micrófono se convierte en el gran protagonista del retrato radiofónico, a menudo situado en primer plano absoluto. Su presencia es especialmente destacada frente a cantantes, subrayando el papel central de la canción, en todas sus variantes, en la escucha radiofónica de estos años. Más que un simple dispositivo técnico, el micrófono actúa como mediador visible entre la voz, la música y el oyente.</p>
-                <a href="exposicion_ondas_galeria_itinerario.html?tipo=microfono" class="btn-itinerario">Ver imágenes con Micrófono</a>
+                <div class="itinerario-header">
+                    <img src="ondas/imagenes/TIRAS%20C%C3%93MICAS%2C%20CHISTES%20Y%20DIBUJOS/1932%3A06%3A25_Ondas%20Ilustrando%20un%20texto%20de%20G%C3%B3mez%20de%20la%20Serna2.webp" alt="Ilustrando un texto de Gómez de la Serna" class="itinerario-thumb">
+                    <div class="itinerario-content">
+                        <h2><span class="section-number">II</span>Micrófono</h2>
+                        <p class="descripcion">El micrófono se convierte en el gran protagonista del retrato radiofónico, a menudo situado en primer plano absoluto. Su presencia es especialmente destacada frente a cantantes, subrayando el papel central de la canción, en todas sus variantes, en la escucha radiofónica de estos años. Más que un simple dispositivo técnico, el micrófono actúa como mediador visible entre la voz, la música y el oyente.</p>
+                        <a href="exposicion_ondas_galeria_itinerario.html?tipo=microfono" class="btn-itinerario">Ver imágenes con Micrófono</a>
+                    </div>
+                </div>
             </section>
 
             <!-- ITINERARIO 3: Altavoz y cascos -->
             <section class="itinerario-section" id="altavoz-cascos">
-                <h2><span class="section-number">III</span>Altavoz y cascos</h2>
-                <p class="descripcion">El altavoz y los cascos aparecen vinculados a anuncios, espacios y lugares diversos. Su iconografía implica una nueva práctica de escucha que necesita ser normalizada y, por ello, reiteradamente representada. La escucha se expande más allá del ámbito doméstico y se muestra en múltiples contextos y geografías, evidenciando la difusión global del fenómeno radiofónico.</p>
-                <div class="btn-group">
-                    <a href="exposicion_ondas_galeria_itinerario.html?tipo=altavoz" class="btn-itinerario">Ver imágenes con Altavoz</a>
-                    <a href="exposicion_ondas_galeria_itinerario.html?tipo=cascos" class="btn-itinerario">Ver imágenes con Cascos</a>
+                <div class="itinerario-header">
+                    <img src="ondas/imagenes/TIRAS%20C%C3%93MICAS%2C%20CHISTES%20Y%20DIBUJOS/1931%3A04%3A04_ONDAS%20%20Altavoz%20Suprasensible.webp" alt="Altavoz Suprasensible" class="itinerario-thumb">
+                    <div class="itinerario-content">
+                        <h2><span class="section-number">III</span>Altavoz y cascos</h2>
+                        <p class="descripcion">El altavoz y los cascos aparecen vinculados a anuncios, espacios y lugares diversos. Su iconografía implica una nueva práctica de escucha que necesita ser normalizada y, por ello, reiteradamente representada. La escucha se expande más allá del ámbito doméstico y se muestra en múltiples contextos y geografías, evidenciando la difusión global del fenómeno radiofónico.</p>
+                        <div class="btn-group">
+                            <a href="exposicion_ondas_galeria_itinerario.html?tipo=altavoz" class="btn-itinerario">Ver imágenes con Altavoz</a>
+                            <a href="exposicion_ondas_galeria_itinerario.html?tipo=cascos" class="btn-itinerario">Ver imágenes con Cascos</a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- ITINERARIO 4: Escuchando -->
             <section class="itinerario-section" id="escuchando">
-                <h2><span class="section-number">IV</span>Escuchando</h2>
-                <p class="descripcion">Esta categoría se relaciona directamente con el acto de escuchar. Personas y animales, en todo tipo de espacios, aparecen concentrados en la recepción de la música. Reaparecen aquí altavoces y cascos ya presentes en la categoría anterior, pero con una diferencia clave: ya no se trata de objetos estáticos o meramente publicitarios. Ahora "suenan". La escucha activa se hace visible y dinámica, representada como una experiencia cotidiana que la revista pone en escena.</p>
-                <a href="exposicion_ondas_galeria_itinerario.html?tipo=escuchando" class="btn-itinerario">Ver imágenes de Escucha</a>
+                <div class="itinerario-header">
+                    <img src="ondas/imagenes/ESTUDIOS%20DE%20RADIO%20Y%20OTRAS%20IM%C3%81GENES%20GENERALES/1926%3A05%3A09_ONDAS%20Irene%20Ambr%C3%BAs%20escuchando%20un%20concierto.webp" alt="Irene Ambrús escuchando un concierto" class="itinerario-thumb">
+                    <div class="itinerario-content">
+                        <h2><span class="section-number">IV</span>Escuchando</h2>
+                        <p class="descripcion">Esta categoría se relaciona directamente con el acto de escuchar. Personas y animales, en todo tipo de espacios, aparecen concentrados en la recepción de la música. Reaparecen aquí altavoces y cascos ya presentes en la categoría anterior, pero con una diferencia clave: ya no se trata de objetos estáticos o meramente publicitarios. Ahora "suenan". La escucha activa se hace visible y dinámica, representada como una experiencia cotidiana que la revista pone en escena.</p>
+                        <a href="exposicion_ondas_galeria_itinerario.html?tipo=escuchando" class="btn-itinerario">Ver imágenes de Escucha</a>
+                    </div>
+                </div>
             </section>
 
             <!-- ITINERARIO 5: Augusto -->
             <section class="itinerario-section" id="augusto">
-                <h2><span class="section-number">V</span>Augusto: líneas que escuchan</h2>
-                <p class="descripcion">Con más de trescientos dibujos, Augusto articula la dimensión más artística de estos itinerarios de escucha. Su línea modernista actúa como un puente entre tradición y vanguardia: actualiza obras clásicas —especialmente óperas— y, al mismo tiempo, acompaña la nueva música de autores como Debussy o Stravinsky.</p>
-                <p class="descripcion">Sus imágenes no ilustran la música: la interpretan. Crean atmósferas, repiten motivos, construyen un imaginario reconocible que acompaña a la nueva escucha radiofónica. Son imágenes que escuchan, que traducen el ritmo, la tensión y la modernidad sonora en formas visuales recurrentes. En ellas, la música encuentra un eco gráfico, una segunda vida en el papel.</p>
-                <a href="exposicion_ondas_galeria_itinerario.html?tipo=augusto" class="btn-itinerario">Ver obras de Augusto</a>
+                <div class="itinerario-header">
+                    <img src="ondas/imagenes/%C3%93PERAS/1929%3A06%3A15_ONDAS%20Parsifal%20por%20Augusto.webp" alt="Parsifal por Augusto" class="itinerario-thumb">
+                    <div class="itinerario-content">
+                        <h2><span class="section-number">V</span>Augusto: líneas que escuchan</h2>
+                        <p class="descripcion">Con más de trescientos dibujos, Augusto articula la dimensión más artística de estos itinerarios de escucha. Su línea modernista actúa como un puente entre tradición y vanguardia: actualiza obras clásicas —especialmente óperas— y, al mismo tiempo, acompaña la nueva música de autores como Debussy o Stravinsky.</p>
+                        <p class="descripcion">Sus imágenes no ilustran la música: la interpretan. Crean atmósferas, repiten motivos, construyen un imaginario reconocible que acompaña a la nueva escucha radiofónica. Son imágenes que escuchan, que traducen el ritmo, la tensión y la modernidad sonora en formas visuales recurrentes. En ellas, la música encuentra un eco gráfico, una segunda vida en el papel.</p>
+                        <a href="exposicion_ondas_galeria_itinerario.html?tipo=augusto" class="btn-itinerario">Ver obras de Augusto</a>
+                    </div>
+                </div>
             </section>
 
         </div>
