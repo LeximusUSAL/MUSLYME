@@ -103,73 +103,11 @@
             transform: translateY(-2px);
         }
 
-        .btn-itinerario.active {
-            background: #4a4a6a;
-        }
-
         .btn-group {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 20px;
-        }
-
-        .gallery-container {
-            margin-top: 30px;
-            display: none;
-        }
-
-        .gallery-container.visible {
-            display: block;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .image-caption {
-            padding: 15px;
-        }
-
-        .image-date {
-            font-size: 0.85rem;
-            color: #888;
-        }
-
-        .image-title {
-            font-family: 'EB Garamond', serif;
-            font-size: 1rem;
-            color: #333;
-            margin-top: 5px;
-        }
-
-        .results-info {
-            padding: 15px;
-            background: #e8e8e8;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-family: 'Crimson Text', serif;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
         }
 
         .section-number {
@@ -215,16 +153,14 @@
             <section class="itinerario-section" id="espacios">
                 <h2><span class="section-number">I</span>Espacios invisibles</h2>
                 <p class="descripcion">Los nuevos espacios de la radio, inicialmente inmateriales e invisibles, se hacen visibles a través de una iconografía insistente del estudio radiofónico. Las fotografías muestran de forma recurrente interiores reconocibles: atriles, micrófonos y, en el centro de la escena, instrumentos musicales como pianos, pianolas o guitarras. Estos elementos funcionan como anclajes visuales que traducen el sonido en imagen y permiten imaginar el lugar desde el que la radio emite.</p>
-                <button class="btn-itinerario" onclick="mostrarItinerario('estudio', this)">Ver imágenes de Estudios</button>
-                <div class="gallery-container" id="gallery-estudio"></div>
+                <a href="exposicion_ondas_galeria_itinerario.html?tipo=estudio" class="btn-itinerario">Ver imágenes de Estudios</a>
             </section>
 
             <!-- ITINERARIO 2: Micrófono -->
             <section class="itinerario-section" id="microfono">
                 <h2><span class="section-number">II</span>Micrófono</h2>
                 <p class="descripcion">El micrófono se convierte en el gran protagonista del retrato radiofónico, a menudo situado en primer plano absoluto. Su presencia es especialmente destacada frente a cantantes, subrayando el papel central de la canción, en todas sus variantes, en la escucha radiofónica de estos años. Más que un simple dispositivo técnico, el micrófono actúa como mediador visible entre la voz, la música y el oyente.</p>
-                <button class="btn-itinerario" onclick="mostrarItinerario('microfono', this)">Ver imágenes con Micrófono</button>
-                <div class="gallery-container" id="gallery-microfono"></div>
+                <a href="exposicion_ondas_galeria_itinerario.html?tipo=microfono" class="btn-itinerario">Ver imágenes con Micrófono</a>
             </section>
 
             <!-- ITINERARIO 3: Altavoz y cascos -->
@@ -232,19 +168,16 @@
                 <h2><span class="section-number">III</span>Altavoz y cascos</h2>
                 <p class="descripcion">El altavoz y los cascos aparecen vinculados a anuncios, espacios y lugares diversos. Su iconografía implica una nueva práctica de escucha que necesita ser normalizada y, por ello, reiteradamente representada. La escucha se expande más allá del ámbito doméstico y se muestra en múltiples contextos y geografías, evidenciando la difusión global del fenómeno radiofónico.</p>
                 <div class="btn-group">
-                    <button class="btn-itinerario" onclick="mostrarItinerario('altavoz', this)">Ver imágenes con Altavoz</button>
-                    <button class="btn-itinerario" onclick="mostrarItinerario('cascos', this)">Ver imágenes con Cascos</button>
+                    <a href="exposicion_ondas_galeria_itinerario.html?tipo=altavoz" class="btn-itinerario">Ver imágenes con Altavoz</a>
+                    <a href="exposicion_ondas_galeria_itinerario.html?tipo=cascos" class="btn-itinerario">Ver imágenes con Cascos</a>
                 </div>
-                <div class="gallery-container" id="gallery-altavoz"></div>
-                <div class="gallery-container" id="gallery-cascos"></div>
             </section>
 
             <!-- ITINERARIO 4: Escuchando -->
             <section class="itinerario-section" id="escuchando">
                 <h2><span class="section-number">IV</span>Escuchando</h2>
                 <p class="descripcion">Esta categoría se relaciona directamente con el acto de escuchar. Personas y animales, en todo tipo de espacios, aparecen concentrados en la recepción de la música. Reaparecen aquí altavoces y cascos ya presentes en la categoría anterior, pero con una diferencia clave: ya no se trata de objetos estáticos o meramente publicitarios. Ahora "suenan". La escucha activa se hace visible y dinámica, representada como una experiencia cotidiana que la revista pone en escena.</p>
-                <button class="btn-itinerario" onclick="mostrarItinerario('escuchando', this)">Ver imágenes de Escucha</button>
-                <div class="gallery-container" id="gallery-escuchando"></div>
+                <a href="exposicion_ondas_galeria_itinerario.html?tipo=escuchando" class="btn-itinerario">Ver imágenes de Escucha</a>
             </section>
 
             <!-- ITINERARIO 5: Augusto -->
@@ -252,8 +185,7 @@
                 <h2><span class="section-number">V</span>Augusto: líneas que escuchan</h2>
                 <p class="descripcion">Con más de trescientos dibujos, Augusto articula la dimensión más artística de estos itinerarios de escucha. Su línea modernista actúa como un puente entre tradición y vanguardia: actualiza obras clásicas —especialmente óperas— y, al mismo tiempo, acompaña la nueva música de autores como Debussy o Stravinsky.</p>
                 <p class="descripcion">Sus imágenes no ilustran la música: la interpretan. Crean atmósferas, repiten motivos, construyen un imaginario reconocible que acompaña a la nueva escucha radiofónica. Son imágenes que escuchan, que traducen el ritmo, la tensión y la modernidad sonora en formas visuales recurrentes. En ellas, la música encuentra un eco gráfico, una segunda vida en el papel.</p>
-                <button class="btn-itinerario" onclick="mostrarItinerario('augusto', this)">Ver obras de Augusto</button>
-                <div class="gallery-container" id="gallery-augusto"></div>
+                <a href="exposicion_ondas_galeria_itinerario.html?tipo=augusto" class="btn-itinerario">Ver obras de Augusto</a>
             </section>
 
         </div>
@@ -281,174 +213,5 @@
         </div>
     </footer>
 
-    <script>
-        // Datos
-        let ondasDatabase = null;
-        let equiposAudioData = null;
-
-        // Cargar datos
-        async function loadData() {
-            try {
-                const [dbResponse, equiposResponse] = await Promise.all([
-                    fetch('ondas_database.json'),
-                    fetch('ondas_etiquetas_equipos_audio.json')
-                ]);
-                ondasDatabase = await dbResponse.json();
-                equiposAudioData = await equiposResponse.json();
-                console.log('Datos cargados correctamente');
-            } catch (error) {
-                console.error('Error cargando datos:', error);
-            }
-        }
-
-        // Mapeo de categorías a directorios
-        const categoryDirMap = {
-            'compositores': 'COMPOSITORES',
-            'cantantes': 'CANTANTES',
-            'interpretes': 'OTROS INTÉRPRETES Y PROTAGONISTAS',
-            'operas': 'ÓPERAS',
-            'zarzuelas': 'OTRAS OBRAS MUSICALES CONCRETAS',
-            'instrumentos': 'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS',
-            'caricaturas_retratos': 'CARICATURAS y RETRATOS de Compositores e intérpretes',
-            'caricaturas': 'TIRAS CÓMICAS, CHISTES Y DIBUJOS',
-            'portadas': 'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA',
-            'anuncios': 'ANUNCIOS ',
-            'otras': 'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES'
-        };
-
-        // Extraer metadatos del nombre de archivo
-        function extractMetadata(filename) {
-            const nameWithoutExt = filename.replace('.webp', '').replace('.png', '');
-            const datePattern = /^(\d{4})[_:](\d{2})[_:](\d{2})[_\s]+ONDAS\s+(.+)$/;
-            const match = nameWithoutExt.match(datePattern);
-
-            if (match) {
-                const [_, year, month, day, title] = match;
-                return {
-                    date: `${day}/${month}/${year}`,
-                    title: title.trim()
-                };
-            }
-            return { date: '', title: nameWithoutExt };
-        }
-
-        // Buscar imágenes por texto en el nombre
-        function buscarPorTexto(texto) {
-            const results = [];
-            const textoLower = texto.toLowerCase();
-
-            for (const [category, images] of Object.entries(ondasDatabase)) {
-                images.forEach(image => {
-                    if (image.toLowerCase().includes(textoLower)) {
-                        results.push({
-                            image: image,
-                            category: category,
-                            categoryDir: categoryDirMap[category]
-                        });
-                    }
-                });
-            }
-            return results;
-        }
-
-        // Buscar imágenes por etiqueta de equipo
-        function buscarPorEtiqueta(etiqueta) {
-            if (!equiposAudioData || !equiposAudioData.imagenes) return [];
-
-            const carpetaToCategory = {
-                'ANUNCIOS ': 'anuncios',
-                'CANTANTES': 'cantantes',
-                'CARICATURAS y RETRATOS de Compositores e intérpretes': 'caricaturas_retratos',
-                'COMPOSITORES': 'compositores',
-                'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES': 'otras',
-                'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS': 'instrumentos',
-                'ÓPERAS': 'operas',
-                'OTRAS OBRAS MUSICALES CONCRETAS': 'zarzuelas',
-                'OTROS INTÉRPRETES Y PROTAGONISTAS': 'interpretes',
-                'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA': 'portadas',
-                'TIRAS CÓMICAS, CHISTES Y DIBUJOS': 'caricaturas'
-            };
-
-            return equiposAudioData.imagenes
-                .filter(img => img.categorias.includes(etiqueta))
-                .map(img => ({
-                    image: img.archivo,
-                    category: carpetaToCategory[img.carpeta] || 'otras',
-                    categoryDir: img.carpeta
-                }));
-        }
-
-        // Renderizar galería
-        function renderGallery(containerId, images) {
-            const container = document.getElementById(containerId);
-
-            if (images.length === 0) {
-                container.innerHTML = '<p class="loading">No se encontraron imágenes</p>';
-                return;
-            }
-
-            let html = `<div class="results-info">${images.length} imágenes encontradas</div><div class="gallery-grid">`;
-
-            images.forEach(item => {
-                const metadata = extractMetadata(item.image);
-                const dir = item.categoryDir || categoryDirMap[item.category];
-                const dirEncoded = encodeURIComponent(dir.normalize('NFC'));
-                const imageEncoded = encodeURIComponent(item.image.normalize('NFC'));
-                const imagePath = `ondas/imagenes/${dirEncoded}/${imageEncoded}`;
-
-                html += `
-                    <div class="gallery-item">
-                        <img src="${imagePath}"
-                             alt="${metadata.title}"
-                             loading="lazy"
-                             onerror="this.style.display='none'">
-                        <div class="image-caption">
-                            <div class="image-date">${metadata.date}</div>
-                            <div class="image-title">${metadata.title}</div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            html += '</div>';
-            container.innerHTML = html;
-        }
-
-        // Mostrar itinerario
-        function mostrarItinerario(tipo, btn) {
-            const containerId = `gallery-${tipo}`;
-            const container = document.getElementById(containerId);
-
-            // Toggle visibilidad
-            if (container.classList.contains('visible')) {
-                container.classList.remove('visible');
-                btn.classList.remove('active');
-                return;
-            }
-
-            // Activar botón
-            btn.classList.add('active');
-            container.classList.add('visible');
-            container.innerHTML = '<p class="loading">Cargando imágenes...</p>';
-
-            let images = [];
-
-            // Determinar qué buscar
-            if (tipo === 'microfono' || tipo === 'altavoz' || tipo === 'cascos') {
-                images = buscarPorEtiqueta(tipo);
-            } else if (tipo === 'estudio') {
-                images = buscarPorTexto('estudio');
-            } else if (tipo === 'escuchando') {
-                images = buscarPorTexto('escuchando');
-            } else if (tipo === 'augusto') {
-                images = buscarPorTexto('augusto');
-            }
-
-            renderGallery(containerId, images);
-        }
-
-        // Inicializar
-        document.addEventListener('DOMContentLoaded', loadData);
-    </script>
 </body>
 </html>

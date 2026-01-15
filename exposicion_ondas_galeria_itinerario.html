@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONDAS - Itinerario</title>
+    <link rel="stylesheet" href="exposicion_ondas_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .gallery-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+        }
+
+        .gallery-header h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+
+        .gallery-header p {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .results-count {
+            text-align: center;
+            padding: 20px;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            color: #666;
+            background: #f0f0f0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .image-caption {
+            padding: 20px;
+        }
+
+        .image-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .image-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.15rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Modal para ver imagen ampliada */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal.visible {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .modal-caption {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.7);
+            padding: 15px 30px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-ornament">✦ ✦ ✦</div>
+        <h1 class="main-title">Itinerarios de Escucha</h1>
+        <p class="subtitle" id="subtitle">Cargando...</p>
+        <div class="header-years">Madrid · 1925-1935</div>
+        <div class="header-ornament">✦ ✦ ✦</div>
+    </header>
+
+    <nav class="main-nav">
+        <a href="exposicion_ondas_itinerarios.html" class="nav-link">← Volver a Itinerarios</a>
+    </nav>
+
+    <main>
+        <div class="gallery-header">
+            <h1 id="gallery-title">Cargando...</h1>
+            <p id="gallery-description"></p>
+        </div>
+
+        <div class="results-count" id="results-count"></div>
+
+        <div class="gallery-grid" id="gallery-container">
+            <p class="loading">Cargando imágenes...</p>
+        </div>
+
+        <section class="credits-section">
+            <div class="ornamental-line"></div>
+            <p class="credits">Exposición Virtual · Proyecto LexiMus · Universidad de Salamanca · 2026</p>
+        </section>
+    </main>
+
+    <!-- Modal para imagen ampliada -->
+    <div class="modal" id="modal" onclick="cerrarModal()">
+        <span class="modal-close">&times;</span>
+        <img src="" alt="" id="modal-img">
+        <div class="modal-caption" id="modal-caption"></div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-ornament">✦ ✦ ✦</div>
+        <p>&copy; 2026 Exposición Virtual ONDAS</p>
+    </footer>
+
+    <script>
+        // Configuración de itinerarios
+        const itinerarios = {
+            estudio: {
+                titulo: 'Espacios invisibles',
+                subtitulo: 'Los estudios radiofónicos',
+                descripcion: 'Los nuevos espacios de la radio, inicialmente inmateriales e invisibles, se hacen visibles a través de una iconografía insistente del estudio radiofónico.',
+                tipo: 'texto',
+                busqueda: 'estudio'
+            },
+            microfono: {
+                titulo: 'Micrófono',
+                subtitulo: 'El protagonista del retrato radiofónico',
+                descripcion: 'El micrófono se convierte en el gran protagonista del retrato radiofónico, actuando como mediador visible entre la voz, la música y el oyente.',
+                tipo: 'etiqueta',
+                busqueda: 'microfono'
+            },
+            altavoz: {
+                titulo: 'Altavoz',
+                subtitulo: 'La difusión del sonido',
+                descripcion: 'El altavoz aparece vinculado a anuncios, espacios y lugares diversos, evidenciando la difusión global del fenómeno radiofónico.',
+                tipo: 'etiqueta',
+                busqueda: 'altavoz'
+            },
+            cascos: {
+                titulo: 'Cascos y auriculares',
+                subtitulo: 'La escucha íntima',
+                descripcion: 'Los cascos representan una práctica de escucha que necesita ser normalizada y, por ello, reiteradamente representada.',
+                tipo: 'etiqueta',
+                busqueda: 'cascos'
+            },
+            escuchando: {
+                titulo: 'Escuchando',
+                subtitulo: 'El acto de escuchar',
+                descripcion: 'Personas y animales, en todo tipo de espacios, aparecen concentrados en la recepción de la música. La escucha activa se hace visible y dinámica.',
+                tipo: 'texto',
+                busqueda: 'escuchando'
+            },
+            augusto: {
+                titulo: 'Augusto: líneas que escuchan',
+                subtitulo: 'La dimensión artística',
+                descripcion: 'Con más de trescientos dibujos, Augusto articula la dimensión más artística de estos itinerarios de escucha. Sus imágenes no ilustran la música: la interpretan.',
+                tipo: 'texto',
+                busqueda: 'augusto'
+            }
+        };
+
+        // Datos
+        let ondasDatabase = null;
+        let equiposAudioData = null;
+
+        // Mapeo de categorías a directorios
+        const categoryDirMap = {
+            'compositores': 'COMPOSITORES',
+            'cantantes': 'CANTANTES',
+            'interpretes': 'OTROS INTÉRPRETES Y PROTAGONISTAS',
+            'operas': 'ÓPERAS',
+            'zarzuelas': 'OTRAS OBRAS MUSICALES CONCRETAS',
+            'instrumentos': 'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS',
+            'caricaturas_retratos': 'CARICATURAS y RETRATOS de Compositores e intérpretes',
+            'caricaturas': 'TIRAS CÓMICAS, CHISTES Y DIBUJOS',
+            'portadas': 'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA',
+            'anuncios': 'ANUNCIOS ',
+            'otras': 'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES'
+        };
+
+        // Extraer metadatos del nombre de archivo
+        function extractMetadata(filename) {
+            const nameWithoutExt = filename.replace('.webp', '').replace('.png', '');
+            const datePattern = /^(\d{4})[_:](\d{2})[_:](\d{2})[_\s]+ONDAS\s+(.+)$/;
+            const match = nameWithoutExt.match(datePattern);
+
+            if (match) {
+                const [_, year, month, day, title] = match;
+                return {
+                    date: `${day}/${month}/${year}`,
+                    title: title.trim()
+                };
+            }
+            return { date: '', title: nameWithoutExt };
+        }
+
+        // Buscar imágenes por texto
+        function buscarPorTexto(texto) {
+            const results = [];
+            const textoLower = texto.toLowerCase();
+
+            for (const [category, images] of Object.entries(ondasDatabase)) {
+                images.forEach(image => {
+                    if (image.toLowerCase().includes(textoLower)) {
+                        results.push({
+                            image: image,
+                            category: category,
+                            categoryDir: categoryDirMap[category]
+                        });
+                    }
+                });
+            }
+            return results;
+        }
+
+        // Buscar por etiqueta de equipo
+        function buscarPorEtiqueta(etiqueta) {
+            if (!equiposAudioData || !equiposAudioData.imagenes) return [];
+
+            const carpetaToCategory = {
+                'ANUNCIOS ': 'anuncios',
+                'CANTANTES': 'cantantes',
+                'CARICATURAS y RETRATOS de Compositores e intérpretes': 'caricaturas_retratos',
+                'COMPOSITORES': 'compositores',
+                'ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES': 'otras',
+                'INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS': 'instrumentos',
+                'ÓPERAS': 'operas',
+                'OTRAS OBRAS MUSICALES CONCRETAS': 'zarzuelas',
+                'OTROS INTÉRPRETES Y PROTAGONISTAS': 'interpretes',
+                'PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA': 'portadas',
+                'TIRAS CÓMICAS, CHISTES Y DIBUJOS': 'caricaturas'
+            };
+
+            return equiposAudioData.imagenes
+                .filter(img => img.categorias.includes(etiqueta))
+                .map(img => ({
+                    image: img.archivo,
+                    category: carpetaToCategory[img.carpeta] || 'otras',
+                    categoryDir: img.carpeta
+                }));
+        }
+
+        // Renderizar galería
+        function renderGallery(images) {
+            const container = document.getElementById('gallery-container');
+            document.getElementById('results-count').textContent = `${images.length} imágenes encontradas`;
+
+            if (images.length === 0) {
+                container.innerHTML = '<p class="loading">No se encontraron imágenes</p>';
+                return;
+            }
+
+            let html = '';
+
+            images.forEach(item => {
+                const metadata = extractMetadata(item.image);
+                const dir = item.categoryDir || categoryDirMap[item.category];
+                const dirEncoded = encodeURIComponent(dir.normalize('NFC'));
+                const imageEncoded = encodeURIComponent(item.image.normalize('NFC'));
+                const imagePath = `ondas/imagenes/${dirEncoded}/${imageEncoded}`;
+
+                html += `
+                    <div class="gallery-item">
+                        <img src="${imagePath}"
+                             alt="${metadata.title}"
+                             loading="lazy"
+                             onclick="abrirModal('${imagePath}', '${metadata.title.replace(/'/g, "\\'")}', '${metadata.date}')"
+                             onerror="this.parentElement.style.display='none'">
+                        <div class="image-caption">
+                            <div class="image-date">${metadata.date}</div>
+                            <div class="image-title">${metadata.title}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Modal
+        function abrirModal(src, title, date) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal-caption').textContent = `${title} (${date})`;
+            document.getElementById('modal').classList.add('visible');
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal').classList.remove('visible');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') cerrarModal();
+        });
+
+        // Inicializar
+        async function init() {
+            // Obtener parámetro de URL
+            const params = new URLSearchParams(window.location.search);
+            const tipo = params.get('tipo');
+
+            if (!tipo || !itinerarios[tipo]) {
+                document.getElementById('gallery-container').innerHTML =
+                    '<p class="loading">Itinerario no encontrado. <a href="exposicion_ondas_itinerarios.html">Volver a itinerarios</a></p>';
+                return;
+            }
+
+            const config = itinerarios[tipo];
+
+            // Actualizar títulos
+            document.title = `ONDAS - ${config.titulo}`;
+            document.getElementById('subtitle').textContent = config.subtitulo;
+            document.getElementById('gallery-title').textContent = config.titulo;
+            document.getElementById('gallery-description').textContent = config.descripcion;
+
+            // Cargar datos
+            try {
+                const [dbResponse, equiposResponse] = await Promise.all([
+                    fetch('ondas_database.json'),
+                    fetch('ondas_etiquetas_equipos_audio.json')
+                ]);
+                ondasDatabase = await dbResponse.json();
+                equiposAudioData = await equiposResponse.json();
+
+                // Buscar imágenes según tipo
+                let images = [];
+                if (config.tipo === 'etiqueta') {
+                    images = buscarPorEtiqueta(config.busqueda);
+                } else {
+                    images = buscarPorTexto(config.busqueda);
+                }
+
+                renderGallery(images);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('gallery-container').innerHTML =
+                    '<p class="loading">Error al cargar las imágenes</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
