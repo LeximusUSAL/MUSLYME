@@ -80,23 +80,23 @@
 <body>
     <div class="container">
         <header>
-            <h1>Corpus de Imagenes Musicales ONDAS</h1>
-            <p class="subtitle">Analisis estadistico de la revista ONDAS (1925-1935)</p>
+            <h1>Corpus de Imágenes Musicales ONDAS</h1>
+            <p class="subtitle">Análisis estadístico de la revista ONDAS (1925-1935)</p>
         </header>
 
         <div class="stats-summary">
-            <div class="stat-card"><div class="stat-number">2133</div><div class="stat-label">Imagenes unicas</div></div>
+            <div class="stat-card"><div class="stat-number">2133</div><div class="stat-label">Imágenes únicas</div></div>
             <a href="indice_imagenes_ondas.json" target="_blank" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(243,156,18,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">2231</div><div class="stat-label">Entradas totales</div></a>
             <a href="listado_compositores_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(243,156,18,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">142</div><div class="stat-label">Compositores distintos</div></a>
             <a href="listado_cantantes_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(231,76,60,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">291</div><div class="stat-label">Cantantes distintos</div></a>
-            <a href="listado_operas_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(26,188,156,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">66</div><div class="stat-label">Operas distintas</div></a>
-            <a href="listado_paises_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(52,152,219,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">27</div><div class="stat-label">Paises</div></a>
-            <a href="listado_interpretes_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(155,89,182,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">207</div><div class="stat-label">Interpretes</div></a>
+            <a href="listado_operas_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(26,188,156,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">66</div><div class="stat-label">Óperas distintas</div></a>
+            <a href="listado_paises_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(52,152,219,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">27</div><div class="stat-label">Países</div></a>
+            <a href="listado_interpretes_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(155,89,182,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">207</div><div class="stat-label">Intérpretes</div></a>
         </div>
 
         <div class="charts-grid">
             <div class="chart-container">
-                <h2>Distribucion por Genero</h2>
+                <h2>Distribución por Género</h2>
                 <div class="chart-wrapper"><canvas id="generoChart"></canvas></div>
                 <div class="highlight-box">
                     <strong>Ratio H/M:</strong> 3.8:1 &nbsp;|&nbsp;
@@ -106,7 +106,7 @@
             </div>
 
             <div class="chart-container">
-                <h2>Categorias de Imagenes</h2>
+                <h2>Categorías de Imágenes</h2>
                 <div class="chart-wrapper"><canvas id="categoriasChart"></canvas></div>
             </div>
 
@@ -116,14 +116,14 @@
             </div>
 
             <div class="chart-container">
-                <h2>Evolucion Temporal (1925-1935, sin 1928)</h2>
+                <h2>Evolución Temporal (1925-1935, sin 1928)</h2>
                 <div class="chart-wrapper"><canvas id="temporalChart"></canvas></div>
             </div>
 
             <div class="chart-container full-width">
-                <h2>Top 25 Compositores (Total apariciones en todas las categorias)</h2>
+                <h2>Top 25 Compositores (Total apariciones en todas las categorías)</h2>
                 <div class="chart-wrapper tall"><canvas id="compositoresChart"></canvas></div>
-                <p class="note">Clasificacion basada en el campo "Instrumento/profesion". Suma de apariciones en todas las categorias.</p>
+                <p class="note">Clasificación basada en el campo "Instrumento/profesión". Suma de apariciones en todas las categorías.</p>
             </div>
 
             <div class="chart-container">
@@ -132,7 +132,7 @@
             </div>
 
             <div class="chart-container">
-                <h2>Top 20 Otros Interpretes (Total apariciones)</h2>
+                <h2>Top 20 Otros Intérpretes (Total apariciones)</h2>
                 <div class="chart-wrapper tall"><canvas id="interpretesChart"></canvas></div>
             </div>
 
@@ -142,49 +142,49 @@
             </div>
 
             <div class="chart-container">
-                <h2>Operas Mas Representadas</h2>
+                <h2>Óperas Más Representadas</h2>
                 <div class="chart-wrapper tall"><canvas id="operasChart"></canvas></div>
             </div>
 
             <div class="chart-container full-width">
-                <h2>Genero por Categoria</h2>
+                <h2>Género por Categoría</h2>
                 <div class="chart-wrapper"><canvas id="generoCategoriaChart"></canvas></div>
             </div>
 
             <div class="chart-container full-width">
-                <h2>Genero por Instrumento (Otros Interpretes y Protagonistas)</h2>
+                <h2>Género por Instrumento (Otros Intérpretes y Protagonistas)</h2>
                 <div class="chart-wrapper tall"><canvas id="generoInstrumentoChart"></canvas></div>
             </div>
 
             <div class="chart-container full-width">
-                <h2>Nacionalidad por Profesion</h2>
+                <h2>Nacionalidad por Profesión</h2>
                 <div class="chart-wrapper tall"><canvas id="nacionalidadProfesionChart"></canvas></div>
             </div>
 
             <div class="chart-container">
-                <h2>Paises de Origen (Todos)</h2>
+                <h2>Países de Origen (Todos)</h2>
                 <table>
-                    <tr><th>Pais</th><th>Entradas</th><th>%</th></tr>
-                    <tr><td>Espana</td><td>791</td><td>47.1%</td></tr>
+                    <tr><th>País</th><th>Entradas</th><th>%</th></tr>
+                    <tr><td>España</td><td>791</td><td>47.1%</td></tr>
                     <tr><td>Italia</td><td>253</td><td>15.1%</td></tr>
                     <tr><td>Alemania</td><td>203</td><td>12.1%</td></tr>
                     <tr><td>Francia</td><td>173</td><td>10.3%</td></tr>
                     <tr><td>Rusia</td><td>85</td><td>5.1%</td></tr>
                     <tr><td>EE.UU</td><td>50</td><td>3.0%</td></tr>
                     <tr><td>Austria</td><td>27</td><td>1.6%</td></tr>
-                    <tr><td>Hungria</td><td>23</td><td>1.4%</td></tr>
+                    <tr><td>Hungría</td><td>23</td><td>1.4%</td></tr>
                     <tr><td>Checoslovaquia</td><td>15</td><td>0.9%</td></tr>
                     <tr><td>Noruega</td><td>9</td><td>0.5%</td></tr>
                     <tr><td>Argentina</td><td>8</td><td>0.5%</td></tr>
                     <tr><td>Inglaterra</td><td>6</td><td>0.4%</td></tr>
-                    <tr><td>Otros (22 paises)</td><td>37</td><td>2.2%</td></tr>
+                    <tr><td>Otros (22 países)</td><td>37</td><td>2.2%</td></tr>
                 </table>
             </div>
 
             <div class="chart-container">
-                <h2>Top 20 Operas</h2>
+                <h2>Top 20 Óperas</h2>
                 <table>
-                    <tr><th>#</th><th>Opera</th><th>Imgs</th></tr>
+                    <tr><th>#</th><th>Ópera</th><th>Imgs</th></tr>
                     <tr><td>1</td><td>Carmen</td><td>18</td></tr>
                     <tr><td>2</td><td>La Boheme</td><td>14</td></tr>
                     <tr><td>3</td><td>Manon Lescaut</td><td>13</td></tr>
@@ -196,12 +196,12 @@
                     <tr><td>9</td><td>El barbero de Sevilla</td><td>10</td></tr>
                     <tr><td>10</td><td>Tosca</td><td>9</td></tr>
                     <tr><td>11</td><td>El trovador</td><td>8</td></tr>
-                    <tr><td>12</td><td>Mefistofeles</td><td>7</td></tr>
+                    <tr><td>12</td><td>Mefistófeles</td><td>7</td></tr>
                     <tr><td>13</td><td>Marina</td><td>7</td></tr>
-                    <tr><td>14</td><td>Tristan e Isolda</td><td>7</td></tr>
+                    <tr><td>14</td><td>Tristán e Isolda</td><td>7</td></tr>
                     <tr><td>15</td><td>Rigoletto</td><td>6</td></tr>
                     <tr><td>16</td><td>Falstaff</td><td>5</td></tr>
-                    <tr><td>17</td><td>Caballeria Rusticana</td><td>5</td></tr>
+                    <tr><td>17</td><td>Caballería Rusticana</td><td>5</td></tr>
                     <tr><td>18</td><td>Fantochines</td><td>4</td></tr>
                     <tr><td>19</td><td>Tannhauser</td><td>4</td></tr>
                     <tr><td>20</td><td>Don Pasquale</td><td>4</td></tr>
@@ -211,7 +211,7 @@
 
         <footer>
             <p><strong>Proyecto LexiMus</strong> - Universidad de Salamanca</p>
-            <p>Corpus de imagenes ONDAS (1925-1935) · 2133 imagenes unicas · 2231 entradas (98 imagenes con multiples personas)</p>
+            <p>Corpus de imágenes ONDAS (1925-1935) · 2133 imágenes únicas · 2231 entradas (98 imágenes con múltiples personas)</p>
         </footer>
     </div>
 
@@ -221,7 +221,7 @@
             gender: { H: '#3498db', M: '#e74c3c' }
         };
 
-        // Genero
+        // Género
         new Chart(document.getElementById('generoChart'), {
             type: 'doughnut',
             data: {
@@ -231,11 +231,11 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#eee' } } } }
         });
 
-        // Categorias
+        // Categorías
         new Chart(document.getElementById('categoriasChart'), {
             type: 'bar',
             data: {
-                labels: ['Compositores', 'Otros interpretes', 'Cantantes', 'Operas', 'Tiras comicas', 'Estudios radio', 'Otras obras', 'Anuncios', 'Portadas', 'Caricaturas', 'Instrumentos'],
+                labels: ['Compositores', 'Otros intérpretes', 'Cantantes', 'Óperas', 'Tiras cómicas', 'Estudios radio', 'Otras obras', 'Anuncios', 'Portadas', 'Caricaturas', 'Instrumentos'],
                 datasets: [{ data: [522, 407, 352, 257, 145, 136, 111, 63, 55, 44, 43], backgroundColor: colors.primary }]
             },
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 10 } }, grid: { display: false } } } }
@@ -245,7 +245,7 @@
         new Chart(document.getElementById('origenChart'), {
             type: 'bar',
             data: {
-                labels: ['Espana', 'Italia', 'Alemania', 'Francia', 'Rusia', 'EE.UU', 'Austria', 'Hungria', 'Checoslov.', 'Noruega', 'Argentina', 'Inglaterra', 'Belgica', 'Polonia', 'Cuba'],
+                labels: ['España', 'Italia', 'Alemania', 'Francia', 'Rusia', 'EE.UU', 'Austria', 'Hungría', 'Checoslov.', 'Noruega', 'Argentina', 'Inglaterra', 'Bélgica', 'Polonia', 'Cuba'],
                 datasets: [{ data: [791, 253, 203, 173, 85, 50, 27, 23, 15, 9, 8, 6, 6, 6, 6], backgroundColor: colors.primary }]
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa', maxRotation: 45 }, grid: { display: false } }, y: { ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
@@ -261,31 +261,31 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
         });
 
-        // Compositores Top 25 (TOTAL APARICIONES - clasificados por profesion)
+        // Compositores Top 25 (TOTAL APARICIONES - clasificados por profesión)
         new Chart(document.getElementById('compositoresChart'), {
             type: 'bar',
             data: {
-                labels: ['Giuseppe Verdi', 'Giacomo Puccini', 'Richard Wagner', 'Claude Debussy', 'L. van Beethoven', 'Georges Bizet', 'Maurice Ravel', 'Richard Strauss', 'Gaetano Donizetti', 'Manuel de Falla', 'P.I. Tchaikowsky', 'Igor Stravinsky', 'Salvador Bacarisse', 'Tomas Breton', 'Amadeo Vives', 'Charles Gounod', 'G. Rossini', 'Ruperto Chapi', 'Alvarez Cantos', 'Joseph Haydn', 'Modest Mussorgsky', 'Enrique Granados', 'Rimsky Korsakov', 'Johannes Brahms', 'Antonin Dvorack'],
+                labels: ['Giuseppe Verdi', 'Giacomo Puccini', 'Richard Wagner', 'Claude Debussy', 'L. van Beethoven', 'Georges Bizet', 'Maurice Ravel', 'Richard Strauss', 'Gaetano Donizetti', 'Manuel de Falla', 'P.I. Tchaikowsky', 'Igor Stravinsky', 'Salvador Bacarisse', 'Tomás Bretón', 'Amadeo Vives', 'Charles Gounod', 'G. Rossini', 'Ruperto Chapí', 'Álvarez Cantos', 'Joseph Haydn', 'Modest Mussorgsky', 'Enrique Granados', 'Rimsky Korsakov', 'Johannes Brahms', 'Antonín Dvorack'],
                 datasets: [{ data: [78, 62, 61, 27, 25, 23, 20, 19, 19, 19, 18, 17, 16, 16, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 12], backgroundColor: '#f39c12' }]
             },
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 10 } }, grid: { display: false } } } }
         });
 
-        // Cantantes Top 20 (TOTAL APARICIONES - clasificados por profesion)
+        // Cantantes Top 20 (TOTAL APARICIONES - clasificados por profesión)
         new Chart(document.getElementById('cantantesChart'), {
             type: 'bar',
             data: {
-                labels: ['Miguel Fleta', 'Maria Estremera', 'Dorini de Diso', 'Paquita Alcaraz', 'Celia Gamez', 'Raquel Meller', 'Angeles Ottein', 'Hipolito Lazaro', 'Crisena Galatti', 'La Argentinita', 'Isabel Soria', 'Ofelia Nieto', 'Selica Perez', 'Maria Tellez', 'Laura Nieto', 'Jose Angerri', 'I. Sanchez Escribano', 'Luisa Puchol', 'Asuncion Camps', 'E. Garcia "El Chato"'],
+                labels: ['Miguel Fleta', 'María Estremera', 'Dorini de Diso', 'Paquita Alcaraz', 'Celia Gámez', 'Raquel Meller', 'Ángeles Ottein', 'Hipólito Lázaro', 'Crisena Galatti', 'La Argentinita', 'Isabel Soria', 'Ofelia Nieto', 'Sélica Pérez', 'María Téllez', 'Laura Nieto', 'José Angerri', 'I. Sánchez Escribano', 'Luisa Puchol', 'Asunción Camps', 'E. García "El Chato"'],
                 datasets: [{ data: [10, 6, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2], backgroundColor: '#e74c3c' }]
             },
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
         });
 
-        // Interpretes Top 20 (TOTAL APARICIONES - clasificados por profesion)
+        // Intérpretes Top 20 (TOTAL APARICIONES - clasificados por profesion)
         new Chart(document.getElementById('interpretesChart'), {
             type: 'bar',
             data: {
-                labels: ['B. Perez Casas', 'Ricardo Villa', 'Fernandez Arbos', 'Enrique Iniesta', 'Rafael Benedito', 'Jose Ma Franco', 'Julio Frances', 'J. Fernandez Lorenzo', 'A. Merce "La Argentina"', 'Henry Wood', 'Angel Barrios', 'Juan Ruiz Casaux', 'Matilde Munoz', 'Walter Damrosch', 'Defauw', 'Elena Romero', 'Josefina Toharia', 'Graciela', 'Maruja Sanchez', 'Angelillo'],
+                labels: ['B. Pérez Casas', 'Ricardo Villa', 'Fernández Arbós', 'Enrique Iniesta', 'Rafael Benedito', 'José Mª Franco', 'Julio Francés', 'J. Fernández Lorenzo', 'A. Mercé "La Argentina"', 'Henry Wood', 'Ángel Barrios', 'Juan Ruiz Casaux', 'Matilde Muñoz', 'Walter Damrosch', 'Defauw', 'Elena Romero', 'Josefina Toharia', 'Graciela', 'Maruja Sánchez', 'Angelillo'],
                 datasets: [{ data: [8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2], backgroundColor: '#3498db' }]
             },
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
@@ -295,13 +295,13 @@
         new Chart(document.getElementById('instrumentosChart'), {
             type: 'bar',
             data: {
-                labels: ['Compositor', 'Cantante', 'Otras imagenes', 'Piano', 'Director', 'Violin', 'Soprano', 'Anuncio', 'Tenor', 'Orquesta', 'Estudio radio', 'Baritono', 'Coro', 'Actriz/cantante', 'Guitarra', 'Artista', 'Cantaor flamenco', 'Violonchelo', 'Cancionista', 'Banda'],
+                labels: ['Compositor', 'Cantante', 'Otras imágenes', 'Piano', 'Director', 'Violín', 'Soprano', 'Anuncio', 'Tenor', 'Orquesta', 'Estudio radio', 'Barítono', 'Coro', 'Actriz/cantante', 'Guitarra', 'Artista', 'Cantaor flamenco', 'Violonchelo', 'Cancionista', 'Banda'],
                 datasets: [{ data: [963, 149, 95, 83, 60, 56, 55, 54, 51, 49, 42, 30, 25, 24, 23, 19, 14, 12, 9, 9], backgroundColor: '#9b59b6' }]
             },
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
         });
 
-        // Operas Top 20
+        // Óperas Top 20
         new Chart(document.getElementById('operasChart'), {
             type: 'bar',
             data: {
@@ -311,11 +311,11 @@
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
         });
 
-        // Genero por categoria
+        // Género por categoría
         new Chart(document.getElementById('generoCategoriaChart'), {
             type: 'bar',
             data: {
-                labels: ['Compositores', 'Cantantes', 'Otros interpretes', 'Caricaturas'],
+                labels: ['Compositores', 'Cantantes', 'Otros intérpretes', 'Caricaturas'],
                 datasets: [
                     { label: 'Hombres', data: [513, 117, 203, 44], backgroundColor: colors.gender.H },
                     { label: 'Mujeres', data: [6, 235, 86, 0], backgroundColor: colors.gender.M }
@@ -324,11 +324,11 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: '#eee' } } }, scales: { x: { stacked: true, ticks: { color: '#aaa' }, grid: { display: false } }, y: { stacked: true, ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
         });
 
-        // Genero por instrumento (Otros Interpretes y Protagonistas)
+        // Género por instrumento (Otros Interpretes y Protagonistas)
         new Chart(document.getElementById('generoInstrumentoChart'), {
             type: 'bar',
             data: {
-                labels: ['Piano', 'Director', 'Violin', 'Guitarra', 'Violonchelo', 'Orquesta', 'Compositor', 'Coro', 'Artista', 'Bailarina', 'Arpa', 'Gaita'],
+                labels: ['Piano', 'Director', 'Violín', 'Guitarra', 'Violonchelo', 'Orquesta', 'Compositor', 'Coro', 'Artista', 'Bailarina', 'Arpa', 'Gaita'],
                 datasets: [
                     { label: 'Hombres', data: [27, 53, 36, 10, 7, 8, 10, 6, 1, 1, 1, 3], backgroundColor: colors.gender.H },
                     { label: 'Mujeres', data: [30, 1, 9, 4, 3, 2, 0, 2, 6, 5, 3, 0], backgroundColor: colors.gender.M }
@@ -337,7 +337,7 @@
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: '#eee' } } }, scales: { x: { stacked: true, ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { stacked: true, ticks: { color: '#eee', font: { size: 10 } }, grid: { display: false } } } }
         });
 
-        // Nacionalidad por profesion
+        // Nacionalidad por profesión
         new Chart(document.getElementById('nacionalidadProfesionChart'), {
             type: 'bar',
             data: {
@@ -349,8 +349,8 @@
                     { label: 'Director', data: [33, 2, 6, 0, 1, 5, 1], backgroundColor: '#3498db' },
                     { label: 'Tenor', data: [37, 1, 3, 1, 2, 4, 0], backgroundColor: '#2ecc71' },
                     { label: 'Piano', data: [63, 0, 3, 0, 2, 1, 0], backgroundColor: '#1abc9c' },
-                    { label: 'Violin', data: [46, 0, 2, 0, 1, 1, 0], backgroundColor: '#e67e22' },
-                    { label: 'Baritono', data: [29, 0, 0, 0, 0, 0, 0], backgroundColor: '#34495e' }
+                    { label: 'Violín', data: [46, 0, 2, 0, 1, 1, 0], backgroundColor: '#e67e22' },
+                    { label: 'Barítono', data: [29, 0, 0, 0, 0, 0, 0], backgroundColor: '#34495e' }
                 ]
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: '#eee', font: { size: 10 } } } }, scales: { x: { stacked: false, ticks: { color: '#aaa' }, grid: { display: false } }, y: { ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
