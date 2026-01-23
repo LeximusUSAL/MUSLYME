@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises - ONDAS (1925-1935)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #eee;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle { font-size: 1.1em; color: #aaa; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #f39c12;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: #e74c3c; }
+        .list-container {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .paises-list {
+            column-count: 2;
+            column-gap: 40px;
+            list-style: none;
+        }
+        @media (max-width: 600px) {
+            .paises-list { column-count: 1; }
+        }
+        .paises-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 1em;
+            break-inside: avoid;
+        }
+        .paises-list li span.num {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+            display: inline-block;
+            min-width: 30px;
+        }
+        footer { text-align: center; padding: 30px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="estadisticas_ondas.html" class="back-link">&larr; Volver a Estadisticas</a>
+        <header>
+            <h1>Paises del Corpus ONDAS</h1>
+            <p class="subtitle">27 paises representados (1925-1935)</p>
+        </header>
+        <div class="list-container">
+            <ol class="paises-list">
+                <li><span class="num">1.</span> Alemania</li>
+                <li><span class="num">2.</span> Argentina</li>
+                <li><span class="num">3.</span> Austria</li>
+                <li><span class="num">4.</span> Belgica</li>
+                <li><span class="num">5.</span> Checoslovaquia</li>
+                <li><span class="num">6.</span> China</li>
+                <li><span class="num">7.</span> Cuba</li>
+                <li><span class="num">8.</span> Dinamarca</li>
+                <li><span class="num">9.</span> España</li>
+                <li><span class="num">10.</span> Filipinas</li>
+                <li><span class="num">11.</span> Finlandia</li>
+                <li><span class="num">12.</span> Francia</li>
+                <li><span class="num">13.</span> Hungria</li>
+                <li><span class="num">14.</span> Indonesia</li>
+                <li><span class="num">15.</span> Irlanda</li>
+                <li><span class="num">16.</span> Italia</li>
+                <li><span class="num">17.</span> Japon</li>
+                <li><span class="num">18.</span> Mexico</li>
+                <li><span class="num">19.</span> Noruega</li>
+                <li><span class="num">20.</span> Paises Bajos</li>
+                <li><span class="num">21.</span> Polonia</li>
+                <li><span class="num">22.</span> Rumania</li>
+                <li><span class="num">23.</span> Rusia</li>
+                <li><span class="num">24.</span> Suiza</li>
+                <li><span class="num">25.</span> Uzbekistan</li>
+                <li><span class="num">26.</span> Estados Unidos</li>
+                <li><span class="num">27.</span> Reino Unido</li>
+            </ol>
+        </div>
+        <footer>
+            <p><strong>Proyecto LexiMus</strong> - Universidad de Salamanca</p>
+            <p>Corpus de imagenes ONDAS (1925-1935)</p>
+        </footer>
+    </div>
+</body>
+</html>
