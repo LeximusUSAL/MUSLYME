@@ -296,8 +296,8 @@
         new Chart(document.getElementById('instrumentosChart'), {
             type: 'bar',
             data: {
-                labels: ['Compositor', 'Cantante', 'Otras imágenes', 'Piano', 'Director', 'Violín', 'Soprano', 'Anuncio', 'Tenor', 'Orquesta', 'Estudio radio', 'Barítono', 'Coro', 'Actriz/cantante', 'Guitarra', 'Artista', 'Cantaor flamenco', 'Violonchelo', 'Cancionista', 'Banda'],
-                datasets: [{ data: [963, 149, 95, 83, 60, 56, 55, 54, 51, 49, 42, 30, 25, 24, 23, 19, 14, 12, 9, 9], backgroundColor: '#9b59b6' }]
+                labels: ['Compositor', 'Cantante', 'Piano', 'Director', 'Violín', 'Soprano', 'Tenor', 'Barítono', 'Coro', 'Actriz/cantante', 'Guitarra', 'Artista', 'Cantaor flamenco', 'Violonchelo', 'Cancionista'],
+                datasets: [{ data: [963, 149, 83, 60, 56, 55, 51, 30, 25, 24, 23, 19, 14, 12, 9], backgroundColor: '#9b59b6' }]
             },
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
         });
