@@ -412,26 +412,7 @@
 <!-- ══ VIDEO ══ -->
 <section id="video-section">
   <div class="video-inner">
-    <p class="section-label reveal">Presentación</p>
-    <h2 class="section-heading reveal reveal-d1">Escuchar sin ver</h2>
-    <div class="gold-rule reveal reveal-d1"></div>
-    <p class="reveal reveal-d2" style="font-size:16px; line-height:1.85; color:rgba(224,216,204,0.7); max-width:700px; margin-bottom:8px;">
-      En la década de 1920, la radio transformó profundamente la forma de escuchar música en España.
-      Por primera vez, conciertos sinfónicos, óperas y actuaciones en directo llegaron a los hogares
-      sin necesidad de acudir a teatros o salas de conciertos y, de manera inédita, sin ver a los intérpretes.
-    </p>
-    <p class="reveal reveal-d2" style="font-size:16px; line-height:1.85; color:rgba(224,216,204,0.7); max-width:700px; margin: 20px 0 8px;">
-      La revista <em>Ondas</em>, publicada en Madrid entre 1925 y 1935 como órgano de Unión Radio,
-      ayudó al público a "ver" la radio a través de fotografías, ilustraciones y esquemas técnicos.
-      Con más de 2.100 imágenes, constituye una fuente excepcional en el ámbito de la iconografía
-      musical del periodo, sin parangón en la España de la época.
-    </p>
-    <p class="reveal reveal-d2" style="font-size:16px; line-height:1.85; color:rgba(224,216,204,0.7); max-width:700px; margin: 20px 0 40px;">
-      Esta exposición virtual invita a explorar ese patrimonio hemerográfico desde una perspectiva
-      accesible y rigurosa, ampliando el acceso a materiales históricos más allá de los grandes
-      centros culturales.
-    </p>
-    <div class="video-wrap reveal reveal-d3">
+    <div class="video-wrap reveal">
       <video controls>
         <source src="escuchar_sin_ver.mp4" type="video/mp4">
         <track kind="subtitles" src="escuchar_sin_ver_es.vtt" srclang="es" label="Español" default>
@@ -452,7 +433,7 @@
     del estudio de radio al micrófono, del altavoz a la imaginación visual.
   </p>
   <a href="https://leximususal.github.io/ondas-exposicion/" class="btn-itinerarios btn-primary reveal reveal-d3">
-    Explorar los itinerarios
+    Entrar en la exposición
   </a>
 </section>
 
@@ -463,13 +444,12 @@
     <h2 class="section-heading reveal reveal-d1">Categorías de la exposición</h2>
     <div class="gold-rule reveal reveal-d1"></div>
 
-    <div class="reveal reveal-d2" style="display:flex; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;">
-      <div class="search-bar" style="margin-bottom:0;">
+    <div class="reveal reveal-d2" style="margin-bottom:40px;">
+      <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Buscar por categoría, autor, compositor, fecha…">
         <button id="searchBtn" class="search-btn">Buscar</button>
         <button id="clearSearch" class="search-btn clear">Limpiar</button>
       </div>
-      <a href="estadisticas_ondas.html" class="btn-datos">Datos y gráficas</a>
     </div>
 
     <div class="categories-grid">
@@ -595,7 +575,23 @@
         </div>
       </a>
 
+      <a href="exposicion_ondas_todas.html" class="category-card reveal reveal-d3" style="grid-column: 1 / -1; height: 180px;">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Puccini.webp'); filter: grayscale(60%); opacity:0.5;"></div>
+        <div class="card-overlay" style="background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.3) 100%);"></div>
+        <div class="card-content" style="text-align:center; left:0; right:0; bottom:0; padding: 28px;">
+          <p class="card-num" style="letter-spacing:0.6em;">— ✦ —</p>
+          <p class="card-title" style="font-size:13px; letter-spacing:0.2em;">Todas las imágenes del repositorio</p>
+          <p class="card-count">2.134 imágenes</p>
+          <p class="card-desc" style="max-height:none; opacity:0.7;">Acceso completo al archivo visual de la revista Ondas</p>
+        </div>
+      </a>
+
     </div>
+
+    <div class="reveal" style="text-align:center; margin-top:48px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.06);">
+      <a href="estadisticas_ondas.html" class="btn-datos">Datos y gráficas</a>
+    </div>
+
   </div>
 </section>
 
