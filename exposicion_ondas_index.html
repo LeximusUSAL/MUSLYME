@@ -1,239 +1,643 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONDAS - Exposición Virtual de Iconografía Musical</title>
-    <link rel="stylesheet" href="exposicion_ondas_styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ver la escucha a través de las Ondas · Exposición Virtual 1925–1935</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark:  #111111;
+      --card:  #161616;
+      --gold:  #c9a84c;
+      --gold2: #e8c97a;
+      --text:  #e0d8cc;
+      --muted: #888888;
+      --white: #ffffff;
+      --serif: 'EB Garamond', 'Georgia', serif;
+      --sans:  'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: var(--serif); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 36px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; }
+    .nav-logo  { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); font-family: var(--sans); }
+    .nav-sep   { color: var(--gold); opacity: 0.4; }
+    .nav-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-family: var(--sans); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; font-family: var(--sans);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      overflow: hidden; background: var(--black);
+    }
+
+    .hero-bg-grid {
+      position: absolute; inset: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      opacity: 0.16; filter: saturate(0.3);
+    }
+    .hero-bg-grid div {
+      background-size: cover; background-position: center;
+    }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.95) 70%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 860px; padding: 120px 48px 80px;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 9px; letter-spacing: 0.55em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 32px;
+      opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
+      font-family: var(--sans);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 400; line-height: 1.1; color: var(--white);
+      margin-bottom: 20px; letter-spacing: -0.01em;
+      opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--gold2); }
+
+    .hero-year {
+      font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 48px;
+      opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards;
+      font-family: var(--sans);
+    }
+
+    .hero-divider {
+      width: 48px; height: 1px; background: var(--gold);
+      margin: 0 auto 40px;
+      opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+
+    .hero-intro {
+      font-family: var(--serif); font-size: 17px; line-height: 1.9;
+      color: rgba(224,216,204,0.75); max-width: 660px; margin: 0 auto 56px;
+      opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards;
+    }
+
+    .hero-scroll {
+      opacity: 0; animation: fadeUp 0.8s ease 1.2s forwards;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+      color: var(--muted); font-size: 8px; letter-spacing: 0.35em;
+      text-transform: uppercase; font-family: var(--sans);
+    }
+    .hero-scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      animation: scrollLine 2s ease-in-out infinite 1.5s;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(0.3); opacity: 0.4; transform-origin: top; }
+      50%       { transform: scaleY(1);   opacity: 1;   transform-origin: top; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-label {
+      font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px; font-family: var(--sans);
+    }
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 400; color: var(--white); line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .gold-rule { width: 48px; height: 1px; background: var(--gold); margin-bottom: 40px; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.15s; }
+    .reveal-d2 { transition-delay: 0.3s; }
+    .reveal-d3 { transition-delay: 0.45s; }
+
+    /* ── VIDEO SECTION ── */
+    #video-section {
+      background: var(--dark);
+      padding: 96px 48px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .video-inner {
+      max-width: 1000px; margin: 0 auto; text-align: center;
+    }
+    .video-wrap {
+      margin-top: 40px;
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      border: 1px solid rgba(201,168,76,0.12);
+    }
+    .video-wrap video { display: block; width: 100%; }
+
+    /* ── ITINERARIOS BUTTON ── */
+    #itinerarios-cta {
+      background: var(--black);
+      padding: 80px 48px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .btn-itinerarios {
+      display: inline-block;
+      padding: 20px 64px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .btn-itinerarios:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-itinerarios.btn-primary {
+      background: var(--gold);
+      color: var(--black);
+      font-size: 13px;
+      padding: 22px 72px;
+    }
+    .btn-itinerarios.btn-primary:hover {
+      background: var(--gold2);
+    }
+
+    /* ── CATEGORIES SECTION ── */
+    #categories {
+      background: var(--dark);
+      padding: 96px 48px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .categories-inner { max-width: 1200px; margin: 0 auto; }
+
+    .search-bar {
+      display: flex; gap: 10px; margin-bottom: 56px; max-width: 560px;
+    }
+    #searchInput {
+      flex: 1; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px; padding: 12px 18px;
+      color: var(--text); font-family: var(--serif); font-size: 15px;
+      outline: none; transition: border-color 0.2s;
+    }
+    #searchInput::placeholder { color: var(--muted); }
+    #searchInput:focus { border-color: rgba(201,168,76,0.4); }
+    .search-btn {
+      background: transparent; border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold); font-family: var(--sans); font-size: 9px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      padding: 12px 20px; cursor: pointer; border-radius: 2px;
+      transition: background 0.2s ease;
+    }
+    .search-btn:hover { background: rgba(201,168,76,0.1); }
+    .search-btn.clear { border-color: rgba(255,255,255,0.12); color: var(--muted); }
+    .search-btn.clear:hover { border-color: rgba(201,168,76,0.3); color: var(--gold); }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2px;
+    }
+
+    .category-card {
+      position: relative;
+      display: block;
+      height: 220px;
+      overflow: hidden;
+      text-decoration: none;
+      background: var(--card);
+    }
+
+    .category-card .card-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      filter: grayscale(40%);
+      transition: transform 0.5s ease, filter 0.4s ease;
+    }
+
+    .category-card:hover .card-bg {
+      transform: scale(1.04);
+      filter: grayscale(10%);
+    }
+
+    .card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%);
+      transition: background 0.4s ease;
+    }
+    .category-card:hover .card-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+    }
+
+    .card-content {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 20px 22px;
+    }
+
+    .card-num {
+      font-size: 8px; letter-spacing: 0.4em; color: var(--gold);
+      font-family: var(--sans); text-transform: uppercase;
+      margin-bottom: 6px; opacity: 0.8;
+    }
+
+    .card-title {
+      font-family: var(--sans); font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--white);
+      line-height: 1.4; margin-bottom: 6px;
+    }
+
+    .card-count {
+      font-family: var(--serif); font-size: 13px;
+      color: rgba(201,168,76,0.7); font-style: italic;
+    }
+
+    .card-desc {
+      font-family: var(--serif); font-size: 12px;
+      color: rgba(224,216,204,0.55); line-height: 1.5; margin-top: 4px;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .category-card:hover .card-desc {
+      max-height: 80px; opacity: 1;
+    }
+
+    /* datos button */
+    .btn-datos {
+      display: inline-block; margin-bottom: 48px;
+      padding: 12px 36px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--sans);
+      font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+      border-radius: 2px;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .btn-datos:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── RADIO SALAMANCA ── */
+    #salamanca {
+      background: var(--black);
+      padding: 96px 48px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+    }
+    .salamanca-inner { max-width: 700px; margin: 0 auto; }
+    .salamanca-sub {
+      font-family: var(--serif); font-size: 16px; font-style: italic;
+      color: var(--muted); margin-bottom: 32px;
+    }
+    .salamanca-text {
+      font-family: var(--serif); font-size: 16px; line-height: 1.85;
+      color: rgba(224,216,204,0.7); margin-bottom: 48px;
+    }
+    .salamanca-meta {
+      font-family: var(--sans); font-size: 9px; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--muted); margin-top: 28px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 64px 48px;
+      text-align: center;
+    }
+    .footer-rule { width: 48px; height: 1px; background: rgba(201,168,76,0.3); margin: 0 auto 32px; }
+    .footer-text {
+      font-family: var(--sans); font-size: 9px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted); line-height: 2.2;
+    }
+    .footer-text a { color: var(--muted); text-decoration: none; }
+    .footer-text a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      #video-section, #itinerarios-cta, #categories, #salamanca { padding: 64px 24px; }
+      .categories-grid { grid-template-columns: 1fr 1fr; }
+      .search-bar { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-ornament">✦ ✦ ✦</div>
-        <h1 class="main-title">Ver la escucha a través de las Ondas</h1>
-        <p class="subtitle">Ondas</p>
-        <div class="header-years">Madrid · 1925-1935</div>
-        <div class="header-ornament">✦ ✦ ✦</div>
-    </header>
 
-    <nav class="main-nav">
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar por categoría, autor, compositor, intérprete, fecha...">
-            <button id="searchBtn">Buscar</button>
-            <button id="clearSearch">Limpiar</button>
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-brand">
+    <span class="nav-logo">LexiMus · MUSLYME</span>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">Ondas 1925–1935</span>
+  </div>
+  <div class="nav-links">
+    <a href="#categories">Categorías</a>
+    <a href="estadisticas_ondas.html">Datos</a>
+    <a href="https://leximususal.github.io/ondas-exposicion/">Itinerarios</a>
+    <a href="https://LeximusUSAL.github.io/radio-salamanca-centenario/">Radio Salamanca</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg-grid">
+    <div style="background-image:url('ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Puccini.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/CANTANTES/1925_07_05_ONDAS Dagmara Renina, soprano.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/ÓPERAS/1926:08:29_ONDAS Carmen.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/CARICATURAS y RETRATOS de Compositores e intérpretes/1927:11:13_ONDAS Beethoven.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:12:13_ONDAS Príncipes escuchando concierto.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:08:09_ONDAS JazzBand.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/OTROS INTÉRPRETES Y PROTAGONISTAS/1925:07:19_ONDAS Cuarteto Aguilar.webp')"></div>
+    <div style="background-image:url('ondas/imagenes/PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:15_ONDAS Portada.webp')"></div>
+  </div>
+  <div class="hero-bg-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Exposición Virtual de Iconografía Musical</p>
+    <h1 class="hero-title">Ver la escucha<br>a través de las <em>Ondas</em></h1>
+    <p class="hero-year">Madrid · 1925–1935 · 2.100 imágenes</p>
+    <div class="hero-divider"></div>
+    <p class="hero-intro">
+      Una ventana al mundo visual de la radio española en sus primeros años.
+      Compositores, cantantes, inventos, caricaturas y estudios radiofónicos
+      documentados semana a semana en la revista <em>Ondas</em>.
+    </p>
+    <div class="hero-scroll">
+      Explorar
+      <div class="hero-scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO ══ -->
+<section id="video-section">
+  <div class="video-inner">
+    <p class="section-label reveal">Presentación</p>
+    <h2 class="section-heading reveal reveal-d1">Escuchar sin ver</h2>
+    <div class="gold-rule reveal reveal-d1"></div>
+    <p class="reveal reveal-d2" style="font-size:16px; line-height:1.85; color:rgba(224,216,204,0.7); max-width:700px; margin-bottom:8px;">
+      En la década de 1920, la radio transformó profundamente la forma de escuchar música en España.
+      Por primera vez, conciertos sinfónicos, óperas y actuaciones en directo llegaron a los hogares
+      sin necesidad de acudir a teatros o salas de conciertos y, de manera inédita, sin ver a los intérpretes.
+    </p>
+    <p class="reveal reveal-d2" style="font-size:16px; line-height:1.85; color:rgba(224,216,204,0.7); max-width:700px; margin: 20px 0 8px;">
+      La revista <em>Ondas</em>, publicada en Madrid entre 1925 y 1935 como órgano de Unión Radio,
+      ayudó al público a "ver" la radio a través de fotografías, ilustraciones y esquemas técnicos.
+      Con más de 2.100 imágenes, constituye una fuente excepcional en el ámbito de la iconografía
+      musical del periodo, sin parangón en la España de la época.
+    </p>
+    <p class="reveal reveal-d2" style="font-size:16px; line-height:1.85; color:rgba(224,216,204,0.7); max-width:700px; margin: 20px 0 40px;">
+      Esta exposición virtual invita a explorar ese patrimonio hemerográfico desde una perspectiva
+      accesible y rigurosa, ampliando el acceso a materiales históricos más allá de los grandes
+      centros culturales.
+    </p>
+    <div class="video-wrap reveal reveal-d3">
+      <video controls>
+        <source src="escuchar_sin_ver.mp4" type="video/mp4">
+        <track kind="subtitles" src="escuchar_sin_ver_es.vtt" srclang="es" label="Español" default>
+        <track kind="subtitles" src="escuchar_sin_ver_en.vtt" srclang="en" label="English">
+        Tu navegador no soporta el elemento de vídeo.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ITINERARIOS CTA ══ -->
+<section id="itinerarios-cta">
+  <p class="section-label reveal">Recorrido temático</p>
+  <h2 class="section-heading reveal reveal-d1">Itinerarios de escucha</h2>
+  <div class="gold-rule reveal reveal-d1" style="margin: 0 auto 28px;"></div>
+  <p class="reveal reveal-d2" style="font-size:16px; color:rgba(224,216,204,0.65); max-width:560px; margin: 0 auto 48px; line-height:1.8;">
+    Seis recorridos guiados para explorar la escucha musical a través de las imágenes de <em>Ondas</em>:
+    del estudio de radio al micrófono, del altavoz a la imaginación visual.
+  </p>
+  <a href="https://leximususal.github.io/ondas-exposicion/" class="btn-itinerarios btn-primary reveal reveal-d3">
+    Explorar los itinerarios
+  </a>
+</section>
+
+<!-- ══ CATEGORIES ══ -->
+<section id="categories">
+  <div class="categories-inner">
+    <p class="section-label reveal">Archivo visual</p>
+    <h2 class="section-heading reveal reveal-d1">Categorías de la exposición</h2>
+    <div class="gold-rule reveal reveal-d1"></div>
+
+    <div class="reveal reveal-d2" style="display:flex; align-items:center; gap:16px; margin-bottom:40px; flex-wrap:wrap;">
+      <div class="search-bar" style="margin-bottom:0;">
+        <input type="text" id="searchInput" placeholder="Buscar por categoría, autor, compositor, fecha…">
+        <button id="searchBtn" class="search-btn">Buscar</button>
+        <button id="clearSearch" class="search-btn clear">Limpiar</button>
+      </div>
+      <a href="estadisticas_ondas.html" class="btn-datos">Datos y gráficas</a>
+    </div>
+
+    <div class="categories-grid">
+
+      <a href="exposicion_ondas_compositores.html" class="category-card reveal">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Puccini.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">I</p>
+          <p class="card-title">Compositores</p>
+          <p class="card-count">522 imágenes</p>
+          <p class="card-desc">Retratos de los grandes maestros de la música universal</p>
         </div>
-    </nav>
+      </a>
 
-    <main class="container">
-        <section class="intro-section">
-            <h2 class="section-title">Sobre esta exposición</h2>
-            <div class="ornamental-line"></div>
-            <div style="text-align: center; margin: 30px 0;">
-                <video controls style="max-width: 800px; width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <source src="escuchar_sin_ver.mp4" type="video/mp4">
-                    <track kind="subtitles" src="escuchar_sin_ver_es.vtt" srclang="es" label="Español" default>
-                    <track kind="subtitles" src="escuchar_sin_ver_en.vtt" srclang="en" label="English">
-                    Tu navegador no soporta el elemento de vídeo.
-                </video>
-            </div>
-            <div class="intro-text">
-                <p>En la década de 1920, la radio transformó profundamente la forma de escuchar música en España. Por primera vez, conciertos sinfónicos, óperas y actuaciones en directo llegaron a los hogares sin necesidad de acudir a teatros o salas de conciertos y, de manera inédita, sin ver a los intérpretes. Esta nueva experiencia sonora inauguró un modo de escucha basado en la imaginación y la distancia, que anticipa rasgos esenciales de la cultura digital contemporánea: acceso democratizado, escucha ubicua y separación entre quien produce el sonido y quien lo recibe.</p>
+      <a href="exposicion_ondas_cantantes.html" class="category-card reveal reveal-d1">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/CANTANTES/1925_07_05_ONDAS Dagmara Renina, soprano.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">II</p>
+          <p class="card-title">Cantantes</p>
+          <p class="card-count">351 imágenes</p>
+          <p class="card-desc">Las voces que conquistaron las ondas hertzianas</p>
+        </div>
+      </a>
 
-                <p>La revista Ondas, publicada en Madrid entre 1925 y 1935 como órgano de Unión Radio, desempeñó un papel clave en este proceso. A través de fotografías, ilustraciones, esquemas técnicos y portadas evocadoras, la publicación ayudó al público a "ver" la radio y a construir mentalmente un mundo sonoro que ya no podía presenciar físicamente. Con más de 2.100 imágenes, Ondas constituye una fuente excepcional en el ámbito de la iconografía musical del periodo, sin parangón en la España de la época por la riqueza y amplitud de su material visual.</p>
+      <a href="exposicion_ondas_interpretes.html" class="category-card reveal reveal-d2">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/OTROS INTÉRPRETES Y PROTAGONISTAS/1925:07:19_ONDAS Cuarteto Aguilar.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">III</p>
+          <p class="card-title">Otros intérpretes y protagonistas</p>
+          <p class="card-count">407 imágenes</p>
+          <p class="card-desc">Instrumentistas, directores y agrupaciones musicales</p>
+        </div>
+      </a>
 
-                <p>La exposición virtual Ver la escucha a través de las ondas (1925-1935) invita a explorar este patrimonio hemerográfico desde una perspectiva accesible y rigurosa, ampliando el acceso a materiales históricos y favoreciendo su difusión más allá de los grandes centros culturales.</p>
-            </div>
-        </section>
+      <a href="exposicion_ondas_operas.html" class="category-card reveal reveal-d3">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/ÓPERAS/1926:08:29_ONDAS Carmen.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">IV</p>
+          <p class="card-title">Óperas</p>
+          <p class="card-count">257 imágenes</p>
+          <p class="card-desc">Escenas y carteles del gran repertorio operístico</p>
+        </div>
+      </a>
 
-        <style>
-            @keyframes pulse {
-                0%, 100% { transform: scale(1); }
-                50% { transform: scale(1.03); }
-            }
-            .btn-itinerarios {
-                display: inline-block;
-                padding: 25px 60px;
-                background: linear-gradient(135deg, #800020 0%, #a00030 50%, #800020 100%);
-                color: white;
-                text-decoration: none;
-                font-family: 'EB Garamond', serif;
-                font-size: 1.8rem;
-                font-weight: 600;
-                border-radius: 12px;
-                box-shadow: 0 6px 25px rgba(128, 0, 32, 0.4);
-                transition: all 0.3s ease;
-                animation: pulse 2s ease-in-out infinite;
-                border: 2px solid rgba(255,255,255,0.2);
-            }
-            .btn-itinerarios:hover {
-                transform: scale(1.05) translateY(-3px);
-                box-shadow: 0 10px 35px rgba(128, 0, 32, 0.5);
-                animation: none;
-            }
-        </style>
-        <section style="text-align: center; padding: 50px 20px; margin: 40px 0;">
-            <a href="https://leximususal.github.io/ondas-exposicion/" class="btn-itinerarios">
-                ✦ Itinerarios de Escucha ✦
-            </a>
-        </section>
+      <a href="exposicion_ondas_zarzuelas.html" class="category-card reveal">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/OTRAS OBRAS MUSICALES CONCRETAS/1927:02:20_ONDAS Maruxa por Augusto.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">V</p>
+          <p class="card-title">Otras obras musicales concretas</p>
+          <p class="card-count">111 imágenes</p>
+          <p class="card-desc">Zarzuela, música de cámara, ballet y otras obras</p>
+        </div>
+      </a>
 
-        <section class="categories-section">
-            <h2 class="section-title">Categorías de la Exposición</h2>
-            <div class="ornamental-line"></div>
-            <div style="text-align: center; margin: 30px 0;">
-                <a href="estadisticas_ondas.html" style="display: inline-block; padding: 15px 40px; background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%); color: white; text-decoration: none; font-family: 'EB Garamond', serif; font-size: 1.3rem; font-weight: 600; border-radius: 10px; box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3); transition: all 0.3s ease; border: 2px solid rgba(255,255,255,0.15);" onmouseover="this.style.transform='scale(1.05) translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(44, 62, 80, 0.4)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(44, 62, 80, 0.3)';">
-                    ✦ Datos y Gráficas ✦
-                </a>
-            </div>
-            <div class="categories-grid">
-                <a href="exposicion_ondas_compositores.html" class="category-card" style="background-image: url('ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Puccini.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">I</div>
-                        <h3>COMPOSITORES</h3>
-                        <p class="category-count">522 imágenes</p>
-                        <p class="category-desc">Retratos de los grandes maestros de la música universal</p>
-                    </div>
-                </a>
+      <a href="exposicion_ondas_instrumentos.html" class="category-card reveal reveal-d1">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1925:01:23_ONDAS Pianorad COMPLETO1.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">VI</p>
+          <p class="card-title">Instrumentos, inventos y experimentos</p>
+          <p class="card-count">43 imágenes</p>
+          <p class="card-desc">Innovaciones tecnológicas y organología musical</p>
+        </div>
+      </a>
 
-                <a href="exposicion_ondas_cantantes.html" class="category-card" style="background-image: url('ondas/imagenes/CANTANTES/1925_07_05_ONDAS Dagmara Renina, soprano.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">II</div>
-                        <h3>CANTANTES</h3>
-                        <p class="category-count">351 imágenes</p>
-                        <p class="category-desc">Las voces que conquistaron las ondas hertzianas</p>
-                    </div>
-                </a>
+      <a href="exposicion_ondas_caricaturas_retratos.html" class="category-card reveal reveal-d2">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/CARICATURAS y RETRATOS de Compositores e intérpretes/1927:11:13_ONDAS Beethoven.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">VII</p>
+          <p class="card-title">Caricaturas y retratos</p>
+          <p class="card-count">44 imágenes</p>
+          <p class="card-desc">Representaciones artísticas de figuras musicales</p>
+        </div>
+      </a>
 
-                <a href="exposicion_ondas_interpretes.html" class="category-card" style="background-image: url('ondas/imagenes/OTROS INTÉRPRETES Y PROTAGONISTAS/1925:07:19_ONDAS Cuarteto Aguilar.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">III</div>
-                        <h3>OTROS INTÉRPRETES Y PROTAGONISTAS Y PROTAGONISTAS</h3>
-                        <p class="category-count">407 imágenes</p>
-                        <p class="category-desc">Instrumentistas, directores y agrupaciones musicales</p>
-                    </div>
-                </a>
+      <a href="exposicion_ondas_caricaturas.html" class="category-card reveal reveal-d3">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:08:09_ONDAS JazzBand.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">VIII</p>
+          <p class="card-title">Tiras cómicas, chistes y dibujos</p>
+          <p class="card-count">146 imágenes</p>
+          <p class="card-desc">El humor gráfico y la ilustración musical</p>
+        </div>
+      </a>
 
-                <a href="exposicion_ondas_operas.html" class="category-card" style="background-image: url('ondas/imagenes/ÓPERAS/1926:08:29_ONDAS Carmen.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">IV</div>
-                        <h3>ÓPERAS</h3>
-                        <p class="category-count">257 imágenes</p>
-                        <p class="category-desc">Escenas y carteles del gran repertorio operístico</p>
-                    </div>
-                </a>
+      <a href="exposicion_ondas_portadas.html" class="category-card reveal">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:15_ONDAS Portada.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">IX</p>
+          <p class="card-title">Portadas musicales y cabeceras</p>
+          <p class="card-count">55 imágenes</p>
+          <p class="card-desc">Las cabeceras y portadas de Ondas</p>
+        </div>
+      </a>
 
-                <a href="exposicion_ondas_zarzuelas.html" class="category-card" style="background-image: url('ondas/imagenes/OTRAS OBRAS MUSICALES CONCRETAS/1927:02:20_ONDAS Maruxa por Augusto.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">V</div>
-                        <h3>OTRAS OBRAS MUSICALES CONCRETAS</h3>
-                        <p class="category-count">111 imágenes</p>
-                        <p class="category-desc">Zarzuela, música de cámara, ballet y otras obras</p>
-                    </div>
-                </a>
+      <a href="exposicion_ondas_anuncios.html" class="category-card reveal reveal-d1">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/ANUNCIOS /1927:01:18_ONDAS Philips.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">X</p>
+          <p class="card-title">Anuncios</p>
+          <p class="card-count">62 imágenes</p>
+          <p class="card-desc">Publicidad de conciertos, artistas y productos radiofónicos</p>
+        </div>
+      </a>
 
-                <a href="exposicion_ondas_instrumentos.html" class="category-card" style="background-image: url('ondas/imagenes/INSTRUMENTOS, INVENTOS, EXPERIMENTOS RADIOFÓNICOS/1925:01:23_ONDAS Pianorad COMPLETO1.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">VI</div>
-                        <h3>INSTRUMENTOS, INVENTOS Y EXPERIMENTOS RADIOFÓNICOS</h3>
-                        <p class="category-count">43 imágenes</p>
-                        <p class="category-desc">Innovaciones tecnológicas y organología musical</p>
-                    </div>
-                </a>
+      <a href="exposicion_ondas_otras.html" class="category-card reveal reveal-d2">
+        <div class="card-bg" style="background-image:url('ondas/imagenes/ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:12:13_ONDAS Príncipes escuchando concierto.webp')"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <p class="card-num">XI</p>
+          <p class="card-title">Estudios de radio y otras imágenes</p>
+          <p class="card-count">136 imágenes</p>
+          <p class="card-desc">Fotografías de estudios radiofónicos y escenas generales</p>
+        </div>
+      </a>
 
-                <a href="exposicion_ondas_caricaturas_retratos.html" class="category-card" style="background-image: url('ondas/imagenes/CARICATURAS y RETRATOS de Compositores e intérpretes/1927:11:13_ONDAS Beethoven.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">VII</div>
-                        <h3>CARICATURAS y RETRATOS de Compositores e intérpretes</h3>
-                        <p class="category-count">44 imágenes</p>
-                        <p class="category-desc">Representaciones artísticas de figuras musicales</p>
-                    </div>
-                </a>
+    </div>
+  </div>
+</section>
 
-                <a href="exposicion_ondas_caricaturas.html" class="category-card" style="background-image: url('ondas/imagenes/TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:08:09_ONDAS JazzBand.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">VIII</div>
-                        <h3>TIRAS CÓMICAS, CHISTES Y DIBUJOS</h3>
-                        <p class="category-count">146 imágenes</p>
-                        <p class="category-desc">El humor gráfico y la ilustración musical</p>
-                    </div>
-                </a>
+<!-- ══ RADIO SALAMANCA ══ -->
+<section id="salamanca">
+  <div class="salamanca-inner">
+    <p class="section-label reveal">Centenario</p>
+    <h2 class="section-heading reveal reveal-d1">Radio Salamanca</h2>
+    <div class="gold-rule reveal reveal-d1" style="margin: 0 auto 28px;"></div>
+    <p class="salamanca-sub reveal reveal-d1">EAJ 22 · 1926–2026</p>
+    <p class="salamanca-text reveal reveal-d2">
+      El <strong style="color:var(--gold2);">11 de abril de 1926</strong>, Radio Salamanca EAJ 22 inició
+      sus emisiones, convirtiéndose en una de las primeras estaciones de radio de España.
+      La revista <em>Ondas</em> documentó sus programaciones musicales, que ahora presentamos
+      en esta exposición virtual con motivo del centenario.
+    </p>
+    <a href="https://LeximusUSAL.github.io/radio-salamanca-centenario/" class="btn-itinerarios btn-primary reveal reveal-d3">
+      Programaciones históricas 1926
+    </a>
+    <p class="salamanca-meta reveal">405 metros · 500 vatios · Salamanca</p>
+  </div>
+</section>
 
-                <a href="exposicion_ondas_portadas.html" class="category-card" style="background-image: url('ondas/imagenes/PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:15_ONDAS Portada.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">IX</div>
-                        <h3>PORTADAS MUSICALES Y CABECERAS</h3>
-                        <p class="category-count">55 imágenes</p>
-                        <p class="category-desc">Las cabeceras y portadas de ONDAS</p>
-                    </div>
-                </a>
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-rule"></div>
+  <p class="footer-text">
+    Exposición Virtual · GTC MUSLYME en colaboración con LexiMus · Universidad de Salamanca · 2026<br>
+    Revista <em>Ondas</em> (Madrid, 1925–1935) · Patrimonio de la música española<br><br>
+    Grupo de Transferencia del Conocimiento MUSLYME – USAL · Proyecto LexiMus ·
+    <a href="mailto:muslyme@usal.es">muslyme@usal.es</a><br>
+    <a href="exposicion_ondas_aviso_legal.html">Aviso legal · Créditos y atribución</a>
+  </p>
+</footer>
 
-                <a href="exposicion_ondas_anuncios.html" class="category-card" style="background-image: url('ondas/imagenes/ANUNCIOS /1927:01:18_ONDAS Philips.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">X</div>
-                        <h3>ANUNCIOS</h3>
-                        <p class="category-count">62 imágenes</p>
-                        <p class="category-desc">Publicidad de conciertos, artistas y productos radiofónicos</p>
-                    </div>
-                </a>
-
-                <a href="exposicion_ondas_otras.html" class="category-card" style="background-image: url('ondas/imagenes/ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:12:13_ONDAS Príncipes escuchando concierto.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(100%); position: relative;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.92); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div class="category-number">XI</div>
-                        <h3>ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES</h3>
-                        <p class="category-count">136 imágenes</p>
-                        <p class="category-desc">Fotografías de estudios radiofónicos y escenas generales</p>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- SECCIÓN CENTENARIO RADIO SALAMANCA -->
-        <section class="radio-salamanca-section" style="text-align: center; padding: 60px 20px; margin: 60px 0 40px; background: linear-gradient(135deg, rgba(128, 0, 32, 0.03) 0%, rgba(160, 0, 48, 0.06) 50%, rgba(128, 0, 32, 0.03) 100%); border-radius: 20px; border: 2px solid rgba(128, 0, 32, 0.15);">
-            <div class="header-ornament" style="color: #800020; margin-bottom: 20px;">✦ ✦ ✦</div>
-            <h2 class="section-title" style="color: #800020; font-size: 2rem; margin-bottom: 15px;">Centenario de Radio Salamanca</h2>
-            <p style="font-family: 'EB Garamond', serif; font-size: 1.3rem; color: #444; margin-bottom: 10px; font-style: italic;">EAJ 22 · 1926-2026</p>
-            <div class="ornamental-line" style="margin: 25px auto;"></div>
-            <p style="font-family: 'EB Garamond', serif; font-size: 1.15rem; color: #555; max-width: 700px; margin: 0 auto 30px; line-height: 1.8;">
-                El <strong>11 de abril de 1926</strong>, Radio Salamanca EAJ 22 inició sus emisiones, convirtiéndose en una de las primeras estaciones de radio de España. La revista ONDAS documentó sus programaciones musicales, que ahora presentamos en esta exposición virtual con motivo del centenario.
-            </p>
-            <a href="https://LeximusUSAL.github.io/radio-salamanca-centenario/" class="btn-itinerarios" style="background: linear-gradient(135deg, #800020 0%, #a00030 50%, #800020 100%); padding: 20px 50px; font-size: 1.5rem;">
-                ✦ Programaciones Históricas 1926 ✦
-            </a>
-            <p style="font-family: 'EB Garamond', serif; font-size: 1rem; color: #888; margin-top: 25px;">
-                405 metros · 500 vatios · Salamanca
-            </p>
-        </section>
-
-        <section class="credits-section">
-            <div class="ornamental-line"></div>
-            <p class="credits">Exposición Virtual · GTC MUSLYME en colaboración con LexiMus · Universidad de Salamanca · 2026</p>
-            <p class="credits-small">Revista ONDAS (Madrid, 1925-1935) · Patrimonio de la música española</p>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-ornament">✦ ✦ ✦</div>
-        <p>&copy; 2026 Exposición Virtual ONDAS · Todos los derechos reservados</p>
-        <p style="margin-top: 15px;">
-            <a href="exposicion_ondas_aviso_legal.html" style="color: #666; text-decoration: underline; font-size: 1.1em; font-weight: 600;">Aviso Legal · Créditos y Atribución</a>
-        </p>
-        <p style="margin-top: 10px; font-size: 0.85em; color: #888;">
-            Grupo de Transferencia del Conocimiento MUSLYME - USAL · Proyecto LexiMus ·
-            <a href="mailto:muslyme@usal.es" style="color: #888;">muslyme@usal.es</a>
-        </p>
-    </footer>
-
-    <script src="exposicion_ondas_search.js?v=4"></script>
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script src="exposicion_ondas_search.js?v=5"></script>
 </body>
 </html>
