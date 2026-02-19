@@ -1,39 +1,285 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANUNCIOS - Exposición ONDAS</title>
-    <link rel="stylesheet" href="exposicion_ondas_styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANUNCIOS · Ver la escucha a través de las Ondas</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark:  #111111;
+      --card:  #1a1a1a;
+      --gold:  #c9a84c;
+      --gold2: #e8c97a;
+      --text:  #e0d8cc;
+      --muted: #888888;
+      --white: #ffffff;
+      --serif: 'EB Garamond', 'Georgia', serif;
+      --sans:  'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--text); font-family: var(--serif); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    .main-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px;
+      background: var(--dark);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; }
+    .nav-logo  { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); font-family: var(--sans); }
+    .nav-sep   { color: var(--gold); opacity: 0.4; }
+    .nav-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-family: var(--sans); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; font-family: var(--sans);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 72px 48px 56px;
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      opacity: 0.07; filter: grayscale(50%);
+    }
+    .page-header-content { position: relative; z-index: 1; max-width: 1000px; }
+    .header-eyebrow {
+      font-size: 9px; letter-spacing: 0.55em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px; font-family: var(--sans);
+    }
+    .header-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400; color: var(--white); line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .header-divider { width: 48px; height: 1px; background: var(--gold); margin-bottom: 18px; }
+    .header-desc {
+      font-family: var(--serif); font-size: 17px; font-style: italic;
+      color: rgba(224,216,204,0.6); margin-bottom: 10px;
+    }
+    .header-count {
+      font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--muted); font-family: var(--sans);
+    }
+
+    /* ── GALLERY SECTION ── */
+    #gallery {
+      background: var(--dark);
+      padding: 56px 40px 80px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .gallery-inner { max-width: 1500px; margin: 0 auto; }
+
+    /* ── SEARCH BAR ── */
+    .search-bar-wrap { margin-bottom: 44px; }
+    .search-bar { display: flex; gap: 10px; max-width: 560px; }
+    #searchInput {
+      flex: 1; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px; padding: 12px 18px;
+      color: var(--text); font-family: var(--serif); font-size: 15px;
+      outline: none; transition: border-color 0.2s;
+    }
+    #searchInput::placeholder { color: var(--muted); }
+    #searchInput:focus { border-color: rgba(201,168,76,0.4); }
+    #searchBtn, #clearSearch {
+      background: transparent; border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold); font-family: var(--sans); font-size: 9px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      padding: 12px 20px; cursor: pointer; border-radius: 2px;
+      transition: background 0.2s ease;
+    }
+    #searchBtn:hover { background: rgba(201,168,76,0.1); }
+    #clearSearch { border-color: rgba(255,255,255,0.12); color: var(--muted); }
+    #clearSearch:hover { border-color: rgba(201,168,76,0.3); color: var(--gold); }
+
+    /* ── GALLERY GRID ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 3px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+    }
+    .gallery-item img {
+      width: 100%; height: auto;
+      display: block;
+      transition: transform 0.5s ease, filter 0.4s ease;
+      filter: grayscale(15%);
+    }
+    .gallery-item:hover img { transform: scale(1.03); filter: grayscale(0%); }
+    .image-caption {
+      padding: 10px 12px 12px;
+      background: var(--card);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .image-date {
+      font-family: var(--sans); font-size: 9px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+    .image-title {
+      font-family: var(--serif); font-size: 13px;
+      color: var(--text); line-height: 1.4; margin-bottom: 8px;
+    }
+    .bne-link {
+      font-family: var(--sans); font-size: 8px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(201,168,76,0.6);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .bne-link:hover { color: var(--gold2); }
+
+    /* ── SEARCH RESULTS ── */
+    .search-results {
+      background: var(--dark);
+      padding: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .search-results h3 {
+      font-family: var(--sans); font-size: 11px; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .ornamental-line {
+      width: 48px; height: 1px; background: var(--gold);
+      opacity: 0.4; margin-bottom: 32px;
+    }
+    .no-results {
+      font-family: var(--serif); font-style: italic; color: var(--muted);
+      padding: 24px 0; font-size: 16px;
+    }
+
+    /* ── PAGINATION ── */
+    .pagination-controls { margin-top: 48px; text-align: center; }
+    .pagination-buttons {
+      display: flex; justify-content: center; align-items: center;
+      gap: 6px; margin-bottom: 12px; flex-wrap: wrap;
+    }
+    .page-btn {
+      font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
+      padding: 10px 18px; background: transparent; color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.1); cursor: pointer; transition: all 0.2s ease;
+    }
+    .page-btn:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
+    .page-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+    .page-numbers { display: flex; gap: 4px; align-items: center; margin: 0 8px; }
+    .page-number {
+      font-family: var(--sans); font-size: 10px;
+      padding: 8px 12px; min-width: 36px;
+      background: transparent; color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.08);
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .page-number:hover { border-color: rgba(201,168,76,0.4); color: var(--gold); }
+    .page-number.active {
+      background: var(--gold); color: var(--black);
+      border-color: var(--gold); font-weight: 600;
+    }
+    .page-ellipsis { padding: 0 6px; color: var(--muted); }
+    .pagination-info {
+      font-family: var(--sans); font-size: 9px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--muted); margin-top: 12px;
+    }
+
+    /* ── GALLERY TOTAL ── */
+    .gallery-total {
+      text-align: center; margin-top: 48px; padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .gallery-total p {
+      font-family: var(--serif); font-size: 14px;
+      font-style: italic; color: var(--muted);
+    }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      display: inline-block; margin-top: 36px;
+      font-family: var(--sans); font-size: 10px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 28px; border-radius: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-link:hover { color: var(--gold); border-color: rgba(201,168,76,0.4); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 56px 48px; text-align: center;
+    }
+    .footer-rule { width: 48px; height: 1px; background: rgba(201,168,76,0.3); margin: 0 auto 28px; }
+    .footer-text {
+      font-family: var(--sans); font-size: 9px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--muted); line-height: 2.2;
+    }
+    .footer-text a { color: var(--muted); text-decoration: none; }
+    .footer-text a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .main-nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .page-header { padding: 48px 24px 40px; }
+      #gallery { padding: 40px 16px 64px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .search-bar { flex-wrap: wrap; }
+    }
+  </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-ornament">✦ ✦ ✦</div>
-        <h1 class="main-title">Ver la escucha a través de las Ondas</h1>
-        <p class="subtitle">Ondas</p>
-        <div class="header-years">Madrid · 1925-1935</div>
-        <div class="header-ornament">✦ ✦ ✦</div>
-    </header>
 
-    <nav class="main-nav">
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar por categoría, autor, compositor, intérprete, fecha...">
-            <button id="searchBtn">Buscar</button>
-            <button id="clearSearch">Limpiar</button>
-        </div>
-    </nav>
+<nav class="main-nav">
+  <div class="nav-brand">
+    <span class="nav-logo">LexiMus · MUSLYME</span>
+    <span class="nav-sep">|</span>
+    <span class="nav-title">Ondas 1925–1935</span>
+  </div>
+  <div class="nav-links">
+    <a href="exposicion_ondas_index.html">← Índice</a>
+    <a href="https://leximususal.github.io/ondas-exposicion/">Itinerarios</a>
+  </div>
+</nav>
 
-    <main class="container">
-        <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
+<header class="page-header">
+  <div class="page-header-bg" style="background-image:url('ondas/imagenes/ANUNCIOS /1927:01:18_ONDAS Philips.webp')"></div>
+  <div class="page-header-content">
+    <p class="header-eyebrow">Categoría X · Exposición Virtual de Iconografía Musical</p>
+    <h1 class="header-title">Anuncios</h1>
+    <div class="header-divider"></div>
+    <p class="header-desc">Publicidad de conciertos, artistas y productos radiofónicos</p>
+    <p class="header-count">62 imágenes</p>
+  </div>
+</header>
 
-        <section class="gallery-header">
-            <h1>ANUNCIOS</h1>
-            <p>Publicidad de conciertos, artistas y productos radiofónicos</p>
-            <p style="margin-top: 1rem; color: #666;">62 imágenes en esta categoría</p>
-        </section>
+<section id="gallery">
+  <div class="gallery-inner">
+    <div class="search-bar-wrap">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar por título, fecha, autor...">
+        <button id="searchBtn">Buscar</button>
+        <button id="clearSearch">Limpiar</button>
+      </div>
+    </div>
 
-        <div class="gallery-grid">
+    <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="ondas/imagenes/ANUNCIOS%20/1926%3A05%3A02_ONDAS%20Anuncio%20con%20Miguel%20Fleta.webp" alt="Anuncio con Miguel Fleta" loading="lazy">
                 <div class="image-caption">
@@ -593,25 +839,27 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin: 3rem 0;">
-            <p style="font-style: italic; color: #666;">Total: 62 imágenes de ANUNCIOS en la revista ONDAS.</p>
-        </div>
+  <div class="gallery-total">
+    <p>Total: 62 imágenes de ANUNCIOS en la revista ONDAS.</p>
+  </div>
 
-        <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
-    </main>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
+    </div>
+  </div>
+</section>
 
-    <footer class="main-footer">
-        <div class="footer-ornament">✦ ✦ ✦</div>
-        <p>&copy; 2026 Exposición Virtual ONDAS · Todos los derechos reservados</p>
-                <p style="margin-top: 15px;">
-            <a href="exposicion_ondas_aviso_legal.html" style="color: #666; text-decoration: underline;">Aviso Legal · Créditos y Atribución</a>
-        </p>
-        <p style="margin-top: 10px; font-size: 0.85em; color: #888;">
-            Grupo de Transferencia del Conocimiento MUSLYME - USAL · Proyecto LexiMus ·
-            <a href="mailto:muslyme@usal.es" style="color: #888;">muslyme@usal.es</a>
-        </p>
-    </footer>
+<footer>
+  <div class="footer-rule"></div>
+  <p class="footer-text">
+    Exposición Virtual · GTC MUSLYME en colaboración con LexiMus · Universidad de Salamanca · 2026<br>
+    Revista <em>Ondas</em> (Madrid, 1925–1935) · Patrimonio de la música española<br><br>
+    Grupo de Transferencia del Conocimiento MUSLYME – USAL · Proyecto LexiMus ·
+    <a href="mailto:muslyme@usal.es">muslyme@usal.es</a><br>
+    <a href="exposicion_ondas_aviso_legal.html">Aviso legal · Créditos y atribución</a>
+  </p>
+</footer>
 
-    <script src="exposicion_ondas_search.js?v=4"></script>
+<script src="exposicion_ondas_search.js?v=5"></script>
 </body>
 </html>
