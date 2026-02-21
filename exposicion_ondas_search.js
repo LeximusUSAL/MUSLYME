@@ -335,9 +335,17 @@ function displaySearchResults(results) {
         resultsSection.innerHTML = resultsHTML;
     }
 
-    // Insertar resultados después de la navegación
-    const nav = document.querySelector('.main-nav');
-    nav.insertAdjacentElement('afterend', resultsSection);
+    // Insertar resultados en el lugar correcto según el diseño
+    // Nuevo diseño: después de .search-bar (dentro de #categories)
+    // Diseño anterior: después de .main-nav
+    const insertionPoint = document.querySelector('.search-bar') ||
+                           document.querySelector('.main-nav') ||
+                           document.querySelector('nav');
+    if (insertionPoint) {
+        insertionPoint.insertAdjacentElement('afterend', resultsSection);
+    } else {
+        document.body.appendChild(resultsSection);
+    }
 
     // Scroll suave a los resultados
     resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -424,9 +432,108 @@ async function loadDatabase() {
 }
 
 /**
+ * Inyecta estilos para los resultados de búsqueda si no están ya definidos
+ * (necesario para páginas con tema oscuro sin exposicion_ondas_styles.css)
+ */
+function ensureSearchResultStyles() {
+    if (document.getElementById('ondas-search-injected-styles')) return;
+
+    // Comprobar si los estilos ya están cubiertos por una hoja externa
+    const hasExternalStyles = Array.from(document.styleSheets).some(ss => {
+        try { return ss.href && ss.href.includes('exposicion_ondas_styles'); } catch (e) { return false; }
+    });
+    if (hasExternalStyles) return;
+
+    const style = document.createElement('style');
+    style.id = 'ondas-search-injected-styles';
+    style.textContent = `
+        .search-results {
+            padding: 2.5rem 3rem;
+            background: var(--dark, #f5f0e8);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            max-width: 100%;
+        }
+        .search-results h3 {
+            color: var(--white, #2c2c2c);
+            font-family: var(--serif, 'EB Garamond', Georgia, serif);
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .search-results .ornamental-line {
+            width: 48px; height: 1px;
+            background: var(--gold, #c9a84c);
+            margin-bottom: 2rem;
+        }
+        .search-results .no-results {
+            color: var(--muted, #888);
+            font-style: italic;
+            padding: 2rem 0;
+            font-family: var(--serif, Georgia, serif);
+        }
+        .search-results .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .search-results .gallery-item {
+            background: var(--card, #fff);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            transition: transform 0.2s ease;
+        }
+        .search-results .gallery-item:hover { transform: translateY(-3px); }
+        .search-results .gallery-item img {
+            width: 100%; height: 200px;
+            object-fit: cover; display: block;
+        }
+        .search-results .image-caption { padding: 0.75rem; }
+        .search-results .image-date {
+            font-size: 0.78rem;
+            color: var(--gold, #c9a84c);
+            font-family: var(--sans, Arial, sans-serif);
+            letter-spacing: 0.05em;
+        }
+        .search-results .image-title {
+            font-size: 0.88rem;
+            color: var(--text, #333);
+            font-family: var(--serif, Georgia, serif);
+            margin-top: 0.25rem;
+            line-height: 1.35;
+        }
+        .search-results .category-card {
+            display: block;
+            padding: 1.2rem 1.5rem;
+            background: var(--card, #fff);
+            border: 1px solid rgba(201,168,76,0.25);
+            border-radius: 2px;
+            text-decoration: none;
+            transition: border-color 0.2s ease;
+            height: auto;
+        }
+        .search-results .category-card:hover { border-color: var(--gold, #c9a84c); }
+        .search-results .category-card h3 {
+            font-size: 0.95rem;
+            color: var(--gold, #c9a84c);
+            margin-bottom: 0.25rem;
+        }
+        .search-results .category-card .category-desc {
+            font-size: 0.82rem;
+            color: var(--muted, #888);
+            font-family: var(--serif, Georgia, serif);
+            font-style: italic;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+/**
  * Inicializa el sistema cuando el DOM está listo
  */
 document.addEventListener('DOMContentLoaded', async () => {
+    ensureSearchResultStyles();
     await loadDatabase();
     initializeSearch();
     console.log('ONDAS Virtual Exhibition - Sistema de búsqueda inicializado');
