@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONDAS · Línea Temporal de Iconografía Musical 1925–1935</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+/* ═══════════════════════════════════════════════════════
+   SISTEMA DE DISEÑO OSCURO — ONDAS Exposición Virtual
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --black:  #0a0a0a;
+    --dark:   #111111;
+    --card:   #161616;
+    --card2:  #1c1c1c;
+    --gold:   #c9a84c;
+    --gold2:  #e8c97a;
+    --text:   #e0d8cc;
+    --muted:  #888888;
+    --dim:    #555555;
+    --border: rgba(255,255,255,0.06);
+    --serif:  'EB Garamond', Georgia, serif;
+    --sans:   'Helvetica Neue', Arial, sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--serif);
+    background: var(--black);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scroll bar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ═══ ANIMACIONES ═══ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollLine {
+    0%,100% { transform: scaleY(0.3); opacity: 0.4; }
+    50%      { transform: scaleY(1);   opacity: 1;   }
+}
+@keyframes pulse {
+    0%,100% { opacity: 0.5; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.15); }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal.d1 { transition-delay: 0.15s; }
+.reveal.d2 { transition-delay: 0.30s; }
+.reveal.d3 { transition-delay: 0.45s; }
+
+/* ═══ NAVEGACIÓN FIJA ═══ */
+nav.site-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0) 100%);
+    backdrop-filter: blur(2px);
+}
+.nav-brand {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.nav-brand:hover { opacity: 1; }
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+.nav-links a {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-sep {
+    width: 1px;
+    height: 16px;
+    background: var(--dim);
+}
+
+/* ═══ HERO ═══ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Grid de imágenes de fondo — simulada con gradientes */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+    opacity: 0.07;
+    pointer-events: none;
+}
+.hero-bg-cell {
+    background: var(--gold);
+    opacity: 0.3;
+}
+.hero-bg-cell:nth-child(2n)   { opacity: 0.15; background: #fff; }
+.hero-bg-cell:nth-child(3n)   { opacity: 0.08; }
+.hero-bg-cell:nth-child(1)    { opacity: 0.35; }
+.hero-bg-cell:nth-child(5)    { opacity: 0.28; }
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%);
+    pointer-events: none;
+}
+
+.hero-kicker {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease 0.3s both;
+}
+
+.hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 0.9;
+    color: var(--text);
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s ease 0.5s both;
+}
+
+.hero-subtitle {
+    font-family: var(--serif);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 48px;
+    max-width: 560px;
+    animation: fadeUp 0.8s ease 0.7s both;
+}
+
+.hero-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 36px;
+    animation: fadeUp 0.8s ease 0.8s both;
+}
+
+.hero-meta {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--dim);
+    animation: fadeUp 0.8s ease 0.9s both;
+}
+
+.hero-nav-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 52px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.8s ease 1.1s both;
+}
+
+.btn {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 36px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-outline {
+    border: 1px solid rgba(201,168,76,0.5);
+    color: var(--gold);
+    background: transparent;
+}
+.btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+}
+.btn-solid {
+    background: var(--gold);
+    color: var(--black);
+    border: 1px solid var(--gold);
+    font-weight: 600;
+}
+.btn-solid:hover { background: var(--gold2); border-color: var(--gold2); }
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeUp 0.8s ease 1.4s both;
+}
+.scroll-label {
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--dim);
+}
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--gold);
+    transform-origin: top;
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ═══ SECCIONES GENERALES ═══ */
+section.page-section {
+    padding: 96px 48px;
+    border-top: 1px solid var(--border);
+}
+
+.section-label {
+    font-family: var(--sans);
+    font-size: 8px;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+.section-rule {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px 0;
+}
+
+.section-intro {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--muted);
+    max-width: 720px;
+    line-height: 1.8;
+}
+
+/* ═══ TEXTO INTRO ═══ */
+.intro-text {
+    max-width: 860px;
+}
+.intro-text p {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: rgba(224,216,204,0.8);
+    line-height: 1.9;
+    margin-bottom: 1.4rem;
+}
+.intro-text p:last-child { margin-bottom: 0; }
+.intro-text strong { color: var(--text); font-weight: 600; }
+
+/* ═══ CLAVE DE LECTURA ═══ */
+.reading-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 32px;
+}
+.reading-card {
+    background: var(--card);
+    padding: 32px 36px;
+}
+.reading-card p {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    color: rgba(224,216,204,0.75);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+}
+.reading-card p:last-child { margin-bottom: 0; }
+.reading-card strong { color: var(--gold2); font-weight: 600; }
+
+/* ═══ OVERVIEW CHART ═══ */
+.overview-wrap {
+    background: var(--card);
+    padding: 40px 40px 24px;
+    margin-top: 32px;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    height: 180px;
+    gap: 0;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0 8px;
+}
+
+.bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+.bar-col:hover .bar-fill { opacity: 0.75; }
+.bar-col.active .bar-fill {
+    background: var(--gold) !important;
+}
+.bar-col.active .bar-year { color: var(--gold); }
+
+.bar-fill {
+    width: 60%;
+    transition: opacity 0.2s, background 0.2s;
+    position: relative;
+}
+.bar-fill.dictadura  { background: #4a3f28; }
+.bar-fill.transicion { background: #786030; }
+.bar-fill.republica  { background: #3a3030; }
+.bar-fill.laguna {
+    background: repeating-linear-gradient(
+        45deg,
+        #2a2a2a, #2a2a2a 4px,
+        #1a1a1a 4px, #1a1a1a 8px
+    );
+}
+
+.bar-value {
+    position: absolute;
+    top: -1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--sans);
+    font-size: 0.58rem;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    white-space: nowrap;
+}
+.bar-col.active .bar-value { color: var(--gold2); }
+
+.bar-year {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    margin-top: 8px;
+    transition: color 0.2s;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+.legend-dot.dictadura  { background: #4a3f28; }
+.legend-dot.transicion { background: #786030; }
+.legend-dot.republica  { background: #3a3030; }
+.legend-dot.laguna {
+    background: repeating-linear-gradient(45deg,#2a2a2a,#2a2a2a 3px,#1a1a1a 3px,#1a1a1a 6px);
+    border: 1px solid #333;
+}
+
+/* ═══ TIMELINE RAIL ═══ */
+.timeline-wrap {
+    position: relative;
+    padding: 0 0 48px;
+    margin-top: 32px;
+}
+
+.period-banners {
+    display: grid;
+    grid-template-columns: 45.5fr 9.1fr 45.4fr;
+    gap: 2px;
+    margin-bottom: 12px;
+}
+.period-banner {
+    background: var(--card);
+    padding: 10px 16px;
+    font-family: var(--sans);
+    font-size: 7.5px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+}
+.period-banner.accent { color: var(--gold); background: rgba(201,168,76,0.05); }
+
+.timeline-rail {
+    position: relative;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background: var(--card);
+    padding: 0 32px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    right: 32px;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), rgba(255,255,255,0.12), var(--border));
+    transform: translateY(-50%);
+}
+
+.timeline-nodes {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.year-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+    gap: 0;
+}
+.year-node:hover { transform: translateY(-4px); }
+.year-node.active { transform: translateY(-5px); }
+
+.node-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.year-node:hover .node-ring {
+    border-color: rgba(201,168,76,0.4);
+}
+.year-node.active .node-ring {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(201,168,76,0.4);
+    width: 44px;
+    height: 44px;
+}
+.year-node.laguna .node-ring {
+    border-style: dashed;
+    border-color: var(--dim);
+    opacity: 0.5;
+}
+
+.node-inner {
+    font-family: var(--sans);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    transition: color 0.3s;
+}
+.year-node.active .node-inner { color: var(--black); }
+
+.node-year {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--dim);
+    margin-top: 8px;
+    transition: color 0.3s;
+}
+.year-node.active .node-year { color: var(--gold); }
+.year-node.laguna .node-year { color: var(--dim); opacity: 0.5; }
+
+.node-count {
+    font-family: var(--sans);
+    font-size: 0.55rem;
+    color: rgba(136,136,136,0.5);
+    margin-top: 2px;
+    font-style: italic;
+}
+.year-node.active .node-count { color: var(--muted); }
+
+/* ═══ PANEL DETALLE AÑO ═══ */
+.year-panel {
+    margin-top: 2px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+.year-panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.panel-header {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    background: var(--card);
+}
+
+.panel-year-block {
+    background: var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+    gap: 6px;
+}
+.panel-year-num {
+    font-family: var(--serif);
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--black);
+}
+.panel-year-titulo {
+    font-family: var(--serif);
+    font-size: 0.82rem;
+    font-style: italic;
+    color: rgba(10,10,10,0.7);
+    line-height: 1.4;
+    max-width: 160px;
+}
+.panel-year-total {
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(10,10,10,0.6);
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(10,10,10,0.2);
+}
+.panel-year-period {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    color: rgba(10,10,10,0.5);
+    letter-spacing: 0.1em;
+}
+
+.panel-context {
+    padding: 36px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+}
+.panel-context p {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: rgba(224,216,204,0.8);
+    line-height: 1.9;
+}
+.panel-nota {
+    margin-top: 16px;
+    padding: 14px 18px;
+    border-left: 2px solid var(--gold);
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.panel-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--card);
+}
+
+.panel-col {
+    padding: 32px 36px;
+    border-right: 1px solid var(--border);
+}
+.panel-col:last-child { border-right: none; }
+
+.col-label {
+    font-family: var(--sans);
+    font-size: 7.5px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Barras de categorías */
+.cat-list { display: flex; flex-direction: column; gap: 10px; }
+
+.cat-item { display: flex; flex-direction: column; gap: 4px; }
+
+.cat-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+.cat-meta strong { color: var(--text); }
+
+.cat-track {
+    height: 2px;
+    background: rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+.cat-fill {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+/* Mini stats (género, internacional) */
+.mini-stats { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+
+.mini-label {
+    font-family: var(--sans);
+    font-size: 7px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.mini-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    color: var(--muted);
+}
+.mini-lbl { width: 72px; flex-shrink: 0; letter-spacing: 0.04em; }
+.mini-bar {
+    flex: 1;
+    height: 2px;
+    background: rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+.mini-fill {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.mini-fill.fem  { background: var(--muted); }
+.mini-fill.intl { background: rgba(201,168,76,0.5); }
+.mini-val { width: 28px; text-align: right; color: var(--text); }
+
+/* Listas históricas y musicales */
+.event-list { display: flex; flex-direction: column; gap: 12px; }
+
+.event-item {
+    display: flex;
+    gap: 12px;
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    color: rgba(224,216,204,0.7);
+    line-height: 1.5;
+}
+.event-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+}
+
+.music-item {
+    display: flex;
+    gap: 12px;
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    color: rgba(224,216,204,0.7);
+    line-height: 1.5;
+}
+.music-icon {
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* Nombres / tags */
+.nombres-wrap { margin-top: 20px; }
+.nombres-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+.nombre-tag {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--muted);
+    font-style: italic;
+    transition: all 0.2s;
+    cursor: default;
+}
+.nombre-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold2);
+}
+
+/* Botones categoría */
+.cat-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+.cat-link {
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--dim);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.cat-link:hover {
+    border-color: rgba(201,168,76,0.4);
+    color: var(--gold);
+}
+
+/* ═══ SPARKLINES POR CATEGORÍA ═══ */
+.evol-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2px;
+    margin-top: 32px;
+}
+
+.evol-card {
+    background: var(--card);
+    padding: 28px 32px;
+    transition: background 0.2s;
+}
+.evol-card:hover { background: var(--card2); }
+
+.evol-title {
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+.evol-roman {
+    color: var(--gold);
+    margin-right: 4px;
+}
+
+.evol-spark {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 56px;
+}
+.evol-bar {
+    flex: 1;
+    background: rgba(201,168,76,0.25);
+    cursor: default;
+    transition: background 0.15s;
+    position: relative;
+    min-height: 1px;
+}
+.evol-bar:hover { background: rgba(201,168,76,0.5); }
+.evol-bar.laguna {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(80,80,80,0.2), rgba(80,80,80,0.2) 3px,
+        rgba(30,30,30,0.2)  3px, rgba(30,30,30,0.2)  6px
+    );
+}
+.evol-bar-tip {
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card2);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold2);
+    font-family: var(--sans);
+    font-size: 0.6rem;
+    padding: 3px 7px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 10;
+}
+.evol-bar:hover .evol-bar-tip { opacity: 1; }
+
+.evol-years {
+    display: flex;
+    gap: 3px;
+    margin-top: 4px;
+}
+.evol-yr {
+    flex: 1;
+    font-family: var(--sans);
+    font-size: 0.52rem;
+    text-align: center;
+    color: var(--dim);
+}
+
+.evol-summary {
+    margin-top: 14px;
+    font-family: var(--serif);
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+}
+
+/* ═══ FOOTER ═══ */
+footer.site-footer {
+    padding: 64px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.footer-brand {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 0.15em;
+}
+.footer-brand small {
+    display: block;
+    font-family: var(--sans);
+    font-size: 7.5px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+    font-style: normal;
+}
+.footer-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+.footer-links a {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold); }
+
+.footer-bottom {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    color: var(--dim);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+}
+.footer-bottom a { color: var(--muted); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 900px) {
+    nav.site-nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 72px; }
+    section.page-section { padding: 64px 24px; }
+    .panel-header { grid-template-columns: 1fr; }
+    .panel-body { grid-template-columns: 1fr; }
+    .panel-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .reading-grid { grid-template-columns: 1fr; }
+    .period-banners { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; }
+    .overview-wrap { padding: 24px 16px 16px; }
+    .timeline-rail { padding: 0 12px; }
+}
+@media (max-width: 640px) {
+    .evol-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 3rem; }
+    .node-ring { width: 28px; height: 28px; }
+    .year-node.active .node-ring { width: 36px; height: 36px; }
+    .node-year { font-size: 0.58rem; }
+}
+@media print {
+    nav.site-nav { display: none; }
+    .year-panel { opacity: 1; transform: none; }
+    body { background: white; color: black; }
+}
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVEGACIÓN FIJA
+═══════════════════════════════════════════════ -->
+<nav class="site-nav">
+    <a href="https://leximususal.github.io/MUSLYME/exposicion_ondas_index.html" class="nav-brand">ONDAS · Exposición Virtual</a>
+    <div class="nav-links">
+        <a href="https://leximususal.github.io/MUSLYME/exposicion_ondas_index.html">Inicio</a>
+        <a href="exposicion_ondas_compositores.html">Compositores</a>
+        <a href="exposicion_ondas_cantantes.html">Cantantes</a>
+        <a href="exposicion_ondas_operas.html">Óperas</a>
+        <div class="nav-sep"></div>
+        <a href="estadisticas_ondas.html">Estadísticas</a>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+        <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+        <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+        <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+        <div class="hero-bg-cell"></div><div class="hero-bg-cell"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <span class="hero-kicker">Iconografía Musical · Análisis Temporal</span>
+    <h1 class="hero-title">ONDAS</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-subtitle">Evolución de la imagen musical en una revista española de radio durante una década de convulsión histórica</p>
+    <p class="hero-meta">Madrid · 1925 – 1935 · 2.231 imágenes · 11 categorías iconográficas</p>
+
+    <div class="hero-nav-buttons">
+        <a href="#timeline" class="btn btn-solid">Explorar la línea temporal</a>
+        <a href="#categorias" class="btn btn-outline">Ver categorías</a>
+        <a href="https://leximususal.github.io/MUSLYME/exposicion_ondas_index.html" class="btn btn-outline">← Exposición</a>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-label">Desplazar</span>
+        <div class="scroll-line"></div>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     INTRODUCCIÓN
+═══════════════════════════════════════════════ -->
+<section class="page-section">
+    <div class="reveal">
+        <span class="section-label">Presentación</span>
+        <h2 class="section-title">La Iconografía Musical de ONDAS</h2>
+        <div class="section-rule"></div>
+    </div>
+    <div class="intro-text reveal d1">
+        <p><strong>ONDAS</strong> (Madrid, 1925–1935) fue la primera gran revista de radio en España y un documento visual excepcional de la vida musical del período de entreguerras. Sus más de 2.100 imágenes —distribuidas en once categorías iconográficas— permiten rastrear con precisión cómo la cultura musical española evolucionó al ritmo de los convulsos cambios históricos de la década.</p>
+        <p>Esta línea temporal interactiva pone en diálogo los datos iconográficos de la exposición virtual con el contexto histórico de cada año: la Dictadura de Primo de Rivera (1925–1930), la transición política de 1930 y los años de la II República (1931–1935). <strong>Haga clic en cualquier año</strong> para desplegar el análisis detallado de su iconografía, los eventos históricos relevantes y los nombres que protagonizaron la cultura musical radiofónica.</p>
+        <p>El análisis revela patrones significativos: el pico iconográfico de 1930 (342 imágenes, 150 solo de compositores) coincide exactamente con la caída de Primo de Rivera; la categoría de tiras cómicas alcanza su máximo en 1926 y desaparece en 1935; los intérpretes crecen de forma sostenida hasta convertirse en la categoría dominante al final de la República. La iconografía musical no es ajena a la historia: la refleja.</p>
+    </div>
+
+    <!-- Claves de lectura -->
+    <div class="section-rule reveal d2" style="margin-top:48px;"></div>
+    <div class="reveal d2">
+        <span class="section-label">Claves de interpretación</span>
+    </div>
+    <div class="reading-grid reveal d3">
+        <div class="reading-card">
+            <p><strong>1930, el año pico</strong>: 342 imágenes, de las que 150 (44%) son retratos de compositores. Coincide exactamente con la caída de Primo de Rivera (28 enero). La apertura política se traduce en una explosión iconográfica sin precedente ni sucesor en la serie.</p>
+        </div>
+        <div class="reading-card">
+            <p><strong>Las tiras cómicas</strong> son el barómetro más sensible: pico en 1926 (25) en plena ebullición radiofónica, segundo pico en 1931 (24, primer año republicano), descenso progresivo y desaparición total en 1935. El humor gráfico refleja la libertad de expresión.</p>
+            <p><strong>Los intérpretes</strong> crecen de forma sostenida de 26 (1925) a 71 (1935), convirtiéndose en la categoría dominante en los últimos años. Simultáneamente, los compositores colapsan de 150 (1930) a 20 (1935): la cultura musical se vuelve interpretativa.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     GRÁFICO PANORÁMICO
+═══════════════════════════════════════════════ -->
+<section class="page-section">
+    <div class="reveal">
+        <span class="section-label">Vista general</span>
+        <h2 class="section-title">Imágenes por Año · 1925–1935</h2>
+        <div class="section-rule"></div>
+        <p class="section-intro">Distribución temporal del corpus iconográfico. Haga clic en una barra para ir directamente a ese año.</p>
+    </div>
+    <div class="overview-wrap reveal d1">
+        <div class="chart-bars" id="overviewChart"></div>
+        <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot dictadura"></div>Dictadura Primo de Rivera (1925–1929)</div>
+            <div class="legend-item"><div class="legend-dot transicion"></div>Dictablanda / Transición (1930)</div>
+            <div class="legend-item"><div class="legend-dot republica"></div>II República Española (1931–1935)</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     LÍNEA TEMPORAL INTERACTIVA
+═══════════════════════════════════════════════ -->
+<section class="page-section" id="timeline">
+    <div class="reveal">
+        <span class="section-label">Línea temporal</span>
+        <h2 class="section-title">Seleccione un Año</h2>
+        <div class="section-rule"></div>
+        <p class="section-intro">Haga clic en cualquier nodo para explorar la iconografía y el contexto histórico de ese año.</p>
+    </div>
+
+    <div class="timeline-wrap reveal d1">
+        <div class="period-banners">
+            <div class="period-banner">Dictadura de Primo de Rivera · 1925–1929</div>
+            <div class="period-banner accent">1930</div>
+            <div class="period-banner">II República Española · 1931–1935</div>
+        </div>
+        <div class="timeline-rail">
+            <div class="timeline-line"></div>
+            <div class="timeline-nodes" id="timelineNodes"></div>
+        </div>
+    </div>
+
+    <!-- Panel de detalle -->
+    <div class="year-panel" id="yearPanel"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     EVOLUCIÓN POR CATEGORÍAS
+═══════════════════════════════════════════════ -->
+<section class="page-section" id="categorias">
+    <div class="reveal">
+        <span class="section-label">Análisis por categoría</span>
+        <h2 class="section-title">Evolución de las Once Categorías Iconográficas</h2>
+        <div class="section-rule"></div>
+        <p class="section-intro">Cada miniatura muestra la evolución año a año (1925–1935). Pase el cursor sobre las barras para ver el valor exacto.</p>
+    </div>
+    <div class="evol-grid" id="evolGrid"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            ONDAS
+            <small>Exposición Virtual de Iconografía Musical</small>
+        </div>
+        <nav class="footer-links">
+            <a href="https://leximususal.github.io/MUSLYME/exposicion_ondas_index.html">Exposición</a>
+            <a href="exposicion_ondas_compositores.html">Compositores</a>
+            <a href="exposicion_ondas_cantantes.html">Cantantes</a>
+            <a href="exposicion_ondas_operas.html">Óperas</a>
+            <a href="estadisticas_ondas.html">Estadísticas</a>
+            <a href="mailto:muslyme@usal.es">Contacto</a>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Proyecto LexiMus · Universidad de Salamanca · Instituto Complutense de Ciencias Musicales · Universidad de La Rioja</p>
+        <p style="margin-top:8px;">Las imágenes proceden de la revista <em>ONDAS</em> (Madrid, 1925–1935), disponible en la Hemeroteca Digital de la Biblioteca Nacional de España. Uso exclusivamente educativo y sin ánimo de lucro. Si detecta contenido protegido, <a href="mailto:muslyme@usal.es">contacte con nosotros</a>.</p>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT — DATOS Y LÓGICA
+═══════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────
+   CATEGORÍAS
+───────────────────────────────────────── */
+const CATEGORIES = [
+    { key:'compositores', label:'Compositores',               roman:'I',    url:'exposicion_ondas_compositores.html' },
+    { key:'cantantes',    label:'Cantantes',                  roman:'II',   url:'exposicion_ondas_cantantes.html' },
+    { key:'interpretes',  label:'Otros Intérpretes',          roman:'III',  url:'exposicion_ondas_interpretes.html' },
+    { key:'operas',       label:'Óperas',                     roman:'IV',   url:'exposicion_ondas_operas.html' },
+    { key:'obras',        label:'Otras Obras Musicales',      roman:'V',    url:'exposicion_ondas_zarzuelas.html' },
+    { key:'instrumentos', label:'Instrumentos e Inventos',    roman:'VI',   url:'exposicion_ondas_instrumentos.html' },
+    { key:'caricaturas',  label:'Caricaturas y Retratos',     roman:'VII',  url:'exposicion_ondas_caricaturas_retratos.html' },
+    { key:'tiras',        label:'Tiras Cómicas y Dibujos',    roman:'VIII', url:'exposicion_ondas_caricaturas.html' },
+    { key:'portadas',     label:'Portadas y Cabeceras',       roman:'IX',   url:'exposicion_ondas_portadas.html' },
+    { key:'anuncios',     label:'Anuncios',                   roman:'X',    url:'exposicion_ondas_anuncios.html' },
+    { key:'otras',        label:'Estudios de Radio y Otras',  roman:'XI',   url:'exposicion_ondas_otras.html' }
+];
+
+/* ─────────────────────────────────────────
+   DATOS VERIFICADOS DEL CSV
+   (indice_imagenes_ondas_completo.csv)
+───────────────────────────────────────── */
+const YEAR_DATA = {
+    1925: {
+        period: 'dictadura', periodLabel: 'Dictadura · Primo de Rivera',
+        titulo: 'Los Orígenes Radiofónicos',
+        total: 105,
+        categories: { compositores:9, cantantes:36, interpretes:26, operas:0, obras:0, instrumentos:8, caricaturas:0, tiras:15, portadas:3, anuncios:0, otras:8 },
+        context: 'El 17 de junio de 1925 nace Unión Radio Madrid (EAJ-7), primera gran emisora española, y con ella la revista ONDAS como su órgano de difusión. Bajo la Dictadura de Primo de Rivera, la iconografía inaugural refleja un universo musical centrado en el canto lírico y el canon romántico europeo. Los cantantes dominan con 36 imágenes. El jazz americano asoma en las tiras cómicas como curiosidad exótica.',
+        nota: 'Primer año de publicación. La radio española da sus primeros pasos y la revista documenta ese nacimiento con énfasis en el canon lírico. Las imágenes de ópera aún no aparecen como categoría consolidada.',
+        historical: ['Fundación de Unión Radio Madrid EAJ-7 — 17 junio 1925','Dictadura de Primo de Rivera: estabilidad política controlada','Campaña de Marruecos: victoria de Alhucemas (septiembre)','España en la senda del desarrollismo europeo de entreguerras'],
+        musical: ['Miguel Fleta, tenor aragonés en auge internacional','Canon romántico europeo: Verdi, Puccini, Brahms, Albéniz','Primeras tiras cómicas sobre radio y música popular (15)','Instrumentos experimentales: el Pianorad (piano-radio)'],
+        nombres: ['Miguel Fleta','Francisco Alonso','Albéniz','Verdi','Puccini','Brahms','Bretón','Mascagni'],
+        genero: { masculino:80, femenino:20 }, internacional: 40, esLaguna: false
+    },
+    1926: {
+        period: 'dictadura', periodLabel: 'Dictadura · Primo de Rivera',
+        titulo: 'Consolidación y Expansión de la Red',
+        total: 158,
+        categories: { compositores:14, cantantes:42, interpretes:18, operas:12, obras:3, instrumentos:5, caricaturas:4, tiras:25, portadas:12, anuncios:2, otras:21 },
+        context: 'El 11 de abril de 1926 nace Radio Salamanca (EAJ-22). La red radiofónica española se expande y ONDAS crece con ella. Este año registra el máximo de tiras cómicas de toda la década (25 imágenes) y el primero de las portadas musicales (12). Las óperas aparecen por primera vez como categoría consolidada. El humor gráfico sobre la radio se convierte en seña de identidad editorial.',
+        nota: 'Las portadas musicales alcanzan su primer máximo (12) y las tiras cómicas el máximo absoluto de la serie (25). 1926 es el año más rico en diversidad de categorías hasta la fecha.',
+        historical: ['Fundación de Radio Salamanca EAJ-22 — 11 abril 1926','Primo de Rivera crea la Asamblea Nacional Consultiva','España integrada en la primera red radiofónica europea','Inauguración del Palacio de Comunicaciones de Madrid'],
+        musical: ['Tiras cómicas: máximo histórico de toda la década (25 imágenes)','Portadas musicales: primera gran cosecha del período (12)','Las óperas emergen: Carmen, Bohème, Aída consolidadas','Wagner, Mozart, Beethoven dominan los retratos de compositores'],
+        nombres: ['Mozart','R. Strauss','Wagner','Beethoven','Grieg','Schubert','Donizetti','Bacarisse','Miguel Fleta'],
+        genero: { masculino:79, femenino:21 }, internacional: 55, esLaguna: false
+    },
+    1927: {
+        period: 'dictadura', periodLabel: 'Dictadura · Primo de Rivera',
+        titulo: 'La Generación del 27 y la Vanguardia',
+        total: 160,
+        categories: { compositores:15, cantantes:28, interpretes:22, operas:18, obras:6, instrumentos:15, caricaturas:2, tiras:17, portadas:1, anuncios:8, otras:28 },
+        context: 'El año de la célebre Generación del 27 en literatura coincide con una ONDAS más madura. Destaca el protagonismo de los instrumentos e inventos radiofónicos (15 imágenes), el máximo de esta categoría en toda la década. Se documentan aparatos de análisis del sonido del violín, micrófonos y sistemas de retransmisión. La vanguardia musical española gana protagonismo.',
+        nota: 'Primer y único año en que los instrumentos y experimentos radiofónicos alcanzan un peso significativo (15). La vanguardia tecnológica tiene su ventana de oportunidad en la dictadura tardía.',
+        historical: ['Año de la Generación del 27: Lorca, Alberti, Cernuda, Guillen','Primo de Rivera intenta institucionalizar su régimen sin éxito','Primera travesía aérea del Atlántico (Lindbergh, mayo 1927)','El cine sonoro (The Jazz Singer) revoluciona el entretenimiento'],
+        musical: ['Instrumentos e inventos: máximo histórico de la categoría (15)','Vanguardia española: Halffter, Esplá, Falla, Conrado del Campo','Análisis del sonido del violín por ondas: ciencia y música','John McCormack (tenor irlandés): internacionalismo en ONDAS'],
+        nombres: ['Beethoven','Falla','Ernesto Halffter','Margarita Halffter','Esplá','Turina','Salazar','Conrado del Campo','Celia Gámez'],
+        genero: { masculino:78, femenino:22 }, internacional: 50, esLaguna: false
+    },
+    1929: {
+        period: 'dictadura', periodLabel: 'Expo Internacional · Fin de la Dictadura',
+        titulo: 'Las Exposiciones Internacionales',
+        total: 181,
+        categories: { compositores:37, cantantes:15, interpretes:18, operas:35, obras:26, instrumentos:5, caricaturas:4, tiras:7, portadas:2, anuncios:16, otras:16 },
+        context: 'Año de doble esplendor: la Exposición Internacional de Barcelona y la Exposición Iberoamericana de Sevilla abren España al mundo. ONDAS refleja esta apertura con 35 imágenes de ópera —primer gran pico de la categoría— y 37 retratos de compositores europeos. Las Otras Obras Musicales alcanzan su máximo (26). La Argentinita y Raquel Meller representan la cultura popular española en el panorama internacional.',
+        nota: 'La apertura internacional de España en 1929 se refleja directamente en la iconografía: primer pico de imágenes de ópera (35) y máximo de Otras Obras Musicales (26). El theremin marca la entrada de la música electrónica.',
+        historical: ['Exposición Internacional de Barcelona — inaugurada 20 mayo','Exposición Iberoamericana de Sevilla: España mira a América','Crack de Wall Street (octubre): impacto en la economía global','Primo de Rivera pierde el apoyo del Ejército y la Corona'],
+        musical: ['Óperas: primer gran pico (35) — Carmen, Aída, La Bohème','Otras Obras Musicales: máximo histórico (26 imágenes)','Raquel Meller y La Argentinita: estrellas del espectáculo español','El theremin: instrumento electrónico (5 imágenes) — música del futuro'],
+        nombres: ['Wagner','Brahms','Debussy','Mussorgsky','Verdi','Bizet','Halffter (fam.)','Raquel Meller','La Argentinita'],
+        genero: { masculino:77, femenino:23 }, internacional: 65, esLaguna: false
+    },
+    1930: {
+        period: 'transicion', periodLabel: 'Transición · Dictablanda Berenguer',
+        titulo: 'El Gran Año · Cénit Iconográfico',
+        total: 342,
+        categories: { compositores:150, cantantes:23, interpretes:51, operas:41, obras:10, instrumentos:3, caricaturas:7, tiras:13, portadas:21, anuncios:14, otras:9 },
+        context: 'El 28 de enero de 1930, Primo de Rivera dimite. Comienza la "Dictablanda" del General Berenguer. Esta apertura política coincide con el máximo histórico de ONDAS: 342 imágenes, de las que 150 corresponden a retratos de compositores —el 44% del total del año—, cifra sin precedente ni sucesor en toda la serie. Las portadas musicales suman 21, su segundo máximo histórico.',
+        nota: 'AÑO PICO ABSOLUTO (342 imágenes). La caída de la Dictadura coincide con la máxima producción iconográfica de ONDAS. Los 150 retratos de compositores en un solo año son el dato más llamativo de toda la serie temporal.',
+        historical: ['Dimisión de Primo de Rivera — 28 enero 1930','Dictablanda de Berenguer: apertura política gradual','Agitación universitaria: republicanos y socialistas se organizan','Pacto de San Sebastián: oposición republicana unida'],
+        musical: ['MÁXIMO HISTÓRICO de compositores: 150 retratos (44% del año)','Dvorak, Tchaikovsky, Beethoven, Wagner: canon romántico completo','Falla, Granados, Bretón, Turina: orgullo de la música española','Portadas musicales: 21 (segundo máximo de la serie)'],
+        nombres: ['Alonso','Bretón','Granados','Vives','Falla','Turina','Dvorak','Tchaikovsky','Beethoven','Wagner','Hipólito Lázaro','Bacarisse'],
+        genero: { masculino:80, femenino:20 }, internacional: 60, esLaguna: false
+    },
+    1931: {
+        period: 'republica', periodLabel: 'II República Española',
+        titulo: 'La República y el Nuevo Paradigma',
+        total: 172,
+        categories: { compositores:40, cantantes:11, interpretes:36, operas:31, obras:14, instrumentos:0, caricaturas:6, tiras:24, portadas:3, anuncios:2, otras:5 },
+        context: 'El 14 de abril de 1931 se proclama la II República Española. Alfonso XIII parte al exilio. ONDAS sigue publicándose y la iconografía registra el cambio: las tiras cómicas recuperan fuerza (24, segundo máximo), reflejando la nueva libertad de prensa. Los cantantes caen a su mínimo histórico (11) mientras los intérpretes y las óperas se mantienen sólidos. La radio, servicio público republicano, adquiere dimensión política.',
+        nota: 'El cambio de régimen se refleja en la jerarquía: las tiras cómicas alcanzan su segundo máximo histórico (24) en plena efervescencia democrática. Los cantantes caen al mínimo (11): año de transición.',
+        historical: ['Proclamación de la II República — 14 abril 1931','Alfonso XIII parte al exilio: cambio de régimen sin violencia','Constitución republicana aprobada — diciembre 1931','Reformas: educación, ejército, relaciones con la Iglesia'],
+        musical: ['Tiras cómicas: segundo máximo histórico (24) — libertad de expresión','Óperas: presencia sólida (31) en el primer año republicano','Falla y Turina, símbolos culturales de la República democrática','Imperio Argentina y el flamenco como cultura popular republicana'],
+        nombres: ['Chapí','Falla','Turina','Vives','Bacarisse','Stravinsky','Ravel','Bach','Schumann','Imperio Argentina'],
+        genero: { masculino:78, femenino:22 }, internacional: 55, esLaguna: false
+    },
+    1932: {
+        period: 'republica', periodLabel: 'II República Española',
+        titulo: 'Los Compositores y el Humor Gráfico',
+        total: 253,
+        categories: { compositores:98, cantantes:33, interpretes:38, operas:23, obras:16, instrumentos:2, caricaturas:6, tiras:23, portadas:1, anuncios:3, otras:10 },
+        context: 'La República consolida sus reformas y afronta su primera crisis interna: el golpe fallido del General Sanjurjo (agosto). En ONDAS, los compositores experimentan un segundo pico significativo (98) y las tiras cómicas se mantienen elevadas (23). El tango y el fox-trot aparecen documentados por primera vez en las ilustraciones. La iconografía es rica y variada.',
+        nota: 'Segundo gran pico de compositores (98). Las tiras se mantienen en 23, reflejando que la República, incluso bajo tensión (Sanjurjada, agosto), mantiene una relativa libertad expresiva.',
+        historical: ['Estatuto de Autonomía de Cataluña — septiembre 1932','Sanjurjada: golpe fallido del General Sanjurjo — agosto','Reformas agrarias republicanas: tensión en el campo','Ley de Congregaciones: agudo conflicto Iglesia-Estado'],
+        musical: ['Compositores: segundo pico de la serie (98 imágenes)','Tango y fox-trot documentados: música popular cosmopolita','Wagner, Brahms, Debussy, Verdi, Chopin: el canon estable','García Ascot, Esplá, Bacarisse: generación republicana'],
+        nombres: ['Brahms','Debussy','Verdi','Wagner','Chopin','Saint-Saëns','Bacarisse','Esplá','Falla','García Ascot'],
+        genero: { masculino:79, femenino:21 }, internacional: 57, esLaguna: false
+    },
+    1933: {
+        period: 'republica', periodLabel: 'II República · Bienio Conservador',
+        titulo: 'El Giro Conservador y los Intérpretes',
+        total: 266,
+        categories: { compositores:82, cantantes:45, interpretes:55, operas:28, obras:4, instrumentos:4, caricaturas:8, tiras:14, portadas:5, anuncios:9, otras:12 },
+        context: 'Las elecciones de noviembre de 1933 dan la victoria a la CEDA y los radicales, iniciando el "Bienio Negro". 1933 es, paradójicamente, el primer año en que los intérpretes (55) superan a los compositores (82) en presencia relativa. Las caricaturas alcanzan su máximo histórico (8). Las tiras cómicas disminuyen. La iconografía se diversifica aunque el total sube (266).',
+        nota: 'Los intérpretes (55) cobran un peso sin precedente. Las caricaturas y retratos artísticos alcanzan su máximo (8). El giro conservador electoral no detiene el dinamismo iconográfico de ONDAS.',
+        historical: ['CEDA y Radicales ganan las elecciones — noviembre 1933','Primera vez que las mujeres votan en elecciones generales en España','Bienio Negro: paralización de las reformas republicanas','Agitación anarcosindicalista: huelgas y conflictos laborales'],
+        musical: ['Intérpretes: primera vez que superan en peso relativo (55 imágenes)','Caricaturas y retratos artísticos: máximo histórico (8)','Radio consolidada como medio masivo de entretenimiento','Diversidad iconográfica: 10 de las 11 categorías con presencia'],
+        nombres: ['Compositores clásicos europeos','Figuras del repertorio operístico','Gustavo Pittaluga','Fernández Arbós'],
+        genero: { masculino:78, femenino:22 }, internacional: 58, esLaguna: false
+    },
+    1934: {
+        period: 'republica', periodLabel: 'II República · Crisis Social',
+        titulo: 'Las Óperas como Refugio ante la Crisis',
+        total: 229,
+        categories: { compositores:43, cantantes:54, interpretes:59, operas:39, obras:11, instrumentos:0, caricaturas:4, tiras:5, portadas:2, anuncios:3, otras:9 },
+        context: 'Octubre de 1934: la Revolución de Asturias, reprimida duramente por el Ejército bajo el mando del General Franco, marca un punto de inflexión en la historia republicana. ONDAS presenta el segundo pico de óperas (39) y las tiras cómicas caen a solo 5. Los intérpretes (59) superan por primera vez en número absoluto a los cantantes (54). La iconografía se refugia en el arte elevado ante la convulsión.',
+        nota: 'La correlación es notable: año de máxima violencia política (Revolución de Asturias) → óperas en segundo pico (39) y humor gráfico en mínimo histórico (5). Los intérpretes superan por primera vez en número absoluto a los cantantes.',
+        historical: ['Revolución de Asturias — octubre 1934: huelga y represión','El General Franco dirige la represión militar en Asturias','Crisis permanente del gobierno radical-cedista','España en la antesala de la polarización extrema'],
+        musical: ['Óperas: segundo máximo histórico (39) — refugio estético ante la crisis','Intérpretes (59) superan por primera vez en número a cantantes (54)','Tiras cómicas: mínimo histórico (5) — el humor enmudece','Escena de la BBC en portada: ONDAS mira al modelo europeo'],
+        nombres: ['Artistas de emisoras europeas','Cantantes de ópera internacionales','BBC','Radio Edimburgo'],
+        genero: { masculino:79, femenino:21 }, internacional: 62, esLaguna: false
+    },
+    1935: {
+        period: 'republica', periodLabel: 'II República · Antesala de la Guerra',
+        titulo: 'El Silencio antes de la Tormenta',
+        total: 230,
+        categories: { compositores:20, cantantes:62, interpretes:71, operas:29, obras:20, instrumentos:1, caricaturas:0, tiras:0, portadas:5, anuncios:6, otras:16 },
+        context: 'Último año completo de ONDAS antes de la Guerra Civil. El escándalo del Straperlo, la crisis permanente de gobierno y la polarización extrema marcan el año. La iconografía musical muestra una inversión radical: los intérpretes (71) alcanzan su máximo absoluto y se convierten en la categoría dominante por primera vez en la historia de la revista. Las tiras cómicas y las caricaturas desaparecen por completo. Es el silencio antes de la tormenta.',
+        nota: 'Inversión histórica en 1935: los intérpretes (71) dominan por primera vez sobre todos. Los compositores colapsan (20, mínimo desde 1925). Desaparición total del humor gráfico. La BBC en portada. Julio de 1936: estalla la Guerra Civil.',
+        historical: ['Escándalo del Straperlo: corrupción que hunde al Partido Radical','Cinco gabinetes de gobierno en un solo año: inestabilidad extrema','El Frente Popular se constituye: acuerdo electoral de izquierdas','España al borde de la ruptura: polarización máxima'],
+        musical: ['Intérpretes: MÁXIMO HISTÓRICO (71) — primera categoría del año','Cantantes: segundo máximo (62) — la música se hace interpretativa','Tiras cómicas y caricaturas: CERO — el humor ha desaparecido','La BBC en portada: modelo de radiodifusión pública de referencia'],
+        nombres: ['Artistas de la BBC','Radio Barcelona','Cantantes de ópera europeos'],
+        genero: { masculino:80, femenino:20 }, internacional: 65, esLaguna: false
+    }
+};
+
+const YEARS    = [1925,1926,1927,1929,1930,1931,1932,1933,1934,1935];
+const MAX_TOTAL = 342;
+
+const PERIOD_CLASS = { dictadura:'dictadura', transicion:'transicion', republica:'republica' };
+
+/* ─────────────────────────────────────────
+   OVERVIEW CHART
+───────────────────────────────────────── */
+function buildOverviewChart() {
+    const wrap = document.getElementById('overviewChart');
+    YEARS.forEach(y => {
+        const d   = YEAR_DATA[y];
+        const pct = Math.round((d.total / MAX_TOTAL) * 100);
+        const col = document.createElement('div');
+        col.className = 'bar-col';
+        col.dataset.year = y;
+        col.title = `${y}: ${d.total} imágenes`;
+        col.innerHTML = `
+            <div class="bar-fill ${d.esLaguna ? 'laguna' : d.period}"
+                 style="height:${Math.max(pct,1)}%">
+                <span class="bar-value">${d.total}</span>
+            </div>
+            <div class="bar-year">${y}</div>`;
+        col.addEventListener('click', () => selectYear(y));
+        wrap.appendChild(col);
+    });
+}
+
+/* ─────────────────────────────────────────
+   TIMELINE NODES
+───────────────────────────────────────── */
+function buildTimeline() {
+    const wrap = document.getElementById('timelineNodes');
+    YEARS.forEach(y => {
+        const d    = YEAR_DATA[y];
+        const node = document.createElement('div');
+        node.className = 'year-node' + (d.esLaguna ? ' laguna' : '');
+        node.dataset.year = y;
+        node.innerHTML = `
+            <div class="node-ring">
+                <span class="node-inner">${String(y).slice(2)}</span>
+            </div>
+            <div class="node-year">${y}</div>
+            <div class="node-count">${d.esLaguna ? '—' : d.total}</div>`;
+        node.addEventListener('click', () => selectYear(y));
+        wrap.appendChild(node);
+    });
+}
+
+/* ─────────────────────────────────────────
+   PANEL DE DETALLE
+───────────────────────────────────────── */
+function buildPanel(year) {
+    const d      = YEAR_DATA[year];
+    const panel  = document.getElementById('yearPanel');
+    const catMax = Math.max(...Object.values(d.categories), 1);
+
+    const sortedCats = [...CATEGORIES]
+        .sort((a,b) => (d.categories[b.key]||0) - (d.categories[a.key]||0))
+        .filter(c => d.categories[c.key] > 0);
+
+    const catBars = sortedCats.map(cat => {
+        const v   = d.categories[cat.key];
+        const pct = Math.round((v / catMax) * 100);
+        return `<div class="cat-item">
+            <div class="cat-meta">
+                <span>${cat.roman} · ${cat.label}</span>
+                <strong>${v}</strong>
+            </div>
+            <div class="cat-track">
+                <div class="cat-fill" style="width:0%" data-pct="${pct}"></div>
+            </div>
+        </div>`;
+    }).join('');
+
+    const histItems = d.historical.map(h =>
+        `<div class="event-item"><div class="event-dot"></div><span>${h}</span></div>`).join('');
+
+    const musItems = d.musical.map(m =>
+        `<div class="music-item"><span class="music-icon">♩</span><span>${m}</span></div>`).join('');
+
+    const tags = d.nombres.length
+        ? d.nombres.map(n => `<span class="nombre-tag">${n}</span>`).join('')
+        : `<span style="font-family:var(--sans);font-size:0.6rem;color:var(--dim);font-style:italic;">Sin nombres registrados este año</span>`;
+
+
+    panel.innerHTML = `
+        <div class="panel-header">
+            <div class="panel-year-block">
+                <div class="panel-year-num">${year}</div>
+                <div class="panel-year-titulo">${d.titulo}</div>
+                <div class="panel-year-total">${d.esLaguna ? '1 imagen' : d.total + ' imágenes'}</div>
+                <div class="panel-year-period">${d.periodLabel}</div>
+            </div>
+            <div class="panel-context">
+                <p>${d.context}</p>
+                <div class="panel-nota">${d.nota}</div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="panel-col">
+                <span class="col-label">Categorías iconográficas</span>
+                <div class="cat-list">${catBars}</div>
+
+                <div class="mini-stats">
+                    <span class="mini-label">Distribución</span>
+                    <div class="mini-row">
+                        <span class="mini-lbl">Masculino</span>
+                        <div class="mini-bar"><div class="mini-fill" style="width:0%" data-pct="${d.genero.masculino}"></div></div>
+                        <span class="mini-val">${d.genero.masculino}%</span>
+                    </div>
+                    <div class="mini-row">
+                        <span class="mini-lbl">Femenino</span>
+                        <div class="mini-bar"><div class="mini-fill fem" style="width:0%" data-pct="${d.genero.femenino}"></div></div>
+                        <span class="mini-val">${d.genero.femenino}%</span>
+                    </div>
+                    <div class="mini-row">
+                        <span class="mini-lbl">Internacional</span>
+                        <div class="mini-bar"><div class="mini-fill intl" style="width:0%" data-pct="${d.internacional}"></div></div>
+                        <span class="mini-val">${d.internacional}%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-col">
+                <span class="col-label">Contexto histórico</span>
+                <div class="event-list">${histItems}</div>
+                <div class="nombres-wrap">
+                    <span class="col-label" style="margin-top:20px;">Figuras documentadas</span>
+                    <div class="nombres-tags">${tags}</div>
+                </div>
+            </div>
+
+            <div class="panel-col">
+                <span class="col-label">Iconografía musical destacada</span>
+                <div class="event-list">${musItems}</div>
+            </div>
+        </div>`;
+
+    panel.classList.add('visible');
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+        panel.querySelectorAll('[data-pct]').forEach(el => {
+            el.style.width = el.dataset.pct + '%';
+        });
+    }));
+}
+
+/* ─────────────────────────────────────────
+   SELECCIÓN DE AÑO
+───────────────────────────────────────── */
+let selectedYear = null;
+
+function selectYear(year) {
+    if (selectedYear === year) return;
+    selectedYear = year;
+
+    document.querySelectorAll('.year-node').forEach(n =>
+        n.classList.toggle('active', +n.dataset.year === year));
+    document.querySelectorAll('.bar-col').forEach(b =>
+        b.classList.toggle('active', +b.dataset.year === year));
+
+    const panel = document.getElementById('yearPanel');
+    panel.classList.remove('visible');
+    setTimeout(() => {
+        buildPanel(year);
+        setTimeout(() => panel.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);
+    }, 220);
+}
+
+/* ─────────────────────────────────────────
+   SPARKLINES POR CATEGORÍA
+───────────────────────────────────────── */
+function buildEvolGrid() {
+    const grid = document.getElementById('evolGrid');
+
+    CATEGORIES.forEach(cat => {
+        const vals  = YEARS.map(y => YEAR_DATA[y].categories[cat.key] || 0);
+        const total = vals.reduce((a,b) => a+b, 0);
+        if (total === 0) return;
+
+        const maxV    = Math.max(...vals, 1);
+        const peakY   = YEARS[vals.indexOf(Math.max(...vals))];
+        const zeroYrs = YEARS.filter((_,i) => vals[i] === 0);
+
+        const bars = YEARS.map((y,i) => {
+            const pct = Math.round((vals[i] / maxV) * 100);
+            return `<div class="evol-bar ${YEAR_DATA[y].esLaguna ? 'laguna' : ''}"
+                        style="height:${Math.max(pct,2)}%">
+                        <span class="evol-bar-tip">${y}: ${vals[i]}</span>
+                    </div>`;
+        }).join('');
+
+        const yrLabels = YEARS.map(y => `<span class="evol-yr">${String(y).slice(2)}</span>`).join('');
+
+        const interp = getInterp(cat.key, vals, peakY, Math.max(...vals));
+        let summary = `Total: <strong style="color:var(--text)">${total}</strong>. Pico en <strong style="color:var(--gold2)">${peakY}</strong> (${Math.max(...vals)}).`;
+        if (zeroYrs.length) summary += ` Ausente en: ${zeroYrs.join(', ')}.`;
+
+        const card = document.createElement('div');
+        card.className = 'evol-card reveal';
+        card.innerHTML = `
+            <div class="evol-title">
+                <span class="evol-roman">${cat.roman}</span>${cat.label}
+            </div>
+            <div class="evol-spark">${bars}</div>
+            <div class="evol-years">${yrLabels}</div>
+            <div class="evol-summary">${summary}<br><em>${interp}</em></div>`;
+        grid.appendChild(card);
+    });
+
+    observeReveal();
+}
+
+function getInterp(key, values, peakYear, maxVal) {
+    const m = {
+        compositores: `Pico en 1930 (150 = 44% del año), con la caída de Primo de Rivera. Segundo pico en 1932 (98). Colapso final hasta 20 en 1935: el canon compositivo cede ante los intérpretes.`,
+        cantantes:    `Tendencia creciente hasta el máximo en 1935 (62). Mínimo en 1931 (11). La curva es la inversa de los compositores: la música se vuelve interpretativa en la República.`,
+        interpretes:  `Crecimiento sostenido de 26 (1925) a 71 (1935), máximo absoluto. En los dos últimos años superan a todas las categorías: los intérpretes son la nueva protagonista de la iconografía.`,
+        operas:       `Ausentes en 1925. Pico en 1929 (35) y segundo pico en 1934 (39). Las óperas crecen en apertura cultural y actúan de refugio estético en los momentos de mayor tensión política.`,
+        obras:        `Pico notable en 1929 (26) coincidiendo con las Exposiciones Internacionales. Mínimo en 1933 (4). Refleja el interés por el repertorio concreto en momentos de apertura.`,
+        instrumentos: `Máximo en 1927 (15), el año de la vanguardia tecnológica. Colapso posterior: solo 1 imagen en 1935. La innovación tiene su ventana de oportunidad en la dictadura tardía.`,
+        caricaturas:  `Pico en 1933 (8), año del giro conservador. Desaparecen en 1935. La caricatura musical, entre arte y crítica, es sensible al clima de tensión y eventual censura.`,
+        tiras:        `Máximo en 1926 (25), plena ebullición radiofónica. Segundo pico en 1931 (24), primer año republicano. Desaparición total en 1935: el humor gráfico es el termómetro de la libertad.`,
+        portadas:     `Dos picos: 1926 (12) y 1930 (21). La portada musical es recurso de calidad editorial, no de volumen: solo aflora en los años de mayor ambición creativa de ONDAS.`,
+        anuncios:     `Distribución estable con pico en 1929 (16). Philips, Telefunken y Radiotechnique dominan, evidenciando la internacionalización del mercado radiofónico español desde el inicio.`,
+        otras:        `Pico en 1927 (28), año de mayor curiosidad tecnológica. Mínimo en 1930 (9), cuando los compositores absorben toda la atención. Categoría barométrica de la diversidad editorial.`
+    };
+    return m[key] || 'Evolución paralela a la tendencia general del corpus.';
+}
+
+/* ─────────────────────────────────────────
+   REVEAL OBSERVER
+───────────────────────────────────────── */
+function observeReveal() {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* ─────────────────────────────────────────
+   INIT
+───────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+    buildOverviewChart();
+    buildTimeline();
+    buildEvolGrid();
+    observeReveal();
+    setTimeout(() => selectYear(1930), 500);
+});
+</script>
+</body>
+</html>
