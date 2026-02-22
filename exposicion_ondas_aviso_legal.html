@@ -4,79 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviso Legal - ONDAS Exposición Virtual</title>
-    <link rel="stylesheet" href="exposicion_ondas_styles.css">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        .legal-content {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: var(--color-white);
-            border: 3px double var(--color-black);
-            padding: 3rem;
+        :root {
+            --black:  #0a0a0a;
+            --dark:   #111111;
+            --card:   #161616;
+            --gold:   #c9a84c;
+            --gold2:  #e8c97a;
+            --text:   #e0d8cc;
+            --muted:  #888888;
+            --border: rgba(201,168,76,0.15);
+            --border2:rgba(201,168,76,0.08);
         }
-        .legal-content h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--color-black);
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background: var(--black);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ── Navigation ── */
+        .main-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.97) 70%, transparent);
+            padding: 18px 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .nav-brand {
+            font-size: 1.15em;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
-            letter-spacing: 0.1rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
         }
-        .legal-content h2:first-of-type {
-            margin-top: 0;
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            margin-left: auto;
         }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.82em;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            transition: color 0.25s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* ── Header ── */
+        header {
+            padding: 140px 48px 80px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-ornament {
+            font-size: 0.7em;
+            letter-spacing: 0.5em;
+            color: var(--gold);
+            opacity: 0.6;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: clamp(2em, 5vw, 3em);
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.06em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            font-style: italic;
+        }
+        .header-years {
+            margin-top: 10px;
+            font-size: 0.82em;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        /* ── Main container ── */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 72px 48px 100px;
+        }
+
+        /* ── Back link ── */
+        .back-link {
+            display: inline-block;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.8em;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 56px;
+            transition: color 0.25s;
+        }
+        .back-link:hover { color: var(--gold); }
+
+        /* ── Legal content ── */
+        .legal-content h2 {
+            font-size: 0.78em;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 52px 0 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .legal-content h2:first-of-type { margin-top: 0; }
+
         .legal-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
+            margin-bottom: 1.1rem;
+            line-height: 1.85;
             text-align: justify;
+            font-size: 1.05em;
+            color: var(--text);
         }
+        .legal-content strong { color: var(--gold2); font-weight: 600; }
+        .legal-content em { font-style: italic; color: var(--text); }
+
         .legal-content ul {
-            margin: 1rem 0 1.5rem 2rem;
-            line-height: 1.8;
+            margin: 0.8rem 0 1.6rem 1.6rem;
+            line-height: 1.85;
         }
         .legal-content li {
             margin-bottom: 0.5rem;
+            font-size: 1.05em;
+            color: var(--text);
         }
+        .legal-content li::marker { color: var(--gold); }
+
         .legal-content a {
-            color: var(--color-black);
-            text-decoration: underline;
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(201,168,76,0.3);
+            transition: border-color 0.2s, color 0.2s;
         }
         .legal-content a:hover {
-            color: var(--color-medium-gray);
+            color: var(--gold2);
+            border-bottom-color: var(--gold2);
         }
+
+        /* ── Contact box ── */
         .contact-box {
-            background-color: var(--color-cream);
-            border: 2px solid var(--color-black);
-            padding: 1.5rem;
-            margin-top: 2rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--gold);
+            padding: 28px 32px;
+            margin-top: 52px;
             text-align: center;
         }
         .contact-box p {
             margin: 0;
             text-align: center;
+            line-height: 2;
+            font-size: 1.0em;
+            color: var(--text);
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 48px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.88em;
+        }
+        .footer-ornament {
+            font-size: 0.65em;
+            letter-spacing: 0.5em;
+            color: var(--gold);
+            opacity: 0.4;
+            margin-bottom: 16px;
+        }
+
+        .bottom-link {
+            display: block;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .main-nav { padding: 16px 20px; }
+            .nav-links { display: none; }
+            header { padding: 110px 24px 60px; }
+            .container { padding: 56px 24px 80px; }
         }
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="header-ornament">✦ ✦ ✦</div>
-        <h1 class="main-title">Aviso Legal</h1>
+
+    <nav class="main-nav">
+        <a href="exposicion_ondas_index.html" class="nav-brand">ONDAS</a>
+        <div class="nav-links">
+            <a href="exposicion_ondas_index.html">Exposición</a>
+            <a href="ondas_timeline_iconografia.html">Línea Temporal</a>
+            <a href="estadisticas_ondas.html">Estadísticas</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+        <h1>Aviso Legal</h1>
         <p class="subtitle">Ver la escucha a través de las Ondas</p>
         <div class="header-years">Madrid · 1925-1935</div>
-        <div class="header-ornament">✦ ✦ ✦</div>
+        <div class="header-ornament" style="margin-top:24px; margin-bottom:0;">✦ &nbsp; ✦ &nbsp; ✦</div>
     </header>
 
     <main class="container">
         <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
 
         <div class="legal-content">
+
             <h2>Créditos y Atribución</h2>
             <p>Esta exposición virtual ha sido desarrollada por el <strong>Grupo de Transferencia del Conocimiento MUSLYME (Música, Lenguaje y Medios de Comunicación)</strong> de la Universidad de Salamanca, en colaboración con el proyecto de investigación <strong>LexiMus (PID2022-139589NB-C33)</strong>, financiado por el Ministerio de Ciencia, Innovación y Universidades.</p>
 
             <h2>Fuentes</h2>
-            <p>Revista <em>ONDAS</em> (Madrid, 1925–1935)<br>
+            <p>Revista <em>ONDAS</em> (Madrid, 1925-1935)<br>
             Hemeroteca Digital de la Biblioteca Nacional de España<br>
             <a href="https://hemerotecadigital.bne.es/" target="_blank" rel="noopener noreferrer">https://hemerotecadigital.bne.es/</a></p>
 
@@ -108,16 +270,18 @@
                 En colaboración con el Proyecto LexiMus · 2026<br>
                 Contacto: <a href="mailto:muslyme@usal.es">muslyme@usal.es</a></p>
             </div>
+
         </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
+        <div class="bottom-link">
             <a href="exposicion_ondas_index.html" class="back-link">← Volver al Índice</a>
         </div>
     </main>
 
-    <footer class="main-footer">
-        <div class="footer-ornament">✦ ✦ ✦</div>
+    <footer>
+        <div class="footer-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
         <p>&copy; 2026 Exposición Virtual ONDAS · Universidad de Salamanca</p>
     </footer>
+
 </body>
 </html>
