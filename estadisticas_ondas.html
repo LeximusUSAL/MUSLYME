@@ -5,118 +5,309 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas ONDAS (1925-1935)</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #eee;
-            min-height: 100vh;
-            padding: 20px;
+        :root {
+            --black:  #0a0a0a;
+            --dark:   #111111;
+            --card:   #161616;
+            --card2:  #1c1c1c;
+            --gold:   #c9a84c;
+            --gold2:  #e8c97a;
+            --text:   #e0d8cc;
+            --muted:  #888888;
+            --border: rgba(201,168,76,0.15);
+            --border2:rgba(201,168,76,0.08);
         }
-        .container { max-width: 1400px; margin: 0 auto; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background: var(--black);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ── Navigation ── */
+        .main-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.97) 70%, transparent);
+            padding: 18px 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .nav-brand {
+            font-size: 1.15em;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            margin-left: auto;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.82em;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            transition: color 0.25s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* ── Header ── */
         header {
+            padding: 140px 48px 80px;
             text-align: center;
-            padding: 40px 20px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border);
             position: relative;
         }
         .lang-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 120px;
+            right: 48px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 18px;
-            background: rgba(243, 156, 18, 0.15);
-            border: 1px solid rgba(243, 156, 18, 0.4);
-            border-radius: 10px;
-            color: #f39c12;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--gold);
             text-decoration: none;
-            font-size: 0.95em;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            font-size: 0.78em;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            transition: background 0.25s, border-color 0.25s;
         }
         .lang-btn:hover {
-            background: rgba(243, 156, 18, 0.3);
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            background: rgba(201,168,76,0.1);
+            border-color: var(--gold);
+        }
+        .header-ornament {
+            font-size: 0.7em;
+            letter-spacing: 0.5em;
+            color: var(--gold);
+            opacity: 0.6;
+            margin-bottom: 24px;
         }
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #f39c12, #e74c3c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: clamp(2em, 5vw, 3.2em);
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.06em;
+            line-height: 1.1;
+            margin-bottom: 16px;
         }
-        .subtitle { font-size: 1.2em; color: #aaa; }
+        h1 span { color: var(--gold); }
+        .subtitle {
+            font-size: 1.1em;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+        }
+
+        /* ── Main container ── */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 48px 80px;
+        }
+
+        /* ── Stat cards ── */
         .stats-summary {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+            gap: 2px;
+            margin: 60px 0;
+            border: 1px solid var(--border);
         }
         .stat-card {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
+            background: var(--card);
+            padding: 28px 20px;
             text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: background 0.25s;
+            border-right: 1px solid var(--border);
+            display: block;
         }
-        .stat-number { font-size: 2.2em; font-weight: bold; color: #f39c12; }
-        .stat-label { color: #aaa; margin-top: 5px; font-size: 0.9em; }
+        .stat-card:last-child { border-right: none; }
+        .stat-card:hover { background: var(--card2); }
+        .stat-number {
+            font-size: 2.4em;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.78em;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ── Section label ── */
+        .section-label {
+            font-size: 0.72em;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.8;
+            margin-bottom: 40px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ── Charts grid ── */
         .charts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2px;
+            margin-bottom: 2px;
         }
         .chart-container {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 15px;
+            background: var(--card);
+            padding: 28px;
         }
         .chart-container h2 {
-            margin-bottom: 15px;
-            color: #f39c12;
-            font-size: 1.2em;
+            font-size: 0.85em;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
         }
         .chart-wrapper { position: relative; height: 350px; }
-        .chart-wrapper.tall { height: 550px; }
+        .chart-wrapper.tall { height: 560px; }
         .full-width { grid-column: 1 / -1; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; }
-        th, td { padding: 8px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        th { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+
+        /* ── Highlight box ── */
         .highlight-box {
-            background: rgba(243, 156, 18, 0.1);
-            border-left: 4px solid #f39c12;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 0 8px 8px 0;
+            background: rgba(201,168,76,0.07);
+            border-left: 3px solid var(--gold);
+            padding: 12px 16px;
+            margin-top: 16px;
+            font-size: 0.9em;
+            color: var(--text);
         }
-        .note { font-size: 0.85em; color: #888; margin-top: 8px; }
-        footer { text-align: center; padding: 30px; color: #666; }
+        .highlight-box strong { color: var(--gold); }
+        .note {
+            font-size: 0.82em;
+            color: var(--muted);
+            margin-top: 10px;
+            line-height: 1.55;
+        }
+
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.88em;
+        }
+        th, td {
+            padding: 9px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border2);
+        }
+        th {
+            background: rgba(201,168,76,0.08);
+            color: var(--gold);
+            font-size: 0.78em;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        td { color: var(--text); }
+        tr:hover td { background: rgba(201,168,76,0.04); }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 48px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.88em;
+            line-height: 1.8;
+        }
+        footer strong { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .main-nav { padding: 16px 20px; }
+            header { padding: 120px 20px 60px; }
+            .lang-btn { top: 100px; right: 20px; font-size: 0.7em; padding: 8px 14px; }
+            .container { padding: 0 20px 60px; }
+            .stats-summary { border: none; gap: 1px; }
+            .stat-card { border-right: none; border-bottom: 1px solid var(--border); }
+            .charts-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
+
+    <nav class="main-nav">
+        <a href="exposicion_ondas_index.html" class="nav-brand">ONDAS</a>
+        <div class="nav-links">
+            <a href="exposicion_ondas_index.html">Exposición</a>
+            <a href="ondas_timeline_iconografia.html">Línea Temporal</a>
+            <a href="estadisticas_ondas.html">Estadísticas</a>
+        </div>
+    </nav>
+
+    <header>
+        <a href="estadisticas_ondas_EN.html" class="lang-btn">EN &nbsp;·&nbsp; English version</a>
+        <div class="header-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+        <h1>Corpus de Imágenes <span>Musicales</span></h1>
+        <p class="subtitle">Análisis estadístico · Revista ONDAS · Madrid, 1925-1935</p>
+    </header>
+
     <div class="container">
-        <header>
-            <a href="estadisticas_ondas_EN.html" class="lang-btn">EN English version</a>
-            <h1>Corpus de Imágenes Musicales ONDAS</h1>
-            <p class="subtitle">Análisis estadístico de la revista ONDAS (1925-1935)</p>
-        </header>
 
         <div class="stats-summary">
-            <div class="stat-card"><div class="stat-number">2133</div><div class="stat-label">Imágenes únicas</div></div>
-            <a href="indice_imagenes_ondas.json" target="_blank" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(243,156,18,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">2231</div><div class="stat-label">Entradas totales</div></a>
-            <a href="listado_compositores_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(243,156,18,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">142</div><div class="stat-label">Compositores distintos</div></a>
-            <a href="listado_cantantes_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(231,76,60,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">291</div><div class="stat-label">Cantantes distintos</div></a>
-            <a href="listado_operas_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(26,188,156,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">65</div><div class="stat-label">Óperas distintas</div></a>
-            <a href="listado_paises_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(52,152,219,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">27</div><div class="stat-label">Países</div></a>
-            <a href="listado_interpretes_ondas.html" class="stat-card" style="text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 15px rgba(155,89,182,0.3)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"><div class="stat-number">207</div><div class="stat-label">Intérpretes</div></a>
+            <div class="stat-card">
+                <span class="stat-number">2133</span>
+                <span class="stat-label">Imágenes únicas</span>
+            </div>
+            <a href="indice_imagenes_ondas.json" target="_blank" class="stat-card">
+                <span class="stat-number">2231</span>
+                <span class="stat-label">Entradas totales</span>
+            </a>
+            <a href="listado_compositores_ondas.html" class="stat-card">
+                <span class="stat-number">142</span>
+                <span class="stat-label">Compositores distintos</span>
+            </a>
+            <a href="listado_cantantes_ondas.html" class="stat-card">
+                <span class="stat-number">291</span>
+                <span class="stat-label">Cantantes distintos</span>
+            </a>
+            <a href="listado_operas_ondas.html" class="stat-card">
+                <span class="stat-number">65</span>
+                <span class="stat-label">Óperas distintas</span>
+            </a>
+            <a href="listado_paises_ondas.html" class="stat-card">
+                <span class="stat-number">27</span>
+                <span class="stat-label">Países</span>
+            </a>
+            <a href="listado_interpretes_ondas.html" class="stat-card">
+                <span class="stat-number">207</span>
+                <span class="stat-label">Intérpretes</span>
+            </a>
         </div>
+
+        <p class="section-label">Gráficos estadísticos</p>
 
         <div class="charts-grid">
             <div class="chart-container">
@@ -234,16 +425,31 @@
             </div>
         </div>
 
-        <footer>
-            <p><strong>Proyecto LexiMus</strong> - Universidad de Salamanca</p>
-            <p>Corpus de imágenes ONDAS (1925-1935) · 2133 imágenes únicas · 2231 entradas (98 imágenes con múltiples personas)</p>
-        </footer>
     </div>
+
+    <footer>
+        <p><strong>Proyecto LexiMus</strong> · Universidad de Salamanca</p>
+        <p>Corpus de imágenes ONDAS (1925-1935) · 2133 imágenes únicas · 2231 entradas (98 imágenes con múltiples personas)</p>
+    </footer>
 
     <script>
         const colors = {
-            primary: ['#f39c12', '#e74c3c', '#3498db', '#2ecc71', '#9b59b6', '#1abc9c', '#e67e22', '#34495e', '#16a085', '#c0392b', '#2980b9', '#8e44ad', '#27ae60', '#d35400', '#7f8c8d'],
-            gender: { H: '#3498db', M: '#e74c3c' }
+            primary: ['#c9a84c','#b85c4a','#5a7a9c','#6b9c6b','#8c6b9c','#4a9c8c','#d48c4a','#6b7a8c','#3d8c7a','#9c4a4a','#4a6b9c','#8c4a7a','#4a9c5c','#9c7a3d','#7a7a7a'],
+            gender:  { H: '#c9a84c', M: '#b85c4a' }
+        };
+
+        const chartDefaults = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: '#e0d8cc', font: { family: 'EB Garamond' } } } }
+        };
+        const axisStyle = {
+            ticks: { color: '#888888', font: { family: 'EB Garamond' } },
+            grid:  { color: 'rgba(201,168,76,0.08)' }
+        };
+        const axisNoGrid = {
+            ticks: { color: '#888888', font: { family: 'EB Garamond' } },
+            grid:  { display: false }
         };
 
         // Género
@@ -251,9 +457,9 @@
             type: 'doughnut',
             data: {
                 labels: ['Hombres (1328)', 'Mujeres (351)'],
-                datasets: [{ data: [1328, 351], backgroundColor: [colors.gender.H, colors.gender.M] }]
+                datasets: [{ data: [1328, 351], backgroundColor: [colors.gender.H, colors.gender.M], borderColor: '#0a0a0a', borderWidth: 3 }]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#eee' } } } }
+            options: { ...chartDefaults, plugins: { legend: { position: 'bottom', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 13 } } } } }
         });
 
         // Categorías
@@ -263,7 +469,7 @@
                 labels: ['Compositores', 'Otros intérpretes', 'Cantantes', 'Óperas', 'Tiras cómicas', 'Estudios radio', 'Otras obras', 'Anuncios', 'Portadas', 'Caricaturas', 'Instrumentos'],
                 datasets: [{ data: [522, 407, 352, 257, 145, 136, 111, 63, 55, 44, 43], backgroundColor: colors.primary }]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 10 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 10, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
         // Origen
@@ -273,7 +479,7 @@
                 labels: ['España', 'Italia', 'Alemania', 'Francia', 'Rusia', 'EE.UU', 'Austria', 'Hungría', 'Checoslov.', 'Noruega', 'Argentina', 'Inglaterra', 'Bélgica', 'Polonia', 'Cuba'],
                 datasets: [{ data: [791, 253, 203, 173, 85, 50, 27, 23, 15, 9, 8, 6, 6, 6, 6], backgroundColor: colors.primary }]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa', maxRotation: 45 }, grid: { display: false } }, y: { ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
+            options: { ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#888888', maxRotation: 45, font: { family: 'EB Garamond' } }, grid: { display: false } }, y: axisStyle } }
         });
 
         // Temporal
@@ -281,49 +487,49 @@
             type: 'line',
             data: {
                 labels: ['1925', '1926', '1927', '1929', '1930', '1931', '1932', '1933', '1934', '1935'],
-                datasets: [{ data: [105, 160, 160, 183, 353, 180, 256, 270, 237, 249], borderColor: '#f39c12', backgroundColor: 'rgba(243,156,18,0.2)', fill: true, tension: 0.3 }]
+                datasets: [{ data: [105, 160, 160, 183, 353, 180, 256, 270, 237, 249], borderColor: '#c9a84c', backgroundColor: 'rgba(201,168,76,0.12)', fill: true, tension: 0.3, pointBackgroundColor: '#c9a84c', pointBorderColor: '#0a0a0a', pointBorderWidth: 2 }]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
+            options: { ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: axisStyle } }
         });
 
-        // Compositores Top 25 (TOTAL APARICIONES - clasificados por profesión)
+        // Compositores Top 25
         new Chart(document.getElementById('compositoresChart'), {
             type: 'bar',
             data: {
                 labels: ['Giuseppe Verdi', 'Giacomo Puccini', 'Richard Wagner', 'Claude Debussy', 'L. van Beethoven', 'Georges Bizet', 'Maurice Ravel', 'Richard Strauss', 'Gaetano Donizetti', 'Manuel de Falla', 'P.I. Tchaikowsky', 'Igor Stravinsky', 'Salvador Bacarisse', 'Tomás Bretón', 'Amadeo Vives', 'Charles Gounod', 'G. Rossini', 'Ruperto Chapí', 'Álvarez Cantos', 'Joseph Haydn', 'Modest Mussorgsky', 'Enrique Granados', 'Rimsky Korsakov', 'Johannes Brahms', 'Antonín Dvorack'],
-                datasets: [{ data: [78, 62, 61, 27, 25, 23, 20, 19, 19, 19, 18, 17, 16, 16, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 12], backgroundColor: '#f39c12' }]
+                datasets: [{ data: [78, 62, 61, 27, 25, 23, 20, 19, 19, 19, 18, 17, 16, 16, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 12], backgroundColor: '#c9a84c' }]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 10 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 10, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
-        // Cantantes Top 20 (TOTAL APARICIONES - clasificados por profesión)
+        // Cantantes Top 20
         new Chart(document.getElementById('cantantesChart'), {
             type: 'bar',
             data: {
                 labels: ['Miguel Fleta', 'María Estremera', 'Dorini de Diso', 'Paquita Alcaraz', 'Celia Gámez', 'Raquel Meller', 'Ángeles Ottein', 'Hipólito Lázaro', 'Crisena Galatti', 'La Argentinita', 'Isabel Soria', 'Ofelia Nieto', 'Sélica Pérez', 'María Téllez', 'Laura Nieto', 'José Angerri', 'I. Sánchez Escribano', 'Luisa Puchol', 'Asunción Camps', 'E. García "El Chato"'],
-                datasets: [{ data: [10, 6, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2], backgroundColor: '#e74c3c' }]
+                datasets: [{ data: [10, 6, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2], backgroundColor: '#b85c4a' }]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
-        // Intérpretes Top 20 (TOTAL APARICIONES - clasificados por profesion)
+        // Intérpretes Top 20
         new Chart(document.getElementById('interpretesChart'), {
             type: 'bar',
             data: {
                 labels: ['B. Pérez Casas', 'Ricardo Villa', 'Fernández Arbós', 'Enrique Iniesta', 'Rafael Benedito', 'José Mª Franco', 'Julio Francés', 'J. Fernández Lorenzo', 'A. Mercé "La Argentina"', 'Henry Wood', 'Ángel Barrios', 'Juan Ruiz Casaux', 'Matilde Muñoz', 'Walter Damrosch', 'Defauw', 'Elena Romero', 'Josefina Toharia', 'Graciela', 'Maruja Sánchez', 'Angelillo'],
-                datasets: [{ data: [8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2], backgroundColor: '#3498db' }]
+                datasets: [{ data: [8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2], backgroundColor: '#5a7a9c' }]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
-        // Instrumentos Top 20
+        // Instrumentos y profesiones
         new Chart(document.getElementById('instrumentosChart'), {
             type: 'bar',
             data: {
                 labels: ['Compositor', 'Cantante', 'Piano', 'Director', 'Violín', 'Soprano', 'Tenor', 'Barítono', 'Coro', 'Actriz/cantante', 'Guitarra', 'Artista', 'Cantaor flamenco', 'Violonchelo', 'Cancionista'],
-                datasets: [{ data: [963, 149, 83, 60, 56, 55, 51, 30, 25, 24, 23, 19, 14, 12, 9], backgroundColor: '#9b59b6' }]
+                datasets: [{ data: [963, 149, 83, 60, 56, 55, 51, 30, 25, 24, 23, 19, 14, 12, 9], backgroundColor: '#8c6b9c' }]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
         // Óperas Top 20
@@ -331,9 +537,9 @@
             type: 'bar',
             data: {
                 labels: ['Carmen', 'La Boheme', 'Manon Lescaut', 'Aida', 'Madame Butterfly', 'Fausto', 'Lucia di Lammemoor', 'La Traviata', 'El barbero de Sevilla', 'Tosca', 'El trovador', 'Mefistofeles', 'Marina', 'Tristan e Isolda', 'Rigoletto', 'Falstaff', 'Caballeria Rusticana', 'Fantochines', 'Tannhauser', 'Don Pasquale'],
-                datasets: [{ data: [18, 14, 13, 13, 10, 10, 10, 10, 10, 9, 8, 7, 7, 7, 6, 5, 5, 4, 4, 4], backgroundColor: '#1abc9c' }]
+                datasets: [{ data: [18, 14, 13, 13, 10, 10, 10, 10, 10, 9, 8, 7, 7, 7, 6, 5, 5, 4, 4, 4], backgroundColor: '#4a9c8c' }]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { ticks: { color: '#eee', font: { size: 9 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
         // Género por categoría
@@ -346,10 +552,10 @@
                     { label: 'Mujeres', data: [6, 235, 86, 0], backgroundColor: colors.gender.M }
                 ]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: '#eee' } } }, scales: { x: { stacked: true, ticks: { color: '#aaa' }, grid: { display: false } }, y: { stacked: true, ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
+            options: { ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 13 } } } }, scales: { x: { stacked: true, ...axisNoGrid }, y: { stacked: true, ...axisStyle } } }
         });
 
-        // Género por instrumento (Otros Interpretes y Protagonistas)
+        // Género por instrumento
         new Chart(document.getElementById('generoInstrumentoChart'), {
             type: 'bar',
             data: {
@@ -359,7 +565,7 @@
                     { label: 'Mujeres', data: [30, 1, 9, 4, 3, 2, 2, 6, 5, 3, 0], backgroundColor: colors.gender.M }
                 ]
             },
-            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: '#eee' } } }, scales: { x: { stacked: true, ticks: { color: '#aaa' }, grid: { color: 'rgba(255,255,255,0.1)' } }, y: { stacked: true, ticks: { color: '#eee', font: { size: 10 } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 13 } } } }, scales: { x: { stacked: true, ...axisStyle }, y: { stacked: true, ticks: { color: '#e0d8cc', font: { size: 10, family: 'EB Garamond' } }, grid: { display: false } } } }
         });
 
         // Nacionalidad por profesión
@@ -368,17 +574,17 @@
             data: {
                 labels: ['España', 'Italia', 'Alemania', 'Francia', 'Rusia', 'EE.UU', 'Austria'],
                 datasets: [
-                    { label: 'Compositor', data: [235, 249, 173, 165, 71, 0, 23], backgroundColor: '#f39c12' },
-                    { label: 'Cantante', data: [121, 0, 6, 1, 1, 15, 0], backgroundColor: '#e74c3c' },
-                    { label: 'Soprano', data: [45, 0, 4, 0, 1, 2, 2], backgroundColor: '#9b59b6' },
-                    { label: 'Director', data: [33, 2, 6, 0, 1, 5, 1], backgroundColor: '#3498db' },
-                    { label: 'Tenor', data: [37, 1, 3, 1, 2, 4, 0], backgroundColor: '#2ecc71' },
-                    { label: 'Piano', data: [63, 0, 3, 0, 2, 1, 0], backgroundColor: '#1abc9c' },
-                    { label: 'Violín', data: [46, 0, 2, 0, 1, 1, 0], backgroundColor: '#e67e22' },
-                    { label: 'Barítono', data: [29, 0, 0, 0, 0, 0, 0], backgroundColor: '#34495e' }
+                    { label: 'Compositor', data: [235, 249, 173, 165, 71, 0, 23],  backgroundColor: '#c9a84c' },
+                    { label: 'Cantante',   data: [121, 0, 6, 1, 1, 15, 0],          backgroundColor: '#b85c4a' },
+                    { label: 'Soprano',    data: [45, 0, 4, 0, 1, 2, 2],            backgroundColor: '#8c6b9c' },
+                    { label: 'Director',   data: [33, 2, 6, 0, 1, 5, 1],            backgroundColor: '#5a7a9c' },
+                    { label: 'Tenor',      data: [37, 1, 3, 1, 2, 4, 0],            backgroundColor: '#6b9c6b' },
+                    { label: 'Piano',      data: [63, 0, 3, 0, 2, 1, 0],            backgroundColor: '#4a9c8c' },
+                    { label: 'Violín',     data: [46, 0, 2, 0, 1, 1, 0],            backgroundColor: '#d48c4a' },
+                    { label: 'Barítono',   data: [29, 0, 0, 0, 0, 0, 0],            backgroundColor: '#6b7a8c' }
                 ]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top', labels: { color: '#eee', font: { size: 10 } } } }, scales: { x: { stacked: false, ticks: { color: '#aaa' }, grid: { display: false } }, y: { ticks: { color: '#eee' }, grid: { color: 'rgba(255,255,255,0.1)' } } } }
+            options: { ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 11 } } } }, scales: { x: { stacked: false, ...axisNoGrid }, y: axisStyle } }
         });
     </script>
 </body>
