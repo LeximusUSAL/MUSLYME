@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONDAS · Línea Temporal de Iconografía Musical 1925–1935</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Kumbh+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
 /* ═══════════════════════════════════════════════════════
    SISTEMA DE DISEÑO OSCURO — ONDAS Exposición Virtual
    ═══════════════════════════════════════════════════════ */
 
 :root {
-    --black:  #0a0a0a;
-    --dark:   #111111;
-    --card:   #161616;
-    --card2:  #1c1c1c;
-    --gold:   #c9a84c;
-    --gold2:  #e8c97a;
-    --text:   #e0d8cc;
-    --muted:  #888888;
-    --dim:    #555555;
-    --border: rgba(255,255,255,0.06);
-    --serif:  'EB Garamond', Georgia, serif;
-    --sans:   'Helvetica Neue', Arial, sans-serif;
+    --black:  #e8dbc8;
+    --dark:   #ddd0b8;
+    --card:   #f5ede0;
+    --card2:  #ede0cc;
+    --gold:   #91410E;
+    --gold2:  #C85632;
+    --text:   #191919;
+    --muted:  #848484;
+    --dim:    #aaaaaa;
+    --border: rgba(145,65,14,0.12);
+    --serif:  'Jost', sans-serif;
+    --sans:   'Kumbh Sans', sans-serif;
 }
+
+/* Hero siempre oscuro */
+header.hero { background: #1a0f06; }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
@@ -79,8 +84,9 @@ nav.site-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0) 100%);
-    backdrop-filter: blur(2px);
+    background: rgba(221,208,184,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(145,65,14,0.12);
 }
 .nav-brand {
     font-family: var(--sans);
@@ -228,17 +234,17 @@ nav.site-nav {
     display: inline-block;
 }
 .btn-outline {
-    border: 1px solid rgba(201,168,76,0.5);
+    border: 1px solid rgba(145,65,14,0.5);
     color: var(--gold);
     background: transparent;
 }
 .btn-outline:hover {
     border-color: var(--gold);
-    background: rgba(201,168,76,0.08);
+    background: rgba(145,65,14,0.08);
 }
 .btn-solid {
     background: var(--gold);
-    color: var(--black);
+    color: var(--white, #ffffff);
     border: 1px solid var(--gold);
     font-weight: 600;
 }
@@ -319,7 +325,7 @@ section.page-section {
 .intro-text p {
     font-family: var(--serif);
     font-size: 1.05rem;
-    color: rgba(224,216,204,0.8);
+    color: rgba(25,25,25,0.72);
     line-height: 1.9;
     margin-bottom: 1.4rem;
 }
@@ -340,7 +346,7 @@ section.page-section {
 .reading-card p {
     font-family: var(--serif);
     font-size: 0.95rem;
-    color: rgba(224,216,204,0.75);
+    color: rgba(25,25,25,0.70);
     line-height: 1.85;
     margin-bottom: 1rem;
 }
@@ -359,8 +365,8 @@ section.page-section {
     align-items: flex-end;
     height: 180px;
     gap: 0;
-    border-left: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid rgba(25,25,25,0.15);
+    border-bottom: 1px solid rgba(25,25,25,0.15);
     padding: 0 8px;
 }
 
@@ -385,14 +391,14 @@ section.page-section {
     transition: opacity 0.2s, background 0.2s;
     position: relative;
 }
-.bar-fill.dictadura  { background: #4a3f28; }
-.bar-fill.transicion { background: #786030; }
-.bar-fill.republica  { background: #3a3030; }
+.bar-fill.dictadura  { background: #8B6914; }
+.bar-fill.transicion { background: #C85632; }
+.bar-fill.republica  { background: #7a5c5c; }
 .bar-fill.laguna {
     background: repeating-linear-gradient(
         45deg,
-        #2a2a2a, #2a2a2a 4px,
-        #1a1a1a 4px, #1a1a1a 8px
+        #c8b898, #c8b898 4px,
+        #ddd0b8 4px, #ddd0b8 8px
     );
 }
 
@@ -441,12 +447,12 @@ section.page-section {
     height: 10px;
     flex-shrink: 0;
 }
-.legend-dot.dictadura  { background: #4a3f28; }
-.legend-dot.transicion { background: #786030; }
-.legend-dot.republica  { background: #3a3030; }
+.legend-dot.dictadura  { background: #8B6914; }
+.legend-dot.transicion { background: #C85632; }
+.legend-dot.republica  { background: #7a5c5c; }
 .legend-dot.laguna {
-    background: repeating-linear-gradient(45deg,#2a2a2a,#2a2a2a 3px,#1a1a1a 3px,#1a1a1a 6px);
-    border: 1px solid #333;
+    background: repeating-linear-gradient(45deg,#c8b898,#c8b898 3px,#ddd0b8 3px,#ddd0b8 6px);
+    border: 1px solid rgba(25,25,25,0.2);
 }
 
 /* ═══ TIMELINE RAIL ═══ */
@@ -472,7 +478,7 @@ section.page-section {
     color: var(--muted);
     text-align: center;
 }
-.period-banner.accent { color: var(--gold); background: rgba(201,168,76,0.05); }
+.period-banner.accent { color: var(--gold); background: rgba(145,65,14,0.08); }
 
 .timeline-rail {
     position: relative;
@@ -489,7 +495,7 @@ section.page-section {
     left: 32px;
     right: 32px;
     height: 1px;
-    background: linear-gradient(to right, var(--border), rgba(255,255,255,0.12), var(--border));
+    background: linear-gradient(to right, var(--border), rgba(145,65,14,0.20), var(--border));
     transform: translateY(-50%);
 }
 
@@ -517,7 +523,7 @@ section.page-section {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(25,25,25,0.18);
     background: var(--dark);
     display: flex;
     align-items: center;
@@ -526,12 +532,12 @@ section.page-section {
     position: relative;
 }
 .year-node:hover .node-ring {
-    border-color: rgba(201,168,76,0.4);
+    border-color: rgba(145,65,14,0.4);
 }
 .year-node.active .node-ring {
     background: var(--gold);
     border-color: var(--gold);
-    box-shadow: 0 0 20px rgba(201,168,76,0.4);
+    box-shadow: 0 0 20px rgba(145,65,14,0.4);
     width: 44px;
     height: 44px;
 }
@@ -644,7 +650,7 @@ section.page-section {
 .panel-context p {
     font-family: var(--serif);
     font-size: 1rem;
-    color: rgba(224,216,204,0.8);
+    color: rgba(25,25,25,0.72);
     line-height: 1.9;
 }
 .panel-nota {
@@ -696,7 +702,7 @@ section.page-section {
 
 .cat-track {
     height: 2px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(25,25,25,0.08);
     position: relative;
     overflow: hidden;
 }
@@ -731,7 +737,7 @@ section.page-section {
 .mini-bar {
     flex: 1;
     height: 2px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(25,25,25,0.08);
     position: relative;
     overflow: hidden;
 }
@@ -741,7 +747,7 @@ section.page-section {
     transition: width 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .mini-fill.fem  { background: var(--muted); }
-.mini-fill.intl { background: rgba(201,168,76,0.5); }
+.mini-fill.intl { background: rgba(145,65,14,0.5); }
 .mini-val { width: 28px; text-align: right; color: var(--text); }
 
 /* Listas históricas y musicales */
@@ -752,7 +758,7 @@ section.page-section {
     gap: 12px;
     font-family: var(--serif);
     font-size: 0.88rem;
-    color: rgba(224,216,204,0.7);
+    color: rgba(25,25,25,0.68);
     line-height: 1.5;
 }
 .event-dot {
@@ -769,7 +775,7 @@ section.page-section {
     gap: 12px;
     font-family: var(--serif);
     font-size: 0.88rem;
-    color: rgba(224,216,204,0.7);
+    color: rgba(25,25,25,0.68);
     line-height: 1.5;
 }
 .music-icon {
@@ -792,7 +798,7 @@ section.page-section {
     font-size: 0.6rem;
     letter-spacing: 0.08em;
     padding: 4px 10px;
-    border: 1px solid rgba(201,168,76,0.25);
+    border: 1px solid rgba(145,65,14,0.25);
     color: var(--muted);
     font-style: italic;
     transition: all 0.2s;
@@ -815,13 +821,13 @@ section.page-section {
     font-size: 0.6rem;
     letter-spacing: 0.08em;
     padding: 5px 10px;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(25,25,25,0.12);
     color: var(--dim);
     text-decoration: none;
     transition: all 0.2s;
 }
 .cat-link:hover {
-    border-color: rgba(201,168,76,0.4);
+    border-color: rgba(145,65,14,0.4);
     color: var(--gold);
 }
 
@@ -861,13 +867,13 @@ section.page-section {
 }
 .evol-bar {
     flex: 1;
-    background: rgba(201,168,76,0.25);
+    background: rgba(145,65,14,0.25);
     cursor: default;
     transition: background 0.15s;
     position: relative;
     min-height: 1px;
 }
-.evol-bar:hover { background: rgba(201,168,76,0.5); }
+.evol-bar:hover { background: rgba(145,65,14,0.5); }
 .evol-bar.laguna {
     background: repeating-linear-gradient(
         45deg,
@@ -881,7 +887,7 @@ section.page-section {
     left: 50%;
     transform: translateX(-50%);
     background: var(--card2);
-    border: 1px solid rgba(201,168,76,0.3);
+    border: 1px solid rgba(145,65,14,0.3);
     color: var(--gold2);
     font-family: var(--sans);
     font-size: 0.6rem;
@@ -921,7 +927,8 @@ section.page-section {
 /* ═══ FOOTER ═══ */
 footer.site-footer {
     padding: 64px 48px;
-    border-top: 1px solid var(--border);
+    background: #060606;
+    border-top: 1px solid rgba(255,255,255,0.06);
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -937,7 +944,7 @@ footer.site-footer {
     font-family: var(--serif);
     font-size: 2rem;
     font-weight: 400;
-    color: var(--text);
+    color: rgba(232,219,200,0.8);
     letter-spacing: 0.15em;
 }
 .footer-brand small {
@@ -969,9 +976,9 @@ footer.site-footer {
 .footer-bottom {
     font-family: var(--sans);
     font-size: 0.7rem;
-    color: var(--dim);
+    color: #666;
     line-height: 1.7;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(255,255,255,0.06);
     padding-top: 24px;
 }
 .footer-bottom a { color: var(--muted); text-decoration: none; }
