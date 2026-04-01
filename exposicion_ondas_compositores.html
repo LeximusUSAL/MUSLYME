@@ -120,12 +120,15 @@
       background: var(--card);
     }
     .gallery-item img {
-      width: 100%; height: auto;
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: contain;
       display: block;
       transition: transform 0.5s ease, filter 0.4s ease;
       filter: grayscale(15%);
     }
     .gallery-item:hover img { transform: scale(1.03); filter: grayscale(0%); }
+    .gallery-item[aria-hidden="true"] { visibility: hidden; }
     .image-caption {
       padding: 10px 12px 12px;
       background: var(--card);
@@ -4991,5 +4994,27 @@
 </footer>
 
 <script src="exposicion_ondas_search.js?v=5"></script>
+<script>
+// Rellena la última fila del grid con elementos invisibles para que todas las filas sean iguales
+document.addEventListener('DOMContentLoaded', function() {
+  const grid = document.querySelector('#gallery .gallery-grid');
+  if (!grid) return;
+  const items = Array.from(grid.querySelectorAll('.gallery-item:not([aria-hidden])'));
+  if (items.length === 0) return;
+  const cs = window.getComputedStyle(grid);
+  const cols = cs.getPropertyValue('grid-template-columns').split(' ').length;
+  if (cols < 2) return;
+  const remainder = items.length % cols;
+  if (remainder > 0) {
+    const needed = cols - remainder;
+    for (let i = 0; i < needed; i++) {
+      const ph = document.createElement('div');
+      ph.className = 'gallery-item';
+      ph.setAttribute('aria-hidden', 'true');
+      grid.appendChild(ph);
+    }
+  }
+});
+</script>
 </body>
 </html>
