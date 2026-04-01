@@ -50,7 +50,7 @@
     #hero {
       position: relative; min-height: 100vh;
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      align-items: flex-end; justify-content: flex-end;
       overflow: hidden; background: #1a0f06;
     }
 
@@ -64,13 +64,15 @@
     #hero:hover .hero-bg { transform: scale(1); }
     .hero-bg-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(10,5,2,0.15) 0%, rgba(10,5,2,0.0) 40%, rgba(10,5,2,0.75) 85%, #1a0f06 100%);
+      background:
+        linear-gradient(to top,  rgba(10,5,2,0.88) 0%, rgba(10,5,2,0.3) 40%, rgba(10,5,2,0.0) 70%),
+        linear-gradient(to left, rgba(10,5,2,0.55) 0%, rgba(10,5,2,0.0) 55%);
     }
 
     .hero-content {
       position: relative; z-index: 2;
-      max-width: 860px; padding: 120px 48px 80px;
-      text-align: center;
+      max-width: 580px; padding: 0 72px 80px 0;
+      text-align: right;
     }
 
     .hero-eyebrow { display: none; }
@@ -392,19 +394,8 @@
   <div class="hero-bg-overlay"></div>
 
   <div class="hero-content">
-    <p class="hero-eyebrow">Exposición Virtual de Iconografía Musical</p>
     <h1 class="hero-title">Ver la escucha<br>a través de las <em>Ondas</em></h1>
     <p class="hero-year">Madrid · 1925–1935 · 2.100 imágenes</p>
-    <div class="hero-divider"></div>
-    <p class="hero-intro">
-      Una ventana al mundo visual de la radio española en sus primeros años.
-      Compositores, cantantes, inventos, caricaturas y estudios radiofónicos
-      documentados semana a semana en la revista <em>Ondas</em>.
-    </p>
-    <div class="hero-scroll">
-      Explorar
-      <div class="hero-scroll-line"></div>
-    </div>
   </div>
 </section>
 
