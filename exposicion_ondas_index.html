@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ver la escucha a través de las Ondas · Exposición Virtual 1925–1935</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Kumbh+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black: #0a0a0a;
-      --dark:  #111111;
-      --card:  #161616;
-      --gold:  #c9a84c;
-      --gold2: #e8c97a;
-      --text:  #e0d8cc;
-      --muted: #888888;
+      --black: #e8dbc8;       /* crema – fondo principal */
+      --dark:  #ddd0b8;       /* crema oscurecida – secciones */
+      --card:  #f5ede0;       /* crema clara – tarjetas */
+      --gold:  #91410E;       /* marrón óxido – acento principal */
+      --gold2: #C85632;       /* terracota – hover */
+      --text:  #191919;       /* texto oscuro */
+      --muted: #848484;       /* texto atenuado */
       --white: #ffffff;
-      --serif: 'EB Garamond', 'Georgia', serif;
-      --sans:  'Helvetica Neue', Arial, sans-serif;
+      --serif: 'Jost', sans-serif;
+      --sans:  'Kumbh Sans', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -29,7 +29,9 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 900;
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 36px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%);
+      background: rgba(221,208,184,0.96);
+      border-bottom: 1px solid rgba(145,65,14,0.15);
+      backdrop-filter: blur(6px);
     }
     .nav-brand { display: flex; align-items: center; gap: 12px; }
     .nav-logo  { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted); font-family: var(--sans); }
@@ -44,11 +46,12 @@
     .nav-links a:hover { color: var(--gold); }
 
     /* ── HERO ── */
+    /* El hero conserva fondo oscuro propio sobre las imágenes */
     #hero {
       position: relative; min-height: 100vh;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      overflow: hidden; background: var(--black);
+      overflow: hidden; background: #1a0f06;
     }
 
     .hero-bg-grid {
@@ -56,14 +59,14 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      opacity: 0.16; filter: saturate(0.3);
+      opacity: 0.22; filter: saturate(0.4);
     }
     .hero-bg-grid div {
       background-size: cover; background-position: center;
     }
     .hero-bg-overlay {
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at center, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.95) 70%);
+      background: radial-gradient(ellipse at center, rgba(20,10,4,0.2) 0%, rgba(20,10,4,0.93) 70%);
     }
 
     .hero-content {
@@ -74,7 +77,7 @@
 
     .hero-eyebrow {
       font-size: 9px; letter-spacing: 0.55em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 32px;
+      color: var(--gold2); margin-bottom: 32px;
       opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
       font-family: var(--sans);
     }
@@ -96,7 +99,7 @@
     }
 
     .hero-divider {
-      width: 48px; height: 1px; background: var(--gold);
+      width: 48px; height: 1px; background: var(--gold2);
       margin: 0 auto 40px;
       opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards;
     }
@@ -115,7 +118,7 @@
     }
     .hero-scroll-line {
       width: 1px; height: 48px;
-      background: linear-gradient(to bottom, transparent, var(--gold));
+      background: linear-gradient(to bottom, transparent, var(--gold2));
       animation: scrollLine 2s ease-in-out infinite 1.5s;
     }
 
@@ -136,7 +139,7 @@
     .section-heading {
       font-family: var(--serif);
       font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 400; color: var(--white); line-height: 1.15;
+      font-weight: 400; color: var(--text); line-height: 1.15;
       margin-bottom: 24px;
     }
     .gold-rule { width: 48px; height: 1px; background: var(--gold); margin-bottom: 40px; }
@@ -152,7 +155,7 @@
     #video-section {
       background: var(--dark);
       padding: 96px 48px;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
     .video-inner {
       max-width: 1000px; margin: 0 auto; text-align: center;
@@ -160,8 +163,8 @@
     .video-wrap {
       margin-top: 40px;
       border-radius: 4px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      border: 1px solid rgba(201,168,76,0.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+      border: 1px solid rgba(145,65,14,0.15);
     }
     .video-wrap video { display: block; width: 100%; }
 
@@ -170,8 +173,10 @@
       background: var(--black);
       padding: 80px 48px;
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
+    /* Override del color inline del párrafo de itinerarios */
+    #itinerarios-cta p.reveal { color: rgba(25,25,25,0.65) !important; }
     .btn-itinerarios {
       display: inline-block;
       padding: 20px 64px;
@@ -188,11 +193,11 @@
     }
     .btn-itinerarios:hover {
       background: var(--gold);
-      color: var(--black);
+      color: var(--white);
     }
     .btn-itinerarios.btn-primary {
       background: var(--gold);
-      color: var(--black);
+      color: var(--white);
       font-size: 13px;
       padding: 22px 72px;
     }
@@ -204,7 +209,7 @@
     #categories {
       background: var(--dark);
       padding: 96px 48px;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(0,0,0,0.06);
     }
     .categories-inner { max-width: 1200px; margin: 0 auto; }
 
@@ -212,24 +217,24 @@
       display: flex; gap: 10px; margin-bottom: 56px; max-width: 560px;
     }
     #searchInput {
-      flex: 1; background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      flex: 1; background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0.15);
       border-radius: 2px; padding: 12px 18px;
       color: var(--text); font-family: var(--serif); font-size: 15px;
       outline: none; transition: border-color 0.2s;
     }
     #searchInput::placeholder { color: var(--muted); }
-    #searchInput:focus { border-color: rgba(201,168,76,0.4); }
+    #searchInput:focus { border-color: rgba(145,65,14,0.5); }
     .search-btn {
-      background: transparent; border: 1px solid rgba(201,168,76,0.4);
+      background: transparent; border: 1px solid rgba(145,65,14,0.4);
       color: var(--gold); font-family: var(--sans); font-size: 9px;
       letter-spacing: 0.3em; text-transform: uppercase;
       padding: 12px 20px; cursor: pointer; border-radius: 2px;
       transition: background 0.2s ease;
     }
-    .search-btn:hover { background: rgba(201,168,76,0.1); }
-    .search-btn.clear { border-color: rgba(255,255,255,0.12); color: var(--muted); }
-    .search-btn.clear:hover { border-color: rgba(201,168,76,0.3); color: var(--gold); }
+    .search-btn:hover { background: rgba(145,65,14,0.1); }
+    .search-btn.clear { border-color: rgba(0,0,0,0.15); color: var(--muted); }
+    .search-btn.clear:hover { border-color: rgba(145,65,14,0.3); color: var(--gold); }
 
     .categories-grid {
       display: grid;
@@ -237,13 +242,14 @@
       gap: 2px;
     }
 
+    /* Las tarjetas conservan overlay oscuro sobre sus imágenes */
     .category-card {
       position: relative;
       display: block;
       height: 220px;
       overflow: hidden;
       text-decoration: none;
-      background: var(--card);
+      background: #1a0f06;
     }
 
     .category-card .card-bg {
@@ -273,9 +279,9 @@
     }
 
     .card-num {
-      font-size: 8px; letter-spacing: 0.4em; color: var(--gold);
+      font-size: 8px; letter-spacing: 0.4em; color: var(--gold2);
       font-family: var(--sans); text-transform: uppercase;
-      margin-bottom: 6px; opacity: 0.8;
+      margin-bottom: 6px; opacity: 0.9;
     }
 
     .card-title {
@@ -286,7 +292,7 @@
 
     .card-count {
       font-family: var(--serif); font-size: 13px;
-      color: rgba(201,168,76,0.7); font-style: italic;
+      color: rgba(200,86,50,0.85); font-style: italic;
     }
 
     .card-desc {
@@ -305,7 +311,7 @@
       display: inline-block; margin-bottom: 48px;
       padding: 12px 36px;
       background: transparent;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(0,0,0,0.15);
       color: var(--muted);
       text-decoration: none;
       font-family: var(--sans);
@@ -316,12 +322,13 @@
     .btn-datos:hover { border-color: var(--gold); color: var(--gold); }
 
     /* ── RADIO SALAMANCA ── */
+    /* Conserva overlay oscuro sobre imagen histórica */
     #salamanca {
       background:
         linear-gradient(rgba(10,10,10,0.78), rgba(10,10,10,0.78)),
         url('assets/salamanca_1926.jpg') center/cover no-repeat;
       padding: 96px 48px;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(0,0,0,0.06);
       text-align: center;
     }
     .salamanca-inner { max-width: 700px; margin: 0 auto; }
@@ -340,18 +347,18 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark);
-      border-top: 1px solid rgba(255,255,255,0.04);
+      background: #060606;
+      border-top: 1px solid rgba(255,255,255,0.06);
       padding: 64px 48px;
       text-align: center;
     }
-    .footer-rule { width: 48px; height: 1px; background: rgba(201,168,76,0.3); margin: 0 auto 32px; }
+    .footer-rule { width: 48px; height: 1px; background: rgba(145,65,14,0.4); margin: 0 auto 32px; }
     .footer-text {
       font-family: var(--sans); font-size: 9px; letter-spacing: 0.3em;
       text-transform: uppercase; color: var(--muted); line-height: 2.2;
     }
     .footer-text a { color: var(--muted); text-decoration: none; }
-    .footer-text a:hover { color: var(--gold); }
+    .footer-text a:hover { color: var(--gold2); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
