@@ -54,19 +54,17 @@
       overflow: hidden; background: #1a0f06;
     }
 
-    .hero-bg-grid {
+    .hero-bg {
       position: absolute; inset: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      opacity: 0.40; filter: saturate(0.55);
+      background-image: url('ondas/imagenes/OTRAS OBRAS MUSICALES CONCRETAS/1927:12:04_ONDAS Bohemios por Augusto.webp');
+      background-size: cover; background-position: center 20%;
+      filter: brightness(0.42) saturate(0.75);
+      transform: scale(1.03); transition: transform 10s ease;
     }
-    .hero-bg-grid div {
-      background-size: cover; background-position: center;
-    }
+    #hero:hover .hero-bg { transform: scale(1); }
     .hero-bg-overlay {
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse at center, rgba(20,10,4,0.05) 0%, rgba(20,10,4,0.65) 70%);
+      background: linear-gradient(160deg, rgba(10,5,2,0.15) 0%, rgba(10,5,2,0.0) 40%, rgba(10,5,2,0.75) 85%, #1a0f06 100%);
     }
 
     .hero-content {
@@ -393,16 +391,7 @@
 
 <!-- ══ HERO ══ -->
 <section id="hero">
-  <div class="hero-bg-grid">
-    <div style="background-image:url('ondas/imagenes/COMPOSITORES/1925_06_01_ONDAS Puccini.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/CANTANTES/1925_07_05_ONDAS Dagmara Renina, soprano.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/ÓPERAS/1926:08:29_ONDAS Carmen.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/CARICATURAS y RETRATOS de Compositores e intérpretes/1927:11:13_ONDAS Beethoven.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/ESTUDIOS DE RADIO Y OTRAS IMÁGENES GENERALES/1925:12:13_ONDAS Príncipes escuchando concierto.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/TIRAS CÓMICAS, CHISTES Y DIBUJOS/1925:08:09_ONDAS JazzBand.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/OTROS INTÉRPRETES Y PROTAGONISTAS/1925:07:19_ONDAS Cuarteto Aguilar.webp')"></div>
-    <div style="background-image:url('ondas/imagenes/PORTADAS MUSICALES (sin intérpretes o compositores concretos) y CABECERAS CON MÚSICA/1925:11:15_ONDAS Portada.webp')"></div>
-  </div>
+  <div class="hero-bg"></div>
   <div class="hero-bg-overlay"></div>
 
   <div class="hero-content">
