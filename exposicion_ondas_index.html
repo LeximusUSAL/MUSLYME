@@ -332,17 +332,21 @@
       text-align: center;
     }
     .salamanca-inner { max-width: 700px; margin: 0 auto; }
+    /* Overrides: sección sobre fondo oscuro, todo el texto debe ser claro */
+    #salamanca .section-label  { color: var(--gold2); }
+    #salamanca .section-heading { color: var(--white); }
+    #salamanca .gold-rule      { background: var(--gold2); }
     .salamanca-sub {
       font-family: var(--serif); font-size: 16px; font-style: italic;
-      color: var(--muted); margin-bottom: 32px;
+      color: rgba(232,219,200,0.9); margin-bottom: 32px;
     }
     .salamanca-text {
       font-family: var(--serif); font-size: 16px; line-height: 1.85;
-      color: rgba(224,216,204,0.7); margin-bottom: 48px;
+      color: rgba(232,219,200,0.85); margin-bottom: 48px;
     }
     .salamanca-meta {
       font-family: var(--sans); font-size: 9px; letter-spacing: 0.35em;
-      text-transform: uppercase; color: var(--muted); margin-top: 28px;
+      text-transform: uppercase; color: rgba(232,219,200,0.6); margin-top: 28px;
     }
 
     /* ── FOOTER ── */
