@@ -73,12 +73,8 @@
       text-align: center;
     }
 
-    .hero-eyebrow {
-      font-size: 9px; letter-spacing: 0.55em; text-transform: uppercase;
-      color: var(--gold2); margin-bottom: 32px;
-      opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards;
-      font-family: var(--sans);
-    }
+    .hero-eyebrow { display: none; }
+
 
     .hero-title {
       font-family: var(--serif);
@@ -90,10 +86,10 @@
     .hero-title em { font-style: italic; color: var(--gold2); }
 
     .hero-year {
-      font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 48px;
+      font-size: clamp(1rem, 2.2vw, 1.5rem); letter-spacing: 0.12em;
+      color: #7ab3d4; margin-bottom: 48px;
       opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards;
-      font-family: var(--sans);
+      font-family: var(--sans); font-weight: 300;
     }
 
     .hero-divider {
