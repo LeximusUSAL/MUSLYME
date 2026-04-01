@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONDAS Statistics (1925-1935)</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Kumbh+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --black:  #0a0a0a;
-            --dark:   #111111;
-            --card:   #161616;
-            --card2:  #1c1c1c;
-            --gold:   #c9a84c;
-            --gold2:  #e8c97a;
-            --text:   #e0d8cc;
-            --muted:  #888888;
-            --border: rgba(201,168,76,0.15);
-            --border2:rgba(201,168,76,0.08);
+            --black:  #e8dbc8;
+            --dark:   #ddd0b8;
+            --card:   #f5ede0;
+            --card2:  #ede0cc;
+            --gold:   #91410E;
+            --gold2:  #C85632;
+            --text:   #191919;
+            --muted:  #848484;
+            --border: rgba(145,65,14,0.18);
+            --border2:rgba(145,65,14,0.10);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'EB Garamond', Georgia, serif;
+            font-family: 'Jost', sans-serif;
             background: var(--black);
             color: var(--text);
             min-height: 100vh;
@@ -34,7 +36,9 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.97) 70%, transparent);
+            background: rgba(221,208,184,0.96);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(145,65,14,0.12);
             padding: 18px 48px;
             display: flex;
             align-items: center;
@@ -89,7 +93,7 @@
             transition: background 0.25s, border-color 0.25s;
         }
         .lang-btn:hover {
-            background: rgba(201,168,76,0.1);
+            background: rgba(145,65,14,0.1);
             border-color: var(--gold);
         }
         .header-ornament {
@@ -195,7 +199,7 @@
 
         /* ── Highlight box ── */
         .highlight-box {
-            background: rgba(201,168,76,0.07);
+            background: rgba(145,65,14,0.07);
             border-left: 3px solid var(--gold);
             padding: 12px 16px;
             margin-top: 16px;
@@ -223,7 +227,7 @@
             border-bottom: 1px solid var(--border2);
         }
         th {
-            background: rgba(201,168,76,0.08);
+            background: rgba(145,65,14,0.08);
             color: var(--gold);
             font-size: 0.78em;
             letter-spacing: 0.12em;
@@ -231,18 +235,19 @@
             font-weight: 600;
         }
         td { color: var(--text); }
-        tr:hover td { background: rgba(201,168,76,0.04); }
+        tr:hover td { background: rgba(145,65,14,0.04); }
 
         /* ── Footer ── */
         footer {
             text-align: center;
             padding: 48px;
+            background: #060606;
             color: var(--muted);
-            border-top: 1px solid var(--border);
+            border-top: 1px solid rgba(255,255,255,0.06);
             font-size: 0.88em;
             line-height: 1.8;
         }
-        footer strong { color: var(--gold); }
+        footer strong { color: rgba(232,219,200,0.55); }
 
         @media (max-width: 768px) {
             .main-nav { padding: 16px 20px; }
@@ -434,21 +439,21 @@
 
     <script>
         const colors = {
-            primary: ['#c9a84c','#b85c4a','#5a7a9c','#6b9c6b','#8c6b9c','#4a9c8c','#d48c4a','#6b7a8c','#3d8c7a','#9c4a4a','#4a6b9c','#8c4a7a','#4a9c5c','#9c7a3d','#7a7a7a'],
-            gender:  { H: '#c9a84c', M: '#b85c4a' }
+            primary: ['#91410E','#b85c4a','#5a7a9c','#6b9c6b','#8c6b9c','#4a9c8c','#d48c4a','#6b7a8c','#3d8c7a','#9c4a4a','#4a6b9c','#8c4a7a','#4a9c5c','#9c7a3d','#7a7a7a'],
+            gender:  { H: '#91410E', M: '#b85c4a' }
         };
 
         const chartDefaults = {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: '#e0d8cc', font: { family: 'EB Garamond' } } } }
+            plugins: { legend: { labels: { color: '#191919', font: { family: 'Jost' } } } }
         };
         const axisStyle = {
-            ticks: { color: '#888888', font: { family: 'EB Garamond' } },
-            grid:  { color: 'rgba(201,168,76,0.08)' }
+            ticks: { color: '#888888', font: { family: 'Jost' } },
+            grid:  { color: 'rgba(145,65,14,0.08)' }
         };
         const axisNoGrid = {
-            ticks: { color: '#888888', font: { family: 'EB Garamond' } },
+            ticks: { color: '#888888', font: { family: 'Jost' } },
             grid:  { display: false }
         };
 
@@ -457,9 +462,9 @@
             type: 'doughnut',
             data: {
                 labels: ['Men (1328)', 'Women (351)'],
-                datasets: [{ data: [1328, 351], backgroundColor: [colors.gender.H, colors.gender.M], borderColor: '#0a0a0a', borderWidth: 3 }]
+                datasets: [{ data: [1328, 351], backgroundColor: [colors.gender.H, colors.gender.M], borderColor: '#e8dbc8', borderWidth: 3 }]
             },
-            options: { ...chartDefaults, plugins: { legend: { position: 'bottom', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 13 } } } } }
+            options: { ...chartDefaults, plugins: { legend: { position: 'bottom', labels: { color: '#191919', font: { family: 'Jost', size: 13 } } } } }
         });
 
         // Categories
@@ -469,7 +474,7 @@
                 labels: ['Composers', 'Other performers', 'Singers', 'Operas', 'Comic strips', 'Radio studios', 'Other works', 'Advertisements', 'Covers', 'Caricatures', 'Instruments'],
                 datasets: [{ data: [522, 407, 352, 257, 145, 136, 111, 63, 55, 44, 43], backgroundColor: colors.primary }]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 10, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#191919', font: { size: 10, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Origin
@@ -479,7 +484,7 @@
                 labels: ['Spain', 'Italy', 'Germany', 'France', 'Russia', 'USA', 'Austria', 'Hungary', 'Czechoslov.', 'Norway', 'Argentina', 'England', 'Belgium', 'Poland', 'Cuba'],
                 datasets: [{ data: [791, 253, 203, 173, 85, 50, 27, 23, 15, 9, 8, 6, 6, 6, 6], backgroundColor: colors.primary }]
             },
-            options: { ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#888888', maxRotation: 45, font: { family: 'EB Garamond' } }, grid: { display: false } }, y: axisStyle } }
+            options: { ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#888888', maxRotation: 45, font: { family: 'Jost' } }, grid: { display: false } }, y: axisStyle } }
         });
 
         // Temporal
@@ -487,7 +492,7 @@
             type: 'line',
             data: {
                 labels: ['1925', '1926', '1927', '1929', '1930', '1931', '1932', '1933', '1934', '1935'],
-                datasets: [{ data: [105, 160, 160, 183, 353, 180, 256, 270, 237, 249], borderColor: '#c9a84c', backgroundColor: 'rgba(201,168,76,0.12)', fill: true, tension: 0.3, pointBackgroundColor: '#c9a84c', pointBorderColor: '#0a0a0a', pointBorderWidth: 2 }]
+                datasets: [{ data: [105, 160, 160, 183, 353, 180, 256, 270, 237, 249], borderColor: '#91410E', backgroundColor: 'rgba(145,65,14,0.12)', fill: true, tension: 0.3, pointBackgroundColor: '#91410E', pointBorderColor: '#e8dbc8', pointBorderWidth: 2 }]
             },
             options: { ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: axisStyle } }
         });
@@ -497,9 +502,9 @@
             type: 'bar',
             data: {
                 labels: ['Giuseppe Verdi', 'Giacomo Puccini', 'Richard Wagner', 'Claude Debussy', 'L. van Beethoven', 'Georges Bizet', 'Maurice Ravel', 'Richard Strauss', 'Gaetano Donizetti', 'Manuel de Falla', 'P.I. Tchaikovsky', 'Igor Stravinsky', 'Salvador Bacarisse', 'Tomás Bretón', 'Amadeo Vives', 'Charles Gounod', 'G. Rossini', 'Ruperto Chapí', 'Álvarez Cantos', 'Joseph Haydn', 'Modest Mussorgsky', 'Enrique Granados', 'Rimsky-Korsakov', 'Johannes Brahms', 'Antonín Dvořák'],
-                datasets: [{ data: [78, 62, 61, 27, 25, 23, 20, 19, 19, 19, 18, 17, 16, 16, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 12], backgroundColor: '#c9a84c' }]
+                datasets: [{ data: [78, 62, 61, 27, 25, 23, 20, 19, 19, 19, 18, 17, 16, 16, 16, 16, 15, 15, 14, 14, 13, 13, 12, 12, 12], backgroundColor: '#91410E' }]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 10, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#191919', font: { size: 10, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Top 20 Singers
@@ -509,7 +514,7 @@
                 labels: ['Miguel Fleta', 'María Estremera', 'Dorini de Diso', 'Paquita Alcaraz', 'Celia Gámez', 'Raquel Meller', 'Ángeles Ottein', 'Hipólito Lázaro', 'Crisena Galatti', 'La Argentinita', 'Isabel Soria', 'Ofelia Nieto', 'Sélica Pérez', 'María Téllez', 'Laura Nieto', 'José Angerri', 'I. Sánchez Escribano', 'Luisa Puchol', 'Asunción Camps', 'E. García "El Chato"'],
                 datasets: [{ data: [10, 6, 5, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2], backgroundColor: '#b85c4a' }]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#191919', font: { size: 9, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Top 20 Other Performers
@@ -519,7 +524,7 @@
                 labels: ['B. Pérez Casas', 'Ricardo Villa', 'Fernández Arbós', 'Enrique Iniesta', 'Rafael Benedito', 'José Mª Franco', 'Julio Francés', 'J. Fernández Lorenzo', 'A. Mercé "La Argentina"', 'Henry Wood', 'Ángel Barrios', 'Juan Ruiz Casaux', 'Matilde Muñoz', 'Walter Damrosch', 'Defauw', 'Elena Romero', 'Josefina Toharia', 'Graciela', 'Maruja Sánchez', 'Angelillo'],
                 datasets: [{ data: [8, 7, 6, 6, 5, 5, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2], backgroundColor: '#5a7a9c' }]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#191919', font: { size: 9, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Instruments and professions
@@ -529,7 +534,7 @@
                 labels: ['Composer', 'Singer', 'Piano', 'Conductor', 'Violin', 'Soprano', 'Tenor', 'Baritone', 'Choir', 'Actress/singer', 'Guitar', 'Artist', 'Flamenco singer', 'Cello', 'Song artist'],
                 datasets: [{ data: [963, 149, 83, 60, 56, 55, 51, 30, 25, 24, 23, 19, 14, 12, 9], backgroundColor: '#8c6b9c' }]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#191919', font: { size: 9, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Top 20 Operas
@@ -539,7 +544,7 @@
                 labels: ['Carmen', 'La Bohème', 'Manon Lescaut', 'Aida', 'Madame Butterfly', 'Faust', 'Lucia di Lammermoor', 'La Traviata', 'The Barber of Seville', 'Tosca', 'Il Trovatore', 'Mefistofele', 'Marina', 'Tristan and Isolde', 'Rigoletto', 'Falstaff', 'Cavalleria Rusticana', 'Fantochines', 'Tannhäuser', 'Don Pasquale'],
                 datasets: [{ data: [18, 14, 13, 13, 10, 10, 10, 10, 10, 9, 8, 7, 7, 7, 6, 5, 5, 4, 4, 4], backgroundColor: '#4a9c8c' }]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#e0d8cc', font: { size: 9, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { display: false } }, scales: { x: axisStyle, y: { ticks: { color: '#191919', font: { size: 9, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Gender by category
@@ -552,7 +557,7 @@
                     { label: 'Women', data: [6, 235, 86, 0],     backgroundColor: colors.gender.M }
                 ]
             },
-            options: { ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 13 } } } }, scales: { x: { stacked: true, ...axisNoGrid }, y: { stacked: true, ...axisStyle } } }
+            options: { ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#191919', font: { family: 'Jost', size: 13 } } } }, scales: { x: { stacked: true, ...axisNoGrid }, y: { stacked: true, ...axisStyle } } }
         });
 
         // Gender by instrument
@@ -565,7 +570,7 @@
                     { label: 'Women', data: [30, 1, 9, 4, 3, 2, 2, 6, 5, 3, 0],    backgroundColor: colors.gender.M }
                 ]
             },
-            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 13 } } } }, scales: { x: { stacked: true, ...axisStyle }, y: { stacked: true, ticks: { color: '#e0d8cc', font: { size: 10, family: 'EB Garamond' } }, grid: { display: false } } } }
+            options: { indexAxis: 'y', ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#191919', font: { family: 'Jost', size: 13 } } } }, scales: { x: { stacked: true, ...axisStyle }, y: { stacked: true, ticks: { color: '#191919', font: { size: 10, family: 'Jost' } }, grid: { display: false } } } }
         });
 
         // Nationality by profession
@@ -574,7 +579,7 @@
             data: {
                 labels: ['Spain', 'Italy', 'Germany', 'France', 'Russia', 'USA', 'Austria'],
                 datasets: [
-                    { label: 'Composer',  data: [235, 249, 173, 165, 71, 0, 23], backgroundColor: '#c9a84c' },
+                    { label: 'Composer',  data: [235, 249, 173, 165, 71, 0, 23], backgroundColor: '#91410E' },
                     { label: 'Singer',    data: [121, 0, 6, 1, 1, 15, 0],        backgroundColor: '#b85c4a' },
                     { label: 'Soprano',   data: [45, 0, 4, 0, 1, 2, 2],          backgroundColor: '#8c6b9c' },
                     { label: 'Conductor', data: [33, 2, 6, 0, 1, 5, 1],          backgroundColor: '#5a7a9c' },
@@ -584,7 +589,7 @@
                     { label: 'Baritone',  data: [29, 0, 0, 0, 0, 0, 0],          backgroundColor: '#6b7a8c' }
                 ]
             },
-            options: { ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#e0d8cc', font: { family: 'EB Garamond', size: 11 } } } }, scales: { x: { stacked: false, ...axisNoGrid }, y: axisStyle } }
+            options: { ...chartDefaults, plugins: { legend: { position: 'top', labels: { color: '#191919', font: { family: 'Jost', size: 11 } } } }, scales: { x: { stacked: false, ...axisNoGrid }, y: axisStyle } }
         });
     </script>
 </body>
