@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviso Legal - ONDAS Exposición Virtual</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Kumbh+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --black:  #0a0a0a;
-            --dark:   #111111;
-            --card:   #161616;
-            --gold:   #c9a84c;
-            --gold2:  #e8c97a;
-            --text:   #e0d8cc;
-            --muted:  #888888;
-            --border: rgba(201,168,76,0.15);
-            --border2:rgba(201,168,76,0.08);
+            --black:  #e8dbc8;
+            --dark:   #ddd0b8;
+            --card:   #f5ede0;
+            --gold:   #91410E;
+            --gold2:  #C85632;
+            --text:   #191919;
+            --muted:  #848484;
+            --white:  #ffffff;
+            --border: rgba(145,65,14,0.15);
+            --border2:rgba(145,65,14,0.08);
+            --serif: 'Jost', sans-serif;
+            --sans:  'Kumbh Sans', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'EB Garamond', Georgia, serif;
+            font-family: var(--sans);
             background: var(--black);
             color: var(--text);
             min-height: 100vh;
@@ -32,19 +37,21 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.97) 70%, transparent);
+            background: rgba(10,8,5,0.72);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid rgba(232,219,200,0.08);
             padding: 18px 48px;
             display: flex;
             align-items: center;
             gap: 40px;
         }
         .nav-brand {
-            font-size: 1.15em;
-            letter-spacing: 0.25em;
+            font-size: 11px;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: rgba(232,219,200,0.9);
             text-decoration: none;
-            font-weight: 600;
+            font-family: var(--sans);
             white-space: nowrap;
         }
         .nav-links {
@@ -53,39 +60,41 @@
             margin-left: auto;
         }
         .nav-links a {
-            color: var(--muted);
+            color: rgba(232,219,200,0.65);
             text-decoration: none;
-            font-size: 0.82em;
-            letter-spacing: 0.18em;
+            font-size: 10px;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
+            font-family: var(--sans);
             transition: color 0.25s;
         }
-        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover { color: rgba(232,219,200,1); }
 
         /* ── Header ── */
         header {
             padding: 140px 48px 80px;
             text-align: center;
-            border-bottom: 1px solid var(--border);
+            background: #1a0f06;
+            border-bottom: 1px solid rgba(145,65,14,0.18);
         }
         .header-ornament {
             font-size: 0.7em;
             letter-spacing: 0.5em;
-            color: var(--gold);
-            opacity: 0.6;
+            color: rgba(232,219,200,0.5);
             margin-bottom: 24px;
         }
         h1 {
             font-size: clamp(2em, 5vw, 3em);
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: 0.06em;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 0.04em;
             line-height: 1.1;
             margin-bottom: 16px;
+            font-family: var(--serif);
         }
         .subtitle {
-            font-size: 1.1em;
-            color: var(--muted);
+            font-size: 1em;
+            color: rgba(232,219,200,0.7);
             letter-spacing: 0.08em;
             font-style: italic;
         }
@@ -94,8 +103,7 @@
             font-size: 0.82em;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--gold);
-            opacity: 0.7;
+            color: rgba(232,219,200,0.55);
         }
 
         /* ── Main container ── */
@@ -120,7 +128,7 @@
 
         /* ── Legal content ── */
         .legal-content h2 {
-            font-size: 0.78em;
+            font-size: 0.75em;
             font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -128,6 +136,7 @@
             margin: 52px 0 18px;
             padding-bottom: 12px;
             border-bottom: 1px solid var(--border);
+            font-family: var(--sans);
         }
         .legal-content h2:first-of-type { margin-top: 0; }
 
@@ -135,10 +144,10 @@
             margin-bottom: 1.1rem;
             line-height: 1.85;
             text-align: justify;
-            font-size: 1.05em;
-            color: var(--text);
+            font-size: 1em;
+            color: rgba(25,25,25,0.82);
         }
-        .legal-content strong { color: var(--gold2); font-weight: 600; }
+        .legal-content strong { color: var(--gold); font-weight: 600; }
         .legal-content em { font-style: italic; color: var(--text); }
 
         .legal-content ul {
@@ -147,15 +156,15 @@
         }
         .legal-content li {
             margin-bottom: 0.5rem;
-            font-size: 1.05em;
-            color: var(--text);
+            font-size: 1em;
+            color: rgba(25,25,25,0.82);
         }
         .legal-content li::marker { color: var(--gold); }
 
         .legal-content a {
             color: var(--gold);
             text-decoration: none;
-            border-bottom: 1px solid rgba(201,168,76,0.3);
+            border-bottom: 1px solid rgba(145,65,14,0.3);
             transition: border-color 0.2s, color 0.2s;
         }
         .legal-content a:hover {
@@ -177,7 +186,7 @@
             text-align: center;
             line-height: 2;
             font-size: 1.0em;
-            color: var(--text);
+            color: rgba(25,25,25,0.82);
         }
 
         /* ── Footer ── */
@@ -185,14 +194,14 @@
             text-align: center;
             padding: 48px;
             color: var(--muted);
-            border-top: 1px solid var(--border);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            background: #060606;
             font-size: 0.88em;
         }
         .footer-ornament {
             font-size: 0.65em;
             letter-spacing: 0.5em;
-            color: var(--gold);
-            opacity: 0.4;
+            color: rgba(232,219,200,0.3);
             margin-bottom: 16px;
         }
 
@@ -235,7 +244,15 @@
         <div class="legal-content">
 
             <h2>Créditos y Atribución</h2>
-            <p>Esta exposición virtual ha sido desarrollada por el <strong>Grupo de Transferencia del Conocimiento MUSLYME (Música, Lenguaje y Medios de Comunicación)</strong> de la Universidad de Salamanca, en colaboración con el proyecto de investigación <strong>LexiMus (PID2022-139589NB-C33)</strong>, financiado por el Ministerio de Ciencia, Innovación y Universidades.</p>
+            <p>Esta exposición se organiza desde el <strong>Grupo de Transferencia del Conocimiento MUSLYME (Música, Lenguaje y Medios de Comunicación)</strong> de la Universidad de Salamanca, en colaboración con el <strong>Proyecto LexiMus: Léxico y Ontología de la Música en Español</strong> (subproyecto USAL, PID2022-139589NB-C33).</p>
+            <ul>
+                <li><strong>Marina Hervás y María Palacios</strong> — comisarias de la exposición física</li>
+                <li><strong>María Palacios</strong> — diseño y estructura web</li>
+                <li><strong>Camilo Vaughan, Daniel Martín, Santiago Ruiz e Isabel Jiménez</strong> — redacción y revisión de textos web</li>
+                <li><strong>Jorge García</strong> — diseño y construcción de Trautonium</li>
+                <li><strong>Pixel Innova</strong> — diseño web exposición virtual</li>
+                <li><strong>BOrrOso Gráfico</strong> — diseño gráfico y museografía</li>
+            </ul>
 
             <h2>Fuentes</h2>
             <p>Revista <em>ONDAS</em> (Madrid, 1925-1935)<br>
