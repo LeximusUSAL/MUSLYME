@@ -233,8 +233,9 @@
     .search-btn.clear:hover { border-color: rgba(145,65,14,0.3); color: var(--gold); }
 
     .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 2px;
     }
 
@@ -242,6 +243,8 @@
     .category-card {
       position: relative;
       display: block;
+      flex: 0 0 calc(25% - 2px);
+      min-width: 280px;
       height: 220px;
       overflow: hidden;
       text-decoration: none;
@@ -365,7 +368,7 @@
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
       #video-section, #itinerarios-cta, #categories, #salamanca { padding: 64px 24px; }
-      .categories-grid { grid-template-columns: 1fr 1fr; }
+      .category-card { flex: 0 0 calc(50% - 2px); min-width: 0; }
       .search-bar { flex-wrap: wrap; }
 
       /* Hero móvil: texto centrado abajo */
