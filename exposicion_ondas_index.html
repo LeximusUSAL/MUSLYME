@@ -379,6 +379,12 @@
           linear-gradient(to top, rgba(10,5,2,0.92) 0%, rgba(10,5,2,0.5) 50%, rgba(10,5,2,0.1) 100%);
       }
     }
+
+    /* Móvil horizontal: hero con scroll para que el título no quede cortado */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #hero { min-height: 100vh; justify-content: center; overflow-y: auto; }
+      .hero-content { padding: 72px 48px 32px; }
+    }
   </style>
 </head>
 <body>
