@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Metodológica: Géneros Musicales — Corpus ONDAS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Kumbh+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #e8dbc8; --dark: #ddd0b8; --card: #f5ede0; --card2: #ede0cc;
+            --gold: #91410E; --gold2: #C85632; --text: #191919; --muted: #848484;
+            --border: rgba(145,65,14,0.18); --border2: rgba(145,65,14,0.10);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Jost', sans-serif; background: var(--black); color: var(--text); line-height: 1.7; }
+
+        .nav-toc {
+            position: sticky; top: 0; background: rgba(221,208,184,0.96); z-index: 100;
+            padding: 14px 48px; backdrop-filter: blur(6px);
+            display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-toc a {
+            color: var(--gold); text-decoration: none; padding: 5px 12px;
+            border: 1px solid var(--border); font-size: 0.75em;
+            letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s;
+        }
+        .nav-toc a:hover { background: rgba(145,65,14,0.1); border-color: var(--gold); }
+        .nav-toc a.back { color: var(--gold2); border-color: rgba(200,86,50,0.3); }
+
+        .header {
+            background: var(--dark); text-align: center;
+            padding: 70px 48px 50px; border-bottom: 1px solid var(--border);
+        }
+        .header h1 {
+            font-size: clamp(1.3em, 3vw, 2em); font-weight: 600;
+            letter-spacing: 0.05em; margin-bottom: 14px; color: var(--text);
+        }
+        .header .meta {
+            font-size: 0.82em; color: var(--muted); letter-spacing: 0.08em;
+            line-height: 1.8;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 48px 80px; }
+
+        .section {
+            background: var(--card); margin: 2px 0; padding: 32px;
+            border: 1px solid var(--border);
+        }
+        .section h2 {
+            font-size: 0.82em; color: var(--gold); text-transform: uppercase;
+            letter-spacing: 0.18em; font-weight: 600;
+            border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 22px;
+        }
+        .section h3 {
+            font-size: 0.8em; color: var(--gold2); text-transform: uppercase;
+            letter-spacing: 0.14em; font-weight: 600; margin: 28px 0 14px;
+        }
+        .section p { font-size: 0.93em; margin-bottom: 14px; color: var(--text); }
+        .section ul { padding-left: 22px; margin-bottom: 14px; }
+        .section ul li { font-size: 0.93em; margin-bottom: 6px; }
+
+        .genre-block {
+            background: var(--card2); border: 1px solid var(--border);
+            border-left: 3px solid var(--gold); padding: 22px 24px; margin: 20px 0;
+        }
+        .genre-block h3 {
+            margin-top: 0; margin-bottom: 16px;
+            border-bottom: 1px solid var(--border2); padding-bottom: 10px;
+        }
+        .genre-total {
+            display: inline-block; font-size: 0.75em; color: var(--muted);
+            letter-spacing: 0.08em; font-weight: 400; margin-left: 8px;
+            text-transform: none;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88em; }
+        th { background: rgba(145,65,14,0.08); color: var(--gold); padding: 8px 12px;
+            text-align: left; font-size: 0.78em; text-transform: uppercase;
+            letter-spacing: 0.1em; font-weight: 600; }
+        td { padding: 7px 12px; border-bottom: 1px solid var(--border2); }
+        td.num { text-align: right; font-weight: 500; color: var(--gold); }
+        tr:hover td { background: rgba(145,65,14,0.03); }
+
+        .nota { background: rgba(200,86,50,0.08); border-left: 3px solid var(--gold2);
+            padding: 14px 18px; margin: 16px 0; font-size: 0.88em; }
+        .nota strong { color: var(--gold2); }
+
+        .aviso { background: rgba(145,65,14,0.07); border-left: 3px solid var(--gold);
+            padding: 14px 18px; margin: 16px 0; font-size: 0.88em; }
+
+        @media (max-width: 768px) {
+            .header { padding: 50px 20px 36px; }
+            .container { padding: 20px 20px 60px; }
+            .nav-toc { padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav-toc">
+    <a href="analisis_discurso_ondas.html#generos" class="back">← Análisis de discurso</a>
+    <a href="#metodo">Método</a>
+    <a href="#generos">Géneros</a>
+    <a href="#no-asignados">No asignados</a>
+    <a href="#solapamientos">Solapamientos</a>
+</nav>
+
+<div class="header">
+    <h1>Géneros Musicales en el Corpus ONDAS<br>Criterios de Clasificación</h1>
+    <div class="meta">
+        Análisis de discurso · Corpus ONDAS (1925-1935)<br>
+        Proyecto LexiMus · Universidad de Salamanca<br>
+        29 de enero de 2026
+    </div>
+</div>
+
+<div class="container">
+
+<!-- 1. MÉTODO -->
+<section class="section" id="metodo">
+    <h2>1. Método</h2>
+    <p>El análisis de géneros musicales se basa en la detección de términos clave asociados a cada género dentro de los 472 archivos TXT del corpus (1.743.435 palabras). Para cada género se definió un conjunto de palabras y expresiones representativas. Se buscaron como palabras completas (delimitadas por <code>\b</code> en expresión regular) en el texto completo del corpus convertido a minúsculas.</p>
+    <p>Los conteos se realizaron de dos formas:</p>
+    <ul>
+        <li><strong>Global:</strong> suma total de ocurrencias en todo el corpus.</li>
+        <li><strong>Por año:</strong> suma de ocurrencias por archivo, agrupada por año de publicación.</li>
+    </ul>
+    <p>No se aplicó desambiguación semántica: cada término se contó en todos los contextos en que aparece. Las posibles ambigüedades se señalan más adelante para cada género.</p>
+</section>
+
+<!-- 2. GÉNEROS -->
+<section class="section" id="generos">
+    <h2>2. Géneros y términos: desglose completo</h2>
+
+    <!-- 2.1 ÓPERA -->
+    <div class="genre-block">
+        <h3>2.1. Ópera <span class="genre-total">— total: 3.411 menciones</span></h3>
+        <p>Criterio: términos que designan directamente el género operístico o sus variantes gramaticales.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>ópera</td><td class="num">2.372</td></tr>
+            <tr><td>opera (sin tilde)</td><td class="num">248</td></tr>
+            <tr><td>óperas</td><td class="num">739</td></tr>
+            <tr><td>operas (sin tilde)</td><td class="num">14</td></tr>
+            <tr><td>operístico</td><td class="num">19</td></tr>
+            <tr><td>operística</td><td class="num">19</td></tr>
+        </table>
+        <div class="aviso">Este conteo se refiere exclusivamente a la aparición de la palabra «ópera» y derivados en el corpus. No incluye los títulos de óperas concretas (Carmen, Aida, Rigoletto, etc.) ni el vocabulario vocal (soprano, tenor, barítono), que se analizan en secciones separadas del informe. El porcentaje de contenido operístico del corpus (62,57% de las secciones) se calcula con criterios más amplios que incluyen esos otros elementos.</div>
+    </div>
+
+    <!-- 2.2 ZARZUELA -->
+    <div class="genre-block">
+        <h3>2.2. Zarzuela <span class="genre-total">— total: 1.088 menciones</span></h3>
+        <p>Criterio: términos que designan el género lírico español por excelencia, incluyendo las denominaciones históricas de sus modalidades.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>zarzuela</td><td class="num">727</td></tr>
+            <tr><td>zarzuelas</td><td class="num">340</td></tr>
+            <tr><td>género chico</td><td class="num">21</td></tr>
+            <tr><td>género grande</td><td class="num">0</td></tr>
+        </table>
+        <p>Términos <strong>no incluidos:</strong> «sainete» (uso más teatral que musical), «revista» (ambiguo con el propio nombre de publicación), «tonadilla» (insuficientes ocurrencias). Tampoco se incluyen nombres de zarzuelas concretas, que se tratan en el análisis de obras.</p>
+        <p>Posible ambigüedad: ninguna significativa. «Zarzuela» es un término inequívoco en contexto musical.</p>
+    </div>
+
+    <!-- 2.3 SINFÓNICA -->
+    <div class="genre-block">
+        <h3>2.3. Música sinfónica <span class="genre-total">— total: 2.444 menciones</span></h3>
+        <p>Criterio: términos que se refieren a la música orquestal en formato sinfónico, incluyendo los nombres de las principales formaciones instrumentales.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>sinfonía</td><td class="num">1.247</td></tr>
+            <tr><td>sinfónica</td><td class="num">422</td></tr>
+            <tr><td>sinfónico</td><td class="num">448</td></tr>
+            <tr><td>orquesta sinfónica</td><td class="num">221</td></tr>
+            <tr><td>orquesta filarmónica</td><td class="num">106</td></tr>
+        </table>
+        <p>Términos <strong>no incluidos:</strong> «orquesta» (a secas, demasiado genérico), «obertura» (puede pertenecer a ópera o a música sinfónica), «poema sinfónico» (aparece en pocas ocasiones).</p>
+        <p>Posible ambigüedad: «sinfonía» puede usarse en sentido figurado, aunque este uso es marginal en un corpus de temática musical. «Sinfónica» y «sinfónico» pueden funcionar como adjetivos calificativos no vinculados a una orquesta concreta.</p>
+    </div>
+
+    <!-- 2.4 CÁMARA -->
+    <div class="genre-block">
+        <h3>2.4. Música de cámara <span class="genre-total">— total: 4.360 menciones</span></h3>
+        <p>Criterio: términos que designan las principales formaciones de cámara y la denominación genérica del género.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>cuarteto</td><td class="num">684</td></tr>
+            <tr><td>trío</td><td class="num">459</td></tr>
+            <tr><td>quinteto</td><td class="num">612</td></tr>
+            <tr><td>sexteto</td><td class="num">2.311</td></tr>
+            <tr><td>música de cámara</td><td class="num">294</td></tr>
+        </table>
+        <div class="nota"><strong>Atención — «sexteto» (2.311 menciones):</strong> cifra anómalamente alta que requiere verificación manual. En el contexto de las emisiones radiofónicas de Unión Radio, el «Sexteto de Unión Radio» o «Sexteto de la Estación» era la agrupación musical residente que interpretaba la programación diaria. La mayor parte de las 2.311 ocurrencias se refieren probablemente a esta formación estable de la emisora, no a música de cámara en sentido estricto. Sin las menciones de «sexteto», el total sería de 2.049 menciones.</div>
+        <p>Posible ambigüedad: «trío» puede referirse tanto a una formación de cámara como a la sección central de un minué o scherzo. «Cuarteto» puede designar un cuarteto vocal además de uno instrumental.</p>
+    </div>
+
+    <!-- 2.5 CANCIÓN -->
+    <div class="genre-block">
+        <h3>2.5. Canción / Cuplé <span class="genre-total">— total: 3.137 menciones</span></h3>
+        <p>Criterio: términos que designan formas vocales breves populares o de salón, incluyendo el cuplé como género específico del periodo.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>canción</td><td class="num">2.024</td></tr>
+            <tr><td>canciones</td><td class="num">965</td></tr>
+            <tr><td>cuplé</td><td class="num">32</td></tr>
+            <tr><td>cuplés</td><td class="num">52</td></tr>
+            <tr><td>cupletista</td><td class="num">7</td></tr>
+            <tr><td>cancionista</td><td class="num">57</td></tr>
+        </table>
+        <p>Posible ambigüedad: «canción» es un término muy genérico. En el corpus se usa tanto para canciones de salón, canciones populares, Lieder traducidos y canción ligera. No es posible distinguir automáticamente estos usos; el conteo refleja la presencia global del concepto en el discurso de la revista.</p>
+    </div>
+
+    <!-- 2.6 FLAMENCO -->
+    <div class="genre-block">
+        <h3>2.6. Flamenco <span class="genre-total">— total: 758 menciones</span></h3>
+        <p>Criterio: términos específicos del género flamenco, incluyendo las denominaciones de sus intérpretes y su categoría estética principal.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>flamenco</td><td class="num">413</td></tr>
+            <tr><td>flamenca</td><td class="num">11</td></tr>
+            <tr><td>cante</td><td class="num">289</td></tr>
+            <tr><td>cantaor</td><td class="num">3</td></tr>
+            <tr><td>cantaora</td><td class="num">3</td></tr>
+            <tr><td>jondo</td><td class="num">39</td></tr>
+        </table>
+        <p>Posible ambigüedad: «cante» puede usarse en contextos no estrictamente flamencos, aunque en la prensa de la época su uso está mayoritariamente asociado al flamenco. «Flamenco/flamenca» puede usarse como gentilicio de Flandes en contextos históricos, aunque esto es extremadamente raro en un corpus de temática musical española.</p>
+    </div>
+
+    <!-- 2.7 JAZZ -->
+    <div class="genre-block">
+        <h3>2.7. Jazz <span class="genre-total">— total: 806 menciones</span></h3>
+        <p>Criterio: el término «jazz» y las denominaciones de las principales formas de baile y agrupaciones asociadas al jazz en la España de los años 20-30.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>jazz</td><td class="num">309</td></tr>
+            <tr><td>jazz-band</td><td class="num">143</td></tr>
+            <tr><td>jazzband (junto)</td><td class="num">0</td></tr>
+            <tr><td>fox-trot</td><td class="num">139</td></tr>
+            <tr><td>foxtrot (junto)</td><td class="num">51</td></tr>
+            <tr><td>charleston</td><td class="num">162</td></tr>
+            <tr><td>swing</td><td class="num">2</td></tr>
+        </table>
+        <p>Posible ambigüedad: «charleston» puede referirse tanto al baile como a la ciudad estadounidense, aunque en el contexto del corpus musical de los años 20 su uso como baile es abrumador. «Swing» (2 menciones) tiene un impacto despreciable.</p>
+    </div>
+
+    <!-- 2.8 CORAL -->
+    <div class="genre-block">
+        <h3>2.8. Música coral <span class="genre-total">— total: 1.105 menciones</span></h3>
+        <p>Criterio: términos que designan formaciones corales y su actividad.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>coral</td><td class="num">144</td></tr>
+            <tr><td>coro</td><td class="num">548</td></tr>
+            <tr><td>coros</td><td class="num">280</td></tr>
+            <tr><td>orfeón</td><td class="num">93</td></tr>
+            <tr><td>masa coral</td><td class="num">40</td></tr>
+        </table>
+        <p>Posible ambigüedad: «coral» puede referirse tanto a una agrupación coral como a un coral luterano o al adjetivo relativo al coro. «Coro» en teatro lírico puede designar el coro de una ópera o zarzuela, generando un solapamiento con la categoría de ópera.</p>
+    </div>
+
+    <!-- 2.9 RELIGIOSA -->
+    <div class="genre-block">
+        <h3>2.9. Música religiosa <span class="genre-total">— total: 115 menciones</span></h3>
+        <p>Criterio: términos que designan géneros y contextos de música sacra o litúrgica.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>misa</td><td class="num">80</td></tr>
+            <tr><td>réquiem</td><td class="num">9</td></tr>
+            <tr><td>requiem (sin tilde)</td><td class="num">3</td></tr>
+            <tr><td>sacro</td><td class="num">11</td></tr>
+            <tr><td>sacra</td><td class="num">4</td></tr>
+            <tr><td>liturgia</td><td class="num">5</td></tr>
+            <tr><td>litúrgica</td><td class="num">3</td></tr>
+        </table>
+        <p>Posible ambigüedad: «misa» puede referirse tanto a una composición musical (Misa en si menor, Misa solemne) como al acto litúrgico. En el corpus musical es probable que predomine el primer sentido, pero no puede descartarse el segundo.</p>
+    </div>
+
+    <!-- 2.10 BALLET -->
+    <div class="genre-block">
+        <h3>2.10. Ballet / Danza <span class="genre-total">— total: 4.315 menciones</span></h3>
+        <p>Criterio: términos que designan las principales formas de danza escénica y sus intérpretes.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>ballet</td><td class="num">489</td></tr>
+            <tr><td>danza</td><td class="num">1.662</td></tr>
+            <tr><td>danzas</td><td class="num">568</td></tr>
+            <tr><td>bailarina</td><td class="num">31</td></tr>
+            <tr><td>bailarín</td><td class="num">12</td></tr>
+            <tr><td>baile</td><td class="num">1.392</td></tr>
+            <tr><td>bailes</td><td class="num">161</td></tr>
+        </table>
+        <div class="nota"><strong>Atención — «danza» (1.662) y «baile» (1.392):</strong> cifras altas porque ambos términos tienen un uso muy amplio. «Danza» puede referirse a ballet escénico, danzas dentro de óperas y zarzuelas, movimientos de suites instrumentales o bailes sociales. «Baile» puede designar bailes de sociedad, música de baile (secciones frecuentes en la programación radiofónica: «Música de baile») o representaciones escénicas. La cifra global no refleja exclusivamente la danza escénica artística.</div>
+    </div>
+
+    <!-- 2.11 POPULAR -->
+    <div class="genre-block">
+        <h3>2.11. Música popular <span class="genre-total">— total: 2.051 menciones</span></h3>
+        <p>Criterio: términos que designan la música de raíz tradicional o la categoría estética de lo «popular» frente a lo «culto».</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>popular</td><td class="num">1.474</td></tr>
+            <tr><td>populares</td><td class="num">505</td></tr>
+            <tr><td>folklore</td><td class="num">58</td></tr>
+            <tr><td>folclore</td><td class="num">0</td></tr>
+            <tr><td>folklórica</td><td class="num">14</td></tr>
+        </table>
+        <div class="nota"><strong>Atención — «popular» (1.474) y «populares» (505):</strong> adjetivos de uso muy amplio. Pueden referirse a música popular/tradicional como género, a «canciones populares» en sentido folclórico, o a «popular» como sinónimo de «conocido» o «famoso» («el popular maestro», «la popular zarzuela»). Este último uso es frecuente en la prosa periodística de la época y genera una inflación significativa. La cifra real de menciones al género sería probablemente bastante inferior a 2.051.</div>
+    </div>
+
+    <!-- 2.12 OPERETA -->
+    <div class="genre-block">
+        <h3>2.12. Opereta <span class="genre-total">— total: 272 menciones</span></h3>
+        <p>Criterio: términos que designan el género de la opereta.</p>
+        <table>
+            <tr><th>Término</th><th class="num">Ocurrencias</th></tr>
+            <tr><td>opereta</td><td class="num">158</td></tr>
+            <tr><td>operetas</td><td class="num">114</td></tr>
+        </table>
+        <p>Posible ambigüedad: ninguna. «Opereta» es un término inequívoco.</p>
+    </div>
+
+</section>
+
+<!-- 3. NO ASIGNADOS -->
+<section class="section" id="no-asignados">
+    <h2>3. Términos no asignados a ningún género</h2>
+    <p>Los siguientes términos musicales relevantes no se incluyeron en ninguna categoría de género por ser transversales o ambiguos:</p>
+    <ul>
+        <li><strong>«concierto» / «conciertos»:</strong> puede referirse al evento (un concierto sinfónico) o a la forma musical (Concierto para piano). Se contabiliza en el léxico de escucha, no en géneros.</li>
+        <li><strong>«sonata» / «sonatas»:</strong> pertenece tanto a cámara como a repertorio solista.</li>
+        <li><strong>«suite» / «suites»:</strong> forma instrumental transversal.</li>
+        <li><strong>«obertura» / «oberturas»:</strong> puede ser operística o sinfónica.</li>
+        <li><strong>«preludio» / «preludios»:</strong> forma transversal.</li>
+        <li><strong>«vals» / «valses»:</strong> puede ser danza, pieza de salón o fragmento orquestal.</li>
+        <li><strong>«marcha» / «marchas»:</strong> puede ser militar, fúnebre, nupcial, etc.</li>
+        <li><strong>«pasodoble» / «pasodobles»:</strong> género transversal entre música de banda, baile y tauromaquia.</li>
+        <li><strong>«serenata» / «serenatas»:</strong> forma vocal o instrumental variable.</li>
+        <li><strong>«rondalla»:</strong> formación instrumental, no género.</li>
+        <li><strong>«tango»:</strong> podría ser categoría propia pero su presencia no se verificó.</li>
+        <li><strong>«bolero»:</strong> ambiguo entre el Bolero de Ravel y el género cubano.</li>
+    </ul>
+</section>
+
+<!-- 4. SOLAPAMIENTOS -->
+<section class="section" id="solapamientos">
+    <h2>4. Solapamientos entre categorías</h2>
+    <p>Las categorías no son mutuamente excluyentes. Un mismo texto puede contener términos de varios géneros simultáneamente. Ejemplos:</p>
+    <ul>
+        <li>Un artículo sobre una retransmisión de ópera puede contener «ópera» + «coro» + «ballet» + «danza» (escenas de ballet dentro de óperas).</li>
+        <li>Las parrillas de programación radiofónica mezclan géneros en un mismo bloque: «Sexteto de la Estación: [zarzuela] + [sinfonía] + [canción]».</li>
+        <li>«Popular» puede calificar cualquier otro género: «ópera popular», «zarzuela popular».</li>
+    </ul>
+    <div class="aviso">El análisis cuantifica <strong>menciones léxicas</strong>, no clasifica artículos por género. Un artículo con 5 menciones de «ópera» y 2 de «baile» suma a ambas categorías.</div>
+</section>
+
+</div>
+</body>
+</html>
