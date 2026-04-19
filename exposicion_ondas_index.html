@@ -50,7 +50,7 @@
     #hero {
       position: relative; min-height: 100vh;
       display: flex; flex-direction: column;
-      align-items: flex-start; justify-content: flex-end;
+      align-items: flex-end; justify-content: flex-end;
       overflow: hidden; background: #1a0f06;
     }
 
@@ -66,13 +66,13 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(to top,   rgba(10,5,2,0.90) 0%, rgba(10,5,2,0.3) 40%, rgba(10,5,2,0.0) 70%),
-        linear-gradient(to right, rgba(10,5,2,0.70) 0%, rgba(10,5,2,0.0) 60%);
+        linear-gradient(to left, rgba(10,5,2,0.70) 0%, rgba(10,5,2,0.0) 60%);
     }
 
     .hero-content {
       position: relative; z-index: 2;
-      width: 58vw; max-width: 1000px; padding: 0 0 56px 48px;
-      text-align: left;
+      width: 58vw; max-width: 1000px; padding: 0 48px 56px 0;
+      text-align: right;
     }
 
     .hero-eyebrow { display: none; }
