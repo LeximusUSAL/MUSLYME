@@ -935,63 +935,32 @@ section.page-section {
 
 /* ═══ FOOTER ═══ */
 footer.site-footer {
-    padding: 64px 48px;
+    position: relative;
     background: #060606;
     border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    padding: 64px 48px;
+    text-align: center;
+    overflow: hidden;
 }
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 32px;
+footer.site-footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('onda_fondo.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    z-index: 0;
 }
-.footer-brand {
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 400;
-    color: rgba(232,219,200,0.8);
-    letter-spacing: 0.15em;
-}
-.footer-brand small {
-    display: block;
+footer.site-footer > * { position: relative; z-index: 1; }
+.footer-rule { width: 48px; height: 1px; background: rgba(145,65,14,0.4); margin: 0 auto 32px; }
+.footer-text {
     font-family: var(--sans);
-    font-size: 7.5px;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-    font-style: normal;
+    font-size: 9px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--muted); line-height: 2.2;
 }
-.footer-links {
-    display: flex;
-    gap: 28px;
-    flex-wrap: wrap;
-}
-.footer-links a {
-    font-family: var(--sans);
-    font-size: 8.5px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--gold); }
-
-.footer-bottom {
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    color: #666;
-    line-height: 1.7;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 24px;
-}
-.footer-bottom a { color: var(--muted); text-decoration: none; }
-.footer-bottom a:hover { color: var(--gold); }
+.footer-text a { color: var(--muted); text-decoration: none; }
+.footer-text a:hover { color: #C85632; }
 
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 900px) {
@@ -1164,24 +1133,14 @@ footer.site-footer {
      FOOTER
 ═══════════════════════════════════════════════ -->
 <footer class="site-footer">
-    <div class="footer-top">
-        <div class="footer-brand">
-            ONDAS
-            <small>Exposición Virtual de Iconografía Musical</small>
-        </div>
-        <nav class="footer-links">
-            <a href="https://leximususal.github.io/MUSLYME/exposicion_ondas_index.html">Exposición</a>
-            <a href="exposicion_ondas_compositores.html">Compositores</a>
-            <a href="exposicion_ondas_cantantes.html">Cantantes</a>
-            <a href="exposicion_ondas_operas.html">Óperas</a>
-            <a href="estadisticas_ondas.html">Estadísticas</a>
-            <a href="mailto:muslyme@usal.es">Contacto</a>
-        </nav>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2025 Proyecto LexiMus · Universidad de Salamanca · Instituto Complutense de Ciencias Musicales · Universidad de La Rioja</p>
-        <p style="margin-top:8px;">Las imágenes proceden de la revista <em>ONDAS</em> (Madrid, 1925–1935), disponible en la Hemeroteca Digital de la Biblioteca Nacional de España. Uso exclusivamente educativo y sin ánimo de lucro. Si detecta contenido protegido, <a href="mailto:muslyme@usal.es">contacte con nosotros</a>.</p>
-    </div>
+  <div class="footer-rule"></div>
+  <p class="footer-text">
+    Exposición Virtual · GTC MUSLYME en colaboración con LexiMus (PID2022-139589NB-C33) · Universidad de Salamanca · 2026<br>
+    Revista <em>Ondas</em> (Madrid, 1925–1935) · Patrimonio de la música española<br><br>
+    Grupo de Transferencia del Conocimiento MUSLYME – USAL · Proyecto LexiMus ·
+    <a href="mailto:muslyme@usal.es">muslyme@usal.es</a><br>
+    <a href="exposicion_ondas_aviso_legal.html">Aviso legal · Créditos y atribución</a>
+  </p>
 </footer>
 
 <!-- ═══════════════════════════════════════════════

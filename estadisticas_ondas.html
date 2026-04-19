@@ -239,15 +239,32 @@
 
         /* ── Footer ── */
         footer {
-            text-align: center;
-            padding: 48px;
-            background: #060606;
-            color: var(--muted);
-            border-top: 1px solid rgba(255,255,255,0.06);
-            font-size: 0.88em;
-            line-height: 1.8;
+          position: relative;
+          background: #060606;
+          border-top: 1px solid rgba(255,255,255,0.06);
+          padding: 64px 48px;
+          text-align: center;
+          overflow: hidden;
         }
-        footer strong { color: rgba(232,219,200,0.55); }
+        footer::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: url('onda_fondo.png');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.18;
+          z-index: 0;
+        }
+        footer > * { position: relative; z-index: 1; }
+        .footer-rule { width: 48px; height: 1px; background: rgba(145,65,14,0.4); margin: 0 auto 32px; }
+        .footer-text {
+          font-family: 'Kumbh Sans', sans-serif;
+          font-size: 9px; letter-spacing: 0.3em;
+          text-transform: uppercase; color: #848484; line-height: 2.2;
+        }
+        .footer-text a { color: #848484; text-decoration: none; }
+        .footer-text a:hover { color: #C85632; }
 
         @media (max-width: 768px) {
             .main-nav { padding: 16px 20px; }
@@ -437,8 +454,14 @@
     </div>
 
     <footer>
-        <p><strong>LexiMus · Universidad de Salamanca · MUSLYME</strong></p>
-        <p>Corpus de imágenes ONDAS (1925-1935) · 2133 imágenes únicas · 2231 entradas (98 imágenes con múltiples personas)</p>
+      <div class="footer-rule"></div>
+      <p class="footer-text">
+        Exposición Virtual · GTC MUSLYME en colaboración con LexiMus (PID2022-139589NB-C33) · Universidad de Salamanca · 2026<br>
+        Revista <em>Ondas</em> (Madrid, 1925–1935) · Patrimonio de la música española<br><br>
+        Grupo de Transferencia del Conocimiento MUSLYME – USAL · Proyecto LexiMus ·
+        <a href="mailto:muslyme@usal.es">muslyme@usal.es</a><br>
+        <a href="exposicion_ondas_aviso_legal.html">Aviso legal · Créditos y atribución</a>
+      </p>
     </footer>
 
     <script>
