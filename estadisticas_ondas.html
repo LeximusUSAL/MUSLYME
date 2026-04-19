@@ -266,6 +266,20 @@
         .footer-text a { color: #848484; text-decoration: none; }
         .footer-text a:hover { color: #C85632; }
 
+        /* ── HAMBURGER ── */
+        .nav-ham {
+          display: none; flex-direction: column; gap: 5px;
+          background: none; border: none; cursor: pointer; padding: 4px;
+        }
+        .nav-ham span {
+          display: block; width: 22px; height: 2px;
+          background: var(--gold); border-radius: 2px;
+          transition: transform 0.28s, opacity 0.28s;
+        }
+        .nav-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-ham.open span:nth-child(2) { opacity: 0; }
+        .nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         @media (max-width: 768px) {
             .main-nav { padding: 16px 20px; }
             header { padding: 120px 20px 60px; }
@@ -274,7 +288,16 @@
             .stats-summary { border: none; gap: 1px; }
             .stat-card { border-right: none; border-bottom: 1px solid var(--border); }
             .charts-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            .nav-ham { display: flex; }
+            .nav-links {
+              display: none; position: absolute; top: 100%; left: 0; right: 0;
+              flex-direction: column; gap: 0;
+              background: rgba(221,208,184,0.98);
+              border-bottom: 1px solid rgba(145,65,14,0.15);
+              padding: 4px 0 12px;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(145,65,14,0.07); font-size: 11px; }
         }
     </style>
 </head>
@@ -291,6 +314,7 @@
             <a href="https://leximususal.github.io/MUSLYME/ondas_timeline_iconografia.html">Línea Temporal</a>
             <a href="analisis_discurso_ondas.html" style="color:var(--gold2);">Análisis de Discurso</a>
         </div>
+        <button class="nav-ham" aria-label="Menú"><span></span><span></span><span></span></button>
     </nav>
 
     <header>
@@ -465,6 +489,14 @@
     </footer>
 
     <script>
+        // Hamburger
+        (function(){
+          var btn=document.querySelector('.nav-ham'), menu=document.querySelector('.nav-links');
+          if(!btn||!menu) return;
+          btn.addEventListener('click',function(){ btn.classList.toggle('open'); menu.classList.toggle('open'); });
+          document.addEventListener('click',function(e){ if(!btn.contains(e.target)&&!menu.contains(e.target)){ btn.classList.remove('open'); menu.classList.remove('open'); } });
+        })();
+
         const colors = {
             primary: ['#91410E','#b85c4a','#5a7a9c','#6b9c6b','#8c6b9c','#4a9c8c','#d48c4a','#6b7a8c','#3d8c7a','#9c4a4a','#4a6b9c','#8c4a7a','#4a9c5c','#9c7a3d','#7a7a7a'],
             gender:  { H: '#91410E', M: '#b85c4a' }

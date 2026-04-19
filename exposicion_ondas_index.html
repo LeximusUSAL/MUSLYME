@@ -368,10 +368,33 @@
     .footer-text a { color: var(--muted); text-decoration: none; }
     .footer-text a:hover { color: var(--gold2); }
 
+    /* ── HAMBURGER ── */
+    .nav-ham {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-ham span {
+      display: block; width: 22px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .nav-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-ham.open span:nth-child(2) { opacity: 0; }
+    .nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       nav { padding: 14px 20px; }
-      .nav-links { display: none; }
+      .nav-ham { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: rgba(221,208,184,0.98);
+        border-bottom: 1px solid rgba(145,65,14,0.15);
+        padding: 4px 0 12px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(145,65,14,0.07); font-size: 11px; }
       #video-section, #itinerarios-cta, #categories, #salamanca { padding: 64px 24px; }
       .category-card { flex: 0 0 calc(50% - 2px); min-width: 0; }
       .search-bar { flex-wrap: wrap; }
@@ -409,6 +432,7 @@
     <a href="estadisticas_ondas.html">Datos</a>
     <a href="ondas_timeline_iconografia.html">Línea temporal</a>
   </div>
+  <button class="nav-ham" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -628,6 +652,15 @@
 </footer>
 
 <script>
+  // Hamburger
+  (function(){
+    var btn = document.querySelector('.nav-ham');
+    var menu = document.querySelector('.nav-links');
+    if (!btn||!menu) return;
+    btn.addEventListener('click', function(){ btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    document.addEventListener('click', function(e){ if (!btn.contains(e.target)&&!menu.contains(e.target)){ btn.classList.remove('open'); menu.classList.remove('open'); } });
+  })();
+
   // Reveal on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
