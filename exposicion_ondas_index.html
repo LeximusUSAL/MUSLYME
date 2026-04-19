@@ -78,20 +78,12 @@
     .hero-eyebrow { display: none; }
 
 
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 7vw, 6rem);
-      font-weight: 400; line-height: 1.1; color: var(--white);
-      margin-bottom: 20px; letter-spacing: -0.01em;
+    .hero-logo {
+      display: block;
+      width: 100%; max-width: 520px;
+      height: auto;
+      margin-bottom: 48px;
       opacity: 0; animation: fadeUp 0.8s ease 0.5s forwards;
-    }
-    .hero-title em { font-style: italic; color: var(--gold2); }
-
-    .hero-year {
-      font-size: clamp(1rem, 2.2vw, 1.5rem); letter-spacing: 0.12em;
-      color: #7ab3d4; margin-bottom: 48px;
-      opacity: 0; animation: fadeUp 0.8s ease 0.65s forwards;
-      font-family: var(--sans); font-weight: 300;
     }
 
     .hero-divider {
@@ -374,6 +366,7 @@
       /* Hero móvil: texto centrado abajo */
       #hero { align-items: center; justify-content: flex-end; }
       .hero-content { text-align: center; padding: 0 24px 64px; max-width: 100%; }
+      .hero-logo { max-width: 100%; }
       .hero-bg-overlay {
         background:
           linear-gradient(to top, rgba(10,5,2,0.92) 0%, rgba(10,5,2,0.5) 50%, rgba(10,5,2,0.1) 100%);
@@ -411,8 +404,7 @@
   <div class="hero-bg-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="hero-title">Ver la escucha<br>a través de las <em>Ondas</em></h1>
-    <p class="hero-year">1925–1935 · 2.100 imágenes</p>
+    <img src="logo_exposicion_ondas.svg" alt="Ver la escucha a través de las Ondas · 1925–1935" class="hero-logo">
   </div>
 </section>
 
